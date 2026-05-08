@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "@/components/ui/Icons";
 import SectionLabel from "@/components/ui/SectionLabel";
+import AnimateIn from "@/components/ui/AnimateIn";
 import Button from "@/components/ui/Button";
 import portfolioData from "@/data/portfolio.json";
 
@@ -20,34 +21,37 @@ export default function PortfolioSection() {
   const visible = featured.slice(activeIndex, activeIndex + ITEMS_PER_PAGE);
 
   return (
-    <section id="portofolio" className="py-20 lg:py-28 bg-white overflow-hidden">
+    <section id="portofolio" className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-125 h-125 bg-blue-100/60 blur-[100px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Left: Text */}
-          <div className="lg:w-70 shrink-0 flex flex-col justify-between gap-8">
-            <div className="flex flex-col gap-4">
+          <AnimateIn from="left" className="lg:w-72 shrink-0 flex flex-col justify-between gap-8">
+            <div className="flex flex-col gap-5">
               <SectionLabel>Portofolio</SectionLabel>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
-                Karya yang Berbicara
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+                Karya yang<br />Berbicara
               </h2>
-              <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 Setiap proyek kami kerjakan dengan dedikasi dan perhatian pada
                 detail untuk menghasilkan desain yang bermakna.
               </p>
               <Button href="#portofolio" variant="outline" showArrow>
-                Lihat Semua Portofolio
+                Lihat Semua
               </Button>
             </div>
 
-            {/* Navigation arrows */}
+            {/* Navigation */}
             <div className="flex items-center gap-3">
               <button
                 onClick={handlePrev}
                 disabled={activeIndex === 0}
-                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
+                className={`w-10 h-10 border flex items-center justify-center transition-all duration-200 ${
                   activeIndex === 0
-                    ? "border-gray-200 text-gray-300 cursor-not-allowed"
-                    : "border-gray-300 text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50"
+                    ? "border-slate-200 text-slate-300 cursor-not-allowed"
+                    : "border-slate-300 text-slate-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
                 aria-label="Previous"
               >
@@ -56,10 +60,10 @@ export default function PortfolioSection() {
               <button
                 onClick={handleNext}
                 disabled={activeIndex >= maxIndex}
-                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${
+                className={`w-10 h-10 border flex items-center justify-center transition-all duration-200 ${
                   activeIndex >= maxIndex
-                    ? "border-gray-200 text-gray-300 cursor-not-allowed"
-                    : "border-gray-300 text-gray-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50"
+                    ? "border-slate-200 text-slate-300 cursor-not-allowed"
+                    : "border-slate-300 text-slate-600 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50"
                 }`}
                 aria-label="Next"
               >
@@ -72,39 +76,38 @@ export default function PortfolioSection() {
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`rounded-full transition-all duration-200 ${
+                    className={`transition-all duration-200 ${
                       i === activeIndex
-                        ? "w-5 h-2 bg-blue-600"
-                        : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                        ? "w-5 h-1.5 bg-blue-600"
+                        : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
                     }`}
                     aria-label={`Go to slide ${i + 1}`}
                   />
                 ))}
               </div>
             </div>
-          </div>
+          </AnimateIn>
 
           {/* Right: Portfolio grid */}
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-2 gap-4">
+          <AnimateIn from="right" delay={150} className="flex-1 grid grid-cols-2 gap-3 sm:gap-4">
             {visible.map((item) => (
               <Link
                 key={item.id}
                 href="#portofolio"
-                className="group relative rounded-2xl overflow-hidden aspect-4/3 flex items-end cursor-pointer"
+                className="group relative overflow-hidden aspect-4/3 flex items-end cursor-pointer border border-white/5"
                 style={{ backgroundColor: item.bgColor }}
                 aria-label={`Lihat proyek ${item.title}`}
               >
-                {/* Portfolio card content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                  {/* Abstract logo/text in center */}
+                {/* Card content */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6">
                   <div
-                    className="text-3xl sm:text-4xl font-black tracking-tight leading-none text-center"
+                    className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-none text-center"
                     style={{ color: item.textColor }}
                   >
                     {item.title}
                   </div>
                   <div
-                    className="text-xs font-medium tracking-widest uppercase mt-1 opacity-70"
+                    className="text-[10px] sm:text-xs font-medium tracking-widest uppercase mt-1.5 opacity-70"
                     style={{ color: item.accentColor }}
                   >
                     {item.subtitle}
@@ -112,20 +115,20 @@ export default function PortfolioSection() {
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-all duration-300" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
 
                 {/* Category tag at bottom */}
-                <div className="relative z-10 w-full p-4 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  <span
-                    className="text-xs font-semibold uppercase tracking-wide"
-                    style={{ color: item.accentColor }}
-                  >
+                <div className="relative z-10 w-full p-3 sm:p-4 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
                     {item.category}
                   </span>
                 </div>
+
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-0 h-0 border-t-32 border-r-32 border-t-transparent border-r-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
             ))}
-          </div>
+          </AnimateIn>
         </div>
       </div>
     </section>

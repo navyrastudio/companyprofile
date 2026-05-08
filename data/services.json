@@ -5,28 +5,17 @@
     "description": "Kami merancang antarmuka yang intuitif dan berpusat pada pengguna — memastikan pengalaman digital yang tidak hanya terlihat baik, tetapi juga terasa menyenangkan untuk digunakan.",
     "items": ["Mobile App", "Web Design", "Design System"]
   },
-  {
+    {
     "id": 2,
-    "title": "Brand Identity",
-    "description": "Membangun identitas merek yang kuat, konsisten, dan mudah diingat — mulai dari logo hingga seluruh elemen visual yang merepresentasikan bisnis Anda.",
-    "items": ["Logo Design", "Brand Guidelines", "Stationery", "Mockup"]
-  },
-  {
-    "id": 3,
-    "title": "Illustration Design",
-    "description": "Ilustrasi orisinal yang memperkuat karakter brand Anda dan menyampaikan pesan secara visual dengan cara yang unik dan berkesan.",
-    "items": ["2D Illustration", "Icon Design"]
-  },
-  {
-    "id": 4,
-    "title": "Social Media",
-    "description": "Konten visual media sosial yang menarik, on-brand, dan dirancang untuk meningkatkan engagement serta memperkuat kehadiran digital Anda.",
-    "items": ["Konten Postingan"]
-  },
-  {
-    "id": 5,
     "title": "Web Development",
     "description": "Pengembangan website modern yang cepat, aman, dan skalabel — dibangun sesuai kebutuhan bisnis Anda dengan teknologi terkini.",
     "items": ["Company Profile", "SaaS", "POS"]
+  },
+  {
+    "id": 3,
+    "title": "Social Media",
+    "description": "Konten visual media sosial yang menarik, on-brand, dan dirancang untuk meningkatkan engagement serta memperkuat kehadiran digital Anda.",
+    "items": ["Konten Postingan"]
   }
+
 ]

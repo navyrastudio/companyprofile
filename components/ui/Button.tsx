@@ -13,17 +13,17 @@ interface ButtonProps {
 
 const sizeClasses = {
   sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-sm",
+  md: "px-5 py-2.5 text-sm",
   lg: "px-7 py-3.5 text-base",
 };
 
 const variantClasses = {
   primary:
-    "bg-blue-600 text-white hover:bg-blue-700 shadow-sm shadow-blue-200 hover:shadow-md hover:shadow-blue-200",
+    "bg-blue-600 text-white hover:bg-blue-500 border border-blue-500/40 hover:border-blue-400/60",
   outline:
-    "border border-gray-200 text-gray-700 bg-white hover:border-blue-600 hover:text-blue-600",
-  ghost: "text-gray-600 hover:text-blue-600 hover:bg-blue-50",
-  white: "bg-white text-blue-700 hover:bg-blue-50 shadow-lg shadow-blue-900/20",
+    "border border-slate-300 text-slate-700 bg-transparent hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50",
+  ghost: "text-slate-600 hover:text-slate-900 hover:bg-slate-100",
+  white: "bg-white text-blue-700 hover:bg-blue-50 border border-white/20",
 };
 
 export default function Button({
@@ -35,7 +35,7 @@ export default function Button({
   showArrow = false,
   size = "md",
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center gap-2 rounded-full font-medium transition-all duration-200 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
+  const baseClasses = `inline-flex items-center gap-2 font-semibold transition-all duration-200 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   if (href) {
     return (

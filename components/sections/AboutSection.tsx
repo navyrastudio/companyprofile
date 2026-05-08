@@ -1,81 +1,106 @@
 import StatCard from "@/components/ui/StatCard";
 import SectionLabel from "@/components/ui/SectionLabel";
+import AnimateIn from "@/components/ui/AnimateIn";
 import { LogoMark } from "@/components/ui/Icons";
 import companyData from "@/data/company.json";
 import statsData from "@/data/stats.json";
 
 export default function AboutSection() {
   return (
-    <section id="tentang" className="py-20 lg:py-28 bg-gray-50">
+    <section id="tentang" className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+      {/* Background accent */}
+      <div className="absolute top-0 left-0 w-125 h-125 bg-blue-100/50 blur-[120px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Section divider line */}
+        <div className="w-full h-px bg-linear-to-r from-transparent via-slate-300 to-transparent mb-20" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Visual */}
-          <div className="relative">
-            {/* Main image card */}
-            <div className="relative rounded-3xl overflow-hidden bg-linear-to-br from-blue-900 to-blue-700 aspect-4/3">
-              {/* Decorative office/workspace illustration */}
+          <AnimateIn from="left" className="relative">
+            {/* Main card */}
+            <div className="relative overflow-hidden bg-linear-to-br from-blue-50 to-slate-100 border border-slate-200 aspect-4/3">
+              {/* Grid pattern inside */}
+              <div
+                className="absolute inset-0 opacity-[0.08]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px)",
+                  backgroundSize: "30px 30px",
+                }}
+              />
+
+              {/* Studio display */}
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-8">
                 {/* Monitor */}
                 <div className="relative">
-                  <div className="w-48 h-32 bg-blue-800/80 rounded-xl border border-blue-600/50 flex items-center justify-center shadow-2xl">
-                    <LogoMark className="w-16 h-16 text-blue-300 opacity-60" />
+                  <div className="w-48 h-32 bg-white border border-blue-300/50 shadow-lg flex items-center justify-center">
+                    <LogoMark className="w-16 h-16 text-blue-500 opacity-40" />
+                    {/* Screen glare */}
+                    <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-black/3 to-transparent" />
                   </div>
-                  {/* Monitor stand */}
-                  <div className="w-12 h-3 bg-blue-800 mx-auto rounded-b-md" />
-                  <div className="w-20 h-1.5 bg-blue-800/70 mx-auto rounded-full" />
+                  <div className="w-12 h-3 bg-slate-200 border-x border-b border-blue-300/20 mx-auto" />
+                  <div className="w-20 h-0.5 bg-blue-300/30 mx-auto" />
                 </div>
-                {/* Floating UI elements */}
-                <div className="flex gap-3 absolute top-6 right-6">
-                  <div className="w-8 h-8 rounded-full bg-blue-400/20 border border-blue-400/30" />
-                  <div className="w-4 h-4 rounded-full bg-blue-300/20 border border-blue-300/30 mt-2" />
+
+                {/* Floating UI chips */}
+                <div className="flex gap-2 absolute top-5 left-5">
+                  <div className="w-2 h-2 bg-blue-300/50 border border-blue-400/30" />
+                  <div className="w-1.5 h-1.5 bg-blue-200/40 border border-blue-300/20 mt-1" />
                 </div>
+
+                {/* Corner accent lines */}
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-blue-500/30" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-blue-500/30" />
               </div>
 
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-blue-950/30 to-transparent" />
+              {/* Bottom gradient */}
+              <div className="absolute inset-0 bg-linear-to-t from-blue-100/60 to-transparent" />
             </div>
 
             {/* Floating accent card */}
-            <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-white rounded-2xl shadow-xl shadow-blue-100/60 p-5 border border-gray-100">
+            <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-white border border-slate-200 shadow-md p-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <LogoMark className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 bg-blue-100 border border-blue-300/50 flex items-center justify-center">
+                    <LogoMark className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-400 font-medium">Berdiri sejak</div>
-                  <div className="text-xl font-bold text-gray-900">{companyData.since}</div>
+                  <div className="text-xs text-slate-500 font-medium uppercase tracking-widest">Berdiri sejak</div>
+                  <div className="text-2xl font-bold text-slate-900 mt-0.5">{companyData.since}</div>
                 </div>
               </div>
             </div>
 
-            {/* Decorative dots */}
+            {/* Decorative dots grid */}
             <div className="absolute -top-4 -left-4 grid grid-cols-4 gap-2">
               {Array.from({ length: 16 }).map((_, i) => (
-                <div key={i} className="w-1.5 h-1.5 rounded-full bg-blue-200" />
+                <div key={i} className="w-1 h-1 bg-blue-400/40" />
               ))}
             </div>
-          </div>
+          </AnimateIn>
 
           {/* Right: Content */}
-          <div className="flex flex-col gap-6">
+          <AnimateIn from="right" delay={150} className="flex flex-col gap-7">
             <SectionLabel>Tentang Kami</SectionLabel>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
               {companyData.about.heading}
             </h2>
 
-            <p className="text-gray-500 leading-relaxed">
+            <div className="w-12 h-px bg-blue-500/50" />
+
+            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
               {companyData.about.description}
             </p>
 
-            <p className="text-gray-500 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
               Dengan pengalaman lebih dari 5 tahun, kami telah membantu
               puluhan brand dari berbagai industri untuk tampil lebih profesional,
               konsisten, dan berkesan di era digital.
             </p>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 mt-2 border-t border-gray-200">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 mt-2 border-t border-slate-200">
               {statsData.map((stat) => (
                 <StatCard
                   key={stat.label}
@@ -85,7 +110,7 @@ export default function AboutSection() {
                 />
               ))}
             </div>
-          </div>
+          </AnimateIn>
         </div>
       </div>
     </section>
