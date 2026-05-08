@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MenuIcon, CloseIcon, LogoMark } from "@/components/ui/Icons";
+import { ArrowRight, MenuIcon, CloseIcon } from "@/components/ui/Icons";
 import navData from "@/data/navigation.json";
 
 export default function Navbar() {
@@ -119,14 +119,16 @@ export default function Navbar() {
         {/* Content */}
         <div className="relative h-full flex flex-col px-6 pt-20 pb-10">
           {/* Logo */}
-          <div className="flex items-center gap-3 mb-10">
-            <div className="w-8 h-8 bg-blue-600 flex items-center justify-center shrink-0">
-              <LogoMark className="w-4.5 h-4.5 text-white" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-heading text-slate-900 font-bold text-base tracking-tight">navyra</span>
-              <span className="font-heading text-slate-400 text-[8px] font-semibold tracking-[0.25em] uppercase">studio</span>
-            </div>
+          <div className="mb-10">
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              <Image
+                src="/navyra-logo.png"
+                alt="Navyra Studio"
+                width={160}
+                height={56}
+                className="h-9 w-auto object-contain"
+              />
+            </Link>
           </div>
 
           {/* Nav links */}

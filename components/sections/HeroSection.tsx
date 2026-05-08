@@ -27,15 +27,15 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center py-16 lg:py-24">
           {/* Left: Content */}
-          <div className="flex flex-col gap-7 max-w-xl">
+          <div className="flex flex-col gap-7 max-w-xl order-last lg:order-first">
             
 
             {/* Heading */}
             <div className="animate-hero-h1 space-y-1">
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-slate-900 leading-[1.08] tracking-tight">
+              <h1 className="text-2xl sm:text-5xl lg:text-[2.75rem] font-bold text-slate-900 leading-[1.08] tracking-tight">
                 {companyData.tagline}
               </h1>
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.75rem] font-bold text-blue-600 leading-[1.08] tracking-tight">
+              <h1 className="text-2xl sm:text-5xl lg:text-[2.75rem] font-bold text-blue-600 leading-[1.08] tracking-tight">
                 {companyData.taglineAccent}
               </h1>
             </div>
@@ -50,10 +50,10 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div className="animate-hero-cta flex flex-wrap gap-3">
-              <Button href="#portofolio" variant="primary" size="lg" showArrow>
+              <Button href="#portofolio" variant="primary" size="md" showArrow className="sm:px-7 sm:py-3.5 sm:text-base">
                 Lihat Portofolio
               </Button>
-              <Button href="#tentang" variant="outline" size="lg">
+              <Button href="#tentang" variant="outline" size="md" className="sm:px-7 sm:py-3.5 sm:text-base">
                 Tentang Kami
               </Button>
             </div>
@@ -68,7 +68,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right: Hero 3D image */}
-          <div className="animate-hero-image relative flex items-center justify-center h-95 sm:h-115 lg:h-135" style={{ perspective: '800px' }}>
+          <div className="animate-hero-image relative flex items-center justify-center h-72 sm:h-95 lg:h-135 order-first lg:order-last" style={{ perspective: '800px' }}>
             {/* Glow behind image */}
             <div className="absolute inset-12 bg-blue-200/40 blur-3xl pointer-events-none" />
 

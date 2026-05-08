@@ -20,11 +20,11 @@ export default function ServicesSection() {
         <AnimateIn className="flex flex-col items-start gap-4 mb-16">
           <SectionLabel>Layanan Kami</SectionLabel>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
-            Paket Layanan
+            Solusi digital yang dirancang untuk<br className="hidden sm:block" /> tumbuh bersama bisnis Anda.
           </h2>
           <p className="text-slate-600 leading-relaxed max-w-lg text-sm sm:text-base">
-            Kami menyediakan berbagai layanan desain dan branding yang dirancang
-            untuk membantu bisnis Anda tumbuh dan dikenal lebih luas.
+            Kami menyediakan layanan Web Development, UI/UX Design, dan Branding yang dirancang
+            untuk membantu bisnis Anda berkembang dan tampil lebih profesional di era digital.
           </p>
         </AnimateIn>
 

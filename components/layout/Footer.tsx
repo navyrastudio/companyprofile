@@ -1,10 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-  BehanceIcon,
+  faInstagram,
+  faLinkedinIn,
+  faXTwitter,
+  faBehance,
+} from "@fortawesome/free-brands-svg-icons";
+import {
   EmailIcon,
   PhoneIcon,
   MapPinIcon,
@@ -23,10 +26,10 @@ const serviceLinks = [
 ];
 
 const socials = [
-  { href: "#", label: "Instagram", Icon: InstagramIcon },
-  { href: "#", label: "LinkedIn", Icon: LinkedInIcon },
-  { href: "#", label: "Twitter / X", Icon: TwitterIcon },
-  { href: "#", label: "Behance", Icon: BehanceIcon },
+  { href: "#", label: "Instagram", icon: faInstagram },
+  { href: "#", label: "LinkedIn", icon: faLinkedinIn },
+  { href: "#", label: "Twitter / X", icon: faXTwitter },
+  { href: "#", label: "Behance", icon: faBehance },
 ];
 
 export default function Footer() {
@@ -59,7 +62,7 @@ export default function Footer() {
 
             {/* Social icons */}
             <div className="flex items-center gap-3">
-              {socials.map(({ href, label, Icon }) => (
+              {socials.map(({ href, label, icon }) => (
                 <Link
                   key={label}
                   href={href}
@@ -68,7 +71,7 @@ export default function Footer() {
                   aria-label={label}
                   className="w-9 h-9 border border-slate-300 flex items-center justify-center text-slate-500 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200"
                 >
-                  <Icon className="w-4 h-4" />
+                  <FontAwesomeIcon icon={icon} className="w-4 h-4" />
                 </Link>
               ))}
             </div>

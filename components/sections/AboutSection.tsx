@@ -1,9 +1,7 @@
-import StatCard from "@/components/ui/StatCard";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import AnimateIn from "@/components/ui/AnimateIn";
-import { LogoMark } from "@/components/ui/Icons";
 import companyData from "@/data/company.json";
-import statsData from "@/data/stats.json";
 
 export default function AboutSection() {
   return (
@@ -35,7 +33,7 @@ export default function AboutSection() {
                 {/* Monitor */}
                 <div className="relative">
                   <div className="w-48 h-32 bg-white border border-blue-300/50 shadow-lg flex items-center justify-center">
-                    <LogoMark className="w-16 h-16 text-blue-500 opacity-40" />
+                    <Image src="/navyra-logo.png" alt="Navyra Studio" width={120} height={40} className="w-28 h-auto object-contain opacity-60" />
                     {/* Screen glare */}
                     <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-black/3 to-transparent" />
                   </div>
@@ -61,8 +59,8 @@ export default function AboutSection() {
             {/* Floating accent card */}
             <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-white border border-slate-200 shadow-md p-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-100 border border-blue-300/50 flex items-center justify-center">
-                    <LogoMark className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 bg-blue-50 border border-blue-300/50 flex items-center justify-center p-1.5">
+                    <Image src="/inilogo.png" alt="Navyra Studio" width={40} height={40} className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium uppercase tracking-widest">Berdiri sejak</div>
@@ -94,13 +92,11 @@ export default function AboutSection() {
             </p>
 
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-              Dengan pengalaman lebih dari 5 tahun, kami telah membantu
-              puluhan brand dari berbagai industri untuk tampil lebih profesional,
-              konsisten, dan berkesan di era digital.
+              Karena bagi kami, produk digital terbaik bukan hanya tentang tampilan, tetapi tentang bagaimana sebuah solusi dapat membantu bisnis bertumbuh dan terhubung lebih dekat dengan penggunanya.
             </p>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 mt-2 border-t border-slate-200">
+            {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 mt-2 border-t border-slate-200">
               {statsData.map((stat) => (
                 <StatCard
                   key={stat.label}
@@ -109,7 +105,7 @@ export default function AboutSection() {
                   icon={stat.icon}
                 />
               ))}
-            </div>
+            </div> */}
           </AnimateIn>
         </div>
       </div>
