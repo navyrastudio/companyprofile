@@ -11,7 +11,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -25,18 +25,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-18">
           {/* Logo */}
-          <Link
-            href="/"
-            aria-label="Navyra Studio - Beranda"
-          >
+          <Link href="/" aria-label="Navyra Studio - Beranda">
             <Image
               src="/logo.png"
               alt="Navyra Studio"
               width={140}
               height={48}
-              className="h-10 w-auto object-contain"
+              className="h-7 sm:h-9 w-auto object-contain"
               priority
             />
           </Link>
@@ -69,36 +66,32 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
+            className="md:hidden w-8 h-8 flex items-center justify-center rounded-lg text-gray-600 hover:text-blue-600 hover:bg-blue-50 transition-colors"
             aria-label={isOpen ? "Tutup menu" : "Buka menu"}
           >
-            {isOpen ? (
-              <CloseIcon className="w-5 h-5" />
-            ) : (
-              <MenuIcon className="w-5 h-5" />
-            )}
+            {isOpen ? <CloseIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden bg-white border-t border-gray-100 py-4 px-2 rounded-b-2xl shadow-lg">
-            <div className="flex flex-col gap-1">
+          <div className="md:hidden bg-white border-t border-gray-100 py-4">
+            <div className="flex flex-col divide-y divide-gray-100">
               {navData.links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-4 py-3 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-xl transition-colors"
+                  className="py-3 text-sm text-gray-600 hover:text-blue-600 transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2 px-4">
+              <div className="pt-4">
                 <Link
                   href={navData.cta.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-xl text-sm font-medium hover:bg-blue-700 transition-colors"
+                  className="flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
                 >
                   {navData.cta.label}
                   <ArrowRight className="w-4 h-4" />
