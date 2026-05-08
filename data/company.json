@@ -1,0 +1,21 @@
+{
+  "name": "Navyra Studio",
+  "tagline": "Membentuk Identitas,",
+  "taglineAccent": "Membangun Cerita.",
+  "description": "Studio kreatif yang berfokus pada desain brand, visual, dan digital untuk membantu bisnis tampil berkesan dan relevan di era digital.",
+  "since": "2020",
+  "highlights": ["Creative", "Digital", "Impactful"],
+  "about": {
+    "heading": "Kreativitas. Strategi. Hasil.",
+    "description": "Navyra Studio berdiri dengan satu tujuan: membantu brand berkembang melalui desain yang berdampak dan relevan."
+  },
+  "email": "hello@navyrastudio.com",
+  "phone": "+62 812 3456 7890",
+  "address": "Jakarta, Indonesia",
+  "socials": {
+    "instagram": "https://instagram.com/navyrastudio",
+    "linkedin": "https://linkedin.com/company/navyrastudio",
+    "twitter": "https://twitter.com/navyrastudio",
+    "behance": "https://behance.net/navyrastudio"
+  }
+}

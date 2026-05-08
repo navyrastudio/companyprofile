@@ -1,0 +1,22 @@
+[
+  {
+    "value": "50+",
+    "label": "Proyek Selesai",
+    "icon": "project"
+  },
+  {
+    "value": "40+",
+    "label": "Klien Puas",
+    "icon": "client"
+  },
+  {
+    "value": "5+",
+    "label": "Tahun Pengalaman",
+    "icon": "award"
+  },
+  {
+    "value": "100%",
+    "label": "Komitmen Kualitas",
+    "icon": "quality"
+  }
+]

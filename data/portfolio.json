@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "KOHA Coffee",
+    "subtitle": "Coffee Roasters",
+    "category": "Brand Identity",
+    "bgColor": "#1a1a1a",
+    "textColor": "#ffffff",
+    "accentColor": "#c8a96e",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Navyra",
+    "subtitle": "Building Digital Future Together",
+    "category": "Web Design",
+    "bgColor": "#1A56DB",
+    "textColor": "#ffffff",
+    "accentColor": "#93c5fd",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Olivia",
+    "subtitle": "Beauty & Skincare",
+    "category": "Photography",
+    "bgColor": "#e8d5c4",
+    "textColor": "#1a1a1a",
+    "accentColor": "#8b6343",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "VELLA",
+    "subtitle": "Premium Brand",
+    "category": "Brand Identity",
+    "bgColor": "#0f172a",
+    "textColor": "#ffffff",
+    "accentColor": "#94a3b8",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Arkana",
+    "subtitle": "Tech Solutions",
+    "category": "Web Development",
+    "bgColor": "#0d9488",
+    "textColor": "#ffffff",
+    "accentColor": "#99f6e4",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Lumira",
+    "subtitle": "Interior Design",
+    "category": "UI/UX Design",
+    "bgColor": "#f3f4f6",
+    "textColor": "#111827",
+    "accentColor": "#6b7280",
+    "featured": false
+  }
+]

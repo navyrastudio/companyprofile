@@ -1,0 +1,14 @@
+{
+  "links": [
+    { "label": "Beranda", "href": "#beranda" },
+    { "label": "Tentang Kami", "href": "#tentang" },
+    { "label": "Layanan", "href": "#layanan" },
+    { "label": "Portofolio", "href": "#portofolio" },
+    { "label": "Blog", "href": "#blog" },
+    { "label": "Kontak", "href": "#kontak" }
+  ],
+  "cta": {
+    "label": "Hubungi Kami",
+    "href": "#kontak"
+  }
+}
