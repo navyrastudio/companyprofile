@@ -36,7 +36,7 @@ export default function PortfolioSection() {
               </h2>
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 Setiap proyek kami kerjakan dengan dedikasi dan perhatian pada
-                detail untuk menghasilkan desain yang bermakna.
+                detail untuk menghasilkan produk yang relevan dan solutif
               </p>
               <Button href="#portofolio" variant="outline" showArrow>
                 Lihat Semua
