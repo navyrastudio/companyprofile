@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { ScrollIcon, TrendIcon } from "@/components/ui/Icons";
 import companyData from "@/data/company.json";
@@ -68,33 +69,20 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Decorative 3D element */}
+          {/* Right: Hero 3D image */}
           <div className="relative flex items-center justify-center h-105 lg:h-130">
-            {/* Main 3D abstract shape */}
-            <div className="relative w-80 h-80 lg:w-100 lg:h-100">
-              {/* Glow base */}
-              <div className="absolute inset-8 bg-blue-400/20 rounded-full blur-2xl" />
+            {/* Glow behind image */}
+            <div className="absolute inset-8 bg-blue-300/20 rounded-full blur-3xl pointer-events-none" />
 
-              {/* Outer ribbon layer */}
-              <div
-                className="absolute inset-0 rounded-[60%_40%_50%_50%/50%_60%_40%_50%] bg-linear-to-br from-blue-200 to-blue-400 opacity-70"
-                style={{ transform: "rotate(20deg)" }}
+            {/* 3D image */}
+            <div className="relative w-80 h-80 lg:w-[480px] lg:h-[480px]">
+              <Image
+                src="/heroicon.png"
+                alt="Navyra Studio 3D Mark"
+                fill
+                className="object-contain drop-shadow-2xl"
+                priority
               />
-              {/* Middle ribbon layer */}
-              <div
-                className="absolute inset-4 rounded-[40%_60%_60%_40%/60%_40%_60%_40%] bg-linear-to-tr from-blue-300/90 to-white/90"
-                style={{ transform: "rotate(-15deg)" }}
-              />
-              {/* Inner ribbon layer */}
-              <div
-                className="absolute inset-8 rounded-[50%_50%_40%_60%/40%_60%_50%_50%] bg-linear-to-b from-white to-blue-100 shadow-inner"
-                style={{ transform: "rotate(10deg)" }}
-              />
-              {/* Center highlight */}
-              <div className="absolute inset-16 rounded-full bg-white/80 blur-sm" />
-
-              {/* Platform shadow */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-5 bg-linear-to-r from-transparent via-blue-300/40 to-transparent rounded-full blur-md" />
             </div>
 
             {/* Floating card 1 - highlights */}

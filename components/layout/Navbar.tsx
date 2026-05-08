@@ -29,7 +29,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" aria-label="Navyra Studio - Beranda">
             <Image
-              src="/logo.png"
+              src="/navyra-logo.png"
               alt="Navyra Studio"
               width={140}
               height={48}
