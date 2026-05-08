@@ -1,21 +1,20 @@
 [
   {
     "id": 1,
-    "title": "UI/UX Design",
-    "description": "Kami merancang antarmuka yang intuitif dan berpusat pada pengguna — memastikan pengalaman digital yang tidak hanya terlihat baik, tetapi juga terasa menyenangkan untuk digunakan.",
-    "items": ["Mobile App", "Web Design", "Design System"]
-  },
-    {
-    "id": 2,
     "title": "Web Development",
     "description": "Pengembangan website modern yang cepat, aman, dan skalabel — dibangun sesuai kebutuhan bisnis Anda dengan teknologi terkini.",
     "items": ["Company Profile", "SaaS", "POS"]
   },
   {
+    "id": 2,
+    "title": "UI/UX Design",
+    "description": "Kami merancang antarmuka yang intuitif dan berpusat pada pengguna — memastikan pengalaman digital yang tidak hanya terlihat baik, tetapi juga terasa menyenangkan untuk digunakan.",
+    "items": ["Mobile App", "Web Design", "Prototype", "Design System"]
+  },
+  {
     "id": 3,
-    "title": "Social Media",
-    "description": "Konten visual media sosial yang menarik, on-brand, dan dirancang untuk meningkatkan engagement serta memperkuat kehadiran digital Anda.",
-    "items": ["Konten Postingan"]
+    "title": "Branding",
+    "description": "Membangun identitas brand yang kuat, konsisten, dan berkesan — dari logo hingga panduan visual yang memperkuat kepercayaan dan daya tarik bisnis Anda.",
+    "items": ["Logo Design", "Brand Identity", "Social Media Design", "Mockup"]
   }
-
 ]

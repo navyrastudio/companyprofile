@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MenuIcon, CloseIcon } from "@/components/ui/Icons";
+import { ArrowRight, MenuIcon, CloseIcon, LogoMark } from "@/components/ui/Icons";
 import navData from "@/data/navigation.json";
 
 export default function Navbar() {
@@ -67,7 +67,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <Link
                 href={navData.cta.href}
-                className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 text-sm font-semibold hover:bg-blue-500 transition-all duration-200 border border-blue-500/40"
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 text-sm font-semibold font-heading hover:bg-blue-500 transition-all duration-200 border border-blue-500/40"
               >
                 {navData.cta.label}
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -118,10 +118,16 @@ export default function Navbar() {
 
         {/* Content */}
         <div className="relative h-full flex flex-col px-6 pt-20 pb-10">
-          {/* Label */}
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-600 mb-10">
-            Menu Navigasi
-          </p>
+          {/* Logo */}
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-8 h-8 bg-blue-600 flex items-center justify-center shrink-0">
+              <LogoMark className="w-4.5 h-4.5 text-white" />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="font-heading text-slate-900 font-bold text-base tracking-tight">navyra</span>
+              <span className="font-heading text-slate-400 text-[8px] font-semibold tracking-[0.25em] uppercase">studio</span>
+            </div>
+          </div>
 
           {/* Nav links */}
           <nav className="flex flex-col gap-1 flex-1">
@@ -135,7 +141,7 @@ export default function Navbar() {
                 }`}
                 style={{ transitionDelay: isOpen ? `${i * 60}ms` : "0ms" }}
               >
-                <span className="text-3xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
+                <span className="text-xl font-bold font-heading text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
                   {link.label}
                 </span>
                 <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-200" />
@@ -153,7 +159,7 @@ export default function Navbar() {
             <Link
               href={navData.cta.href}
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-4 text-base font-semibold hover:bg-blue-500 transition-colors"
+              className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-4 text-base font-semibold font-heading hover:bg-blue-500 transition-colors"
             >
               {navData.cta.label}
               <ArrowRight className="w-4 h-4" />

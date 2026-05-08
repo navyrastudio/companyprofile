@@ -28,13 +28,7 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center py-16 lg:py-24">
           {/* Left: Content */}
           <div className="flex flex-col gap-7 max-w-xl">
-            {/* Badge */}
-            <div className="animate-hero-badge inline-flex items-center gap-2.5 w-fit px-4 py-2 border border-blue-500/30 bg-blue-50 backdrop-blur-sm">
-              <span className="w-1.5 h-1.5 bg-blue-600 animate-pulse" />
-              <span className="text-xs font-semibold text-blue-600 uppercase tracking-[0.2em]">
-                Navyra Studio — Creative Digital Agency
-              </span>
-            </div>
+            
 
             {/* Heading */}
             <div className="animate-hero-h1 space-y-1">
@@ -74,12 +68,12 @@ export default function HeroSection() {
           </div>
 
           {/* Right: Hero 3D image */}
-          <div className="animate-hero-image relative flex items-center justify-center h-95 sm:h-115 lg:h-135">
+          <div className="animate-hero-image relative flex items-center justify-center h-95 sm:h-115 lg:h-135" style={{ perspective: '800px' }}>
             {/* Glow behind image */}
             <div className="absolute inset-12 bg-blue-200/40 blur-3xl pointer-events-none" />
 
             {/* 3D image */}
-            <div className="relative w-72 h-72 sm:w-95 sm:h-95 lg:w-115 lg:h-115 animate-float">
+            <div className="relative w-72 h-72 sm:w-95 sm:h-95 lg:w-115 lg:h-115 animate-3d-float">
               <Image
                 src="/heroicon.png"
                 alt="Navyra Studio 3D Mark"

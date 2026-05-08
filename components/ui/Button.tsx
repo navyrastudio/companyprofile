@@ -35,7 +35,7 @@ export default function Button({
   showArrow = false,
   size = "md",
 }: ButtonProps) {
-  const baseClasses = `inline-flex items-center gap-2 font-semibold transition-all duration-200 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
+  const baseClasses = `inline-flex items-center gap-2 font-semibold font-heading transition-all duration-200 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   if (href) {
     return (
