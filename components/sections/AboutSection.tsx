@@ -5,9 +5,9 @@ import companyData from "@/data/company.json";
 
 export default function AboutSection() {
   return (
-    <section id="tentang" className="snap-start min-h-screen py-20 lg:py-28 bg-gray-50 relative overflow-hidden flex flex-col justify-center">
+    <section id="tentang" className="snap-start min-h-screen py-20 lg:py-28 bg-slate-50 relative overflow-hidden flex flex-col justify-center">
       {/* Background accent */}
-      <div className="absolute top-0 left-0 w-125 h-125 bg-blue-100/50 blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-125 h-125 bg-brand-100/50 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section divider line */}
@@ -16,7 +16,7 @@ export default function AboutSection() {
           {/* Left: Visual */}
           <AnimateIn from="left" className="relative">
             {/* Main card */}
-            <div className="relative overflow-hidden bg-linear-to-br from-blue-50 to-slate-100 border border-slate-200 aspect-4/3">
+            <div className="relative overflow-hidden bg-linear-to-br from-brand-50 to-slate-100 border border-slate-200 aspect-4/3">
               {/* Grid pattern inside */}
               <div
                 className="absolute inset-0 opacity-[0.08]"
@@ -31,34 +31,34 @@ export default function AboutSection() {
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-8">
                 {/* Monitor */}
                 <div className="relative">
-                  <div className="w-48 h-32 bg-white border border-blue-300/50 shadow-lg flex items-center justify-center">
+                  <div className="w-48 h-32 bg-white border border-brand-300/50 shadow-lg flex items-center justify-center">
                     <Image src="/navyra-logo.png" alt="Navyra Studio" width={120} height={40} className="w-28 h-auto object-contain opacity-60" />
                     {/* Screen glare */}
                     <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-black/3 to-transparent" />
                   </div>
-                  <div className="w-12 h-3 bg-slate-200 border-x border-b border-blue-300/20 mx-auto" />
-                  <div className="w-20 h-0.5 bg-blue-300/30 mx-auto" />
+                  <div className="w-12 h-3 bg-slate-200 border-x border-b border-brand-300/20 mx-auto" />
+                  <div className="w-20 h-0.5 bg-brand-300/30 mx-auto" />
                 </div>
 
                 {/* Floating UI chips */}
                 <div className="flex gap-2 absolute top-5 left-5">
-                  <div className="w-2 h-2 bg-blue-300/50 border border-blue-400/30" />
-                  <div className="w-1.5 h-1.5 bg-blue-200/40 border border-blue-300/20 mt-1" />
+                  <div className="w-2 h-2 bg-brand-300/50 border border-brand-400/30" />
+                  <div className="w-1.5 h-1.5 bg-brand-200/40 border border-brand-300/20 mt-1" />
                 </div>
 
                 {/* Corner accent lines */}
-                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-blue-500/30" />
-                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-blue-500/30" />
+                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-brand/30" />
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-brand/30" />
               </div>
 
               {/* Bottom gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-blue-100/60 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-brand-100/60 to-transparent" />
             </div>
 
             {/* Floating accent card */}
             <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-white border border-slate-200 shadow-md p-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-50 border border-blue-300/50 flex items-center justify-center p-1.5">
+                <div className="w-10 h-10 bg-brand-50 border border-brand-300/50 flex items-center justify-center p-1.5">
                     <Image src="/inilogo.png" alt="Navyra Studio" width={40} height={40} className="w-full h-full object-contain" />
                 </div>
                 <div>
@@ -71,7 +71,7 @@ export default function AboutSection() {
             {/* Decorative dots grid */}
             <div className="absolute -top-4 -left-4 grid grid-cols-4 gap-2">
               {Array.from({ length: 16 }).map((_, i) => (
-                <div key={i} className="w-1 h-1 bg-blue-400/40" />
+                <div key={i} className="w-1 h-1 bg-brand-400/40" />
               ))}
             </div>
           </AnimateIn>
@@ -84,7 +84,7 @@ export default function AboutSection() {
               {companyData.about.heading}
             </h2>
 
-            <div className="w-12 h-px bg-blue-500/50" />
+            <div className="w-12 h-px bg-brand/50" />
 
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
               {companyData.about.description}

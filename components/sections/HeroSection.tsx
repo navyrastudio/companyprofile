@@ -54,7 +54,7 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto">
+      <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto pt-14 sm:pt-16 lg:pt-18">
 
         {/* Logo — float animation */}
         <Image
@@ -77,8 +77,8 @@ export default function HeroSection() {
         </div>
 
         {/* Heading */}
-        <h1 className="animate-hero-h1 text-2xl sm:text-5xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
-         Merancang Produk Digital yang <span className="text-blue-500">Bertumbuh Bersama Bisnis Anda</span>
+        <h1 className="animate-hero-h1 text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+         Merancang Produk Digital yang <span className="text-brand">Bertumbuh Bersama Bisnis Anda</span>
         </h1>
 
         {/* Description */}

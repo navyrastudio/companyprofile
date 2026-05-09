@@ -11,19 +11,23 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const container = document.getElementById("scroll-container");
+    if (!container) return;
+    const handleScroll = () => setScrolled(container.scrollTop > 10);
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Lock scroll container when mobile menu is open
   useEffect(() => {
+    const container = document.getElementById("scroll-container");
+    if (!container) return;
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      container.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      container.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => { if (container) container.style.overflow = ""; };
   }, [isOpen]);
 
   return (
@@ -58,7 +62,7 @@ export default function Navbar() {
                   className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200 relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-blue-500 group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand group-hover:w-full transition-all duration-300" />
                 </Link>
               ))}
             </div>
@@ -102,9 +106,9 @@ export default function Navbar() {
         <div className="absolute inset-0 bg-white" />
 
         {/* Decorative blue orb top-right */}
-        <div className="absolute -top-20 -right-20 w-80 h-80 bg-blue-200/40 blur-[80px] pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-brand-200/40 blur-[80px] pointer-events-none" />
         {/* Decorative orb bottom-left */}
-        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-100/60 blur-[60px] pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-100/60 blur-[60px] pointer-events-none" />
 
         {/* Grid pattern */}
         <div
@@ -143,10 +147,10 @@ export default function Navbar() {
                 }`}
                 style={{ transitionDelay: isOpen ? `${i * 60}ms` : "0ms" }}
               >
-                <span className="text-xl font-bold font-heading text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
+                <span className="text-xl font-bold font-heading text-slate-900 group-hover:text-brand transition-colors duration-200">
                   {link.label}
                 </span>
-                <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-200" />
+                <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-brand group-hover:translate-x-1 transition-all duration-200" />
               </Link>
             ))}
           </nav>

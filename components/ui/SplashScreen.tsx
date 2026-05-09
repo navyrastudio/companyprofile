@@ -62,7 +62,7 @@ export default function SplashScreen() {
         {/* ── Logo — center ── */}
         <div
           className="absolute inset-0 flex items-center justify-center"
-          style={{ animation: "splash-logo-in 0.6s cubic-bezier(0.22,1,0.36,1) 0.1s both" }}
+          style={{ animation: "splash-logo-in 1.2s cubic-bezier(0.22,1,0.36,1) 0.1s both" }}
         >
           <Image
             src="/navyra-logo.png"

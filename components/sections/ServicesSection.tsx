@@ -22,7 +22,7 @@ export default function ServicesSection() {
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
 
   return (
-    <section id="layanan" className="snap-start h-screen py-20 bg-gray-50 relative flex flex-col justify-center overflow-y-auto">
+    <section id="layanan" className="snap-start h-screen py-20 bg-slate-50 relative flex flex-col justify-center overflow-y-auto">
       {/* Subtle background accent */}
 
 

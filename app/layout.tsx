@@ -46,7 +46,7 @@ export default function RootLayout({
           className="h-full overflow-y-scroll snap-y snap-mandatory"
           style={{ scrollbarWidth: "thin", scrollbarColor: "#1A56DB #f1f5f9" }}
         >
-          {/* <Navbar /> */}
+          <Navbar />
           <main>{children}</main>
           {/* Footer as last snap target */}
           <div className="snap-start">

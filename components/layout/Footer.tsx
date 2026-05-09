@@ -26,10 +26,10 @@ const serviceLinks = [
 ];
 
 const socials = [
-  { href: "#", label: "Instagram", icon: faInstagram },
-  { href: "#", label: "LinkedIn", icon: faLinkedinIn },
-  { href: "#", label: "Twitter / X", icon: faXTwitter },
-  { href: "#", label: "Behance", icon: faBehance },
+  { href: companyData.socials.instagram, label: "Instagram",   icon: faInstagram  },
+  { href: companyData.socials.linkedin,  label: "LinkedIn",    icon: faLinkedinIn },
+  { href: companyData.socials.twitter,   label: "Twitter / X", icon: faXTwitter   },
+  { href: companyData.socials.behance,   label: "Behance",     icon: faBehance    },
 ];
 
 export default function Footer() {
@@ -42,9 +42,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
 
-          {/* Brand — wider col */}
+          {/* Brand */}
           <div className="lg:col-span-4 flex flex-col gap-6">
-            {/* Logo */}
             <Link href="/" className="w-fit">
               <Image
                 src="/navyra-logo.png"
@@ -55,12 +54,10 @@ export default function Footer() {
               />
             </Link>
 
-            {/* Tagline */}
             <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
               {companyData.description}
             </p>
 
-            {/* Social icons */}
             <div className="flex items-center gap-3">
               {socials.map(({ href, label, icon }) => (
                 <Link
@@ -69,7 +66,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 border border-slate-300 flex items-center justify-center text-slate-500 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200"
+                  className="w-9 h-9 border border-slate-300 flex items-center justify-center text-slate-500 hover:border-brand hover:text-brand hover:bg-brand-50 transition-all duration-200"
                 >
                   <FontAwesomeIcon icon={icon} className="w-4 h-4" />
                 </Link>
@@ -90,7 +87,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                    className="text-sm text-slate-500 hover:text-brand transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -109,7 +106,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-500 hover:text-blue-600 transition-colors duration-200"
+                    className="text-sm text-slate-500 hover:text-brand transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -129,10 +126,10 @@ export default function Footer() {
                   href={`mailto:${companyData.email}`}
                   className="flex items-start gap-3 group"
                 >
-                  <span className="w-8 h-8 bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-600 group-hover:bg-blue-50 transition-all duration-200">
-                    <EmailIcon className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-600 transition-colors" />
+                  <span className="w-8 h-8 bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-brand group-hover:bg-brand-50 transition-all duration-200">
+                    <EmailIcon className="w-3.5 h-3.5 text-slate-500 group-hover:text-brand transition-colors" />
                   </span>
-                  <span className="text-sm text-slate-500 group-hover:text-blue-600 transition-colors duration-200 pt-1.5">
+                  <span className="text-sm text-slate-500 group-hover:text-brand transition-colors duration-200 pt-1.5">
                     {companyData.email}
                   </span>
                 </a>
@@ -142,10 +139,10 @@ export default function Footer() {
                   href={`tel:${companyData.phone}`}
                   className="flex items-center gap-3 group"
                 >
-                  <span className="w-8 h-8 bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-blue-600 group-hover:bg-blue-50 transition-all duration-200">
-                    <PhoneIcon className="w-3.5 h-3.5 text-slate-500 group-hover:text-blue-600 transition-colors" />
+                  <span className="w-8 h-8 bg-white border border-slate-200 flex items-center justify-center shrink-0 group-hover:border-brand group-hover:bg-brand-50 transition-all duration-200">
+                    <PhoneIcon className="w-3.5 h-3.5 text-slate-500 group-hover:text-brand transition-colors" />
                   </span>
-                  <span className="text-sm text-slate-500 group-hover:text-blue-600 transition-colors duration-200">
+                  <span className="text-sm text-slate-500 group-hover:text-brand transition-colors duration-200">
                     {companyData.phone}
                   </span>
                 </a>
@@ -164,7 +161,7 @@ export default function Footer() {
 
             <Link
               href="#kontak"
-              className="inline-flex items-center gap-2 mt-6 text-xs font-semibold text-blue-600 hover:text-blue-700 uppercase tracking-widest transition-colors group"
+              className="inline-flex items-center gap-2 mt-6 text-xs font-semibold text-brand hover:text-brand-700 uppercase tracking-widest transition-colors group"
             >
               Mulai Proyek
               <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
@@ -187,4 +184,3 @@ export default function Footer() {
     </footer>
   );
 }
-
