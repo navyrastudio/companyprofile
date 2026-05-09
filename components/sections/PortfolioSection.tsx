@@ -68,6 +68,52 @@ export default function PortfolioSection() {
     return () => section.removeEventListener("wheel", onWheel);
   }, [goTo, items.length]);
 
+  /* ── Touch: swipe horizontal inside, vertical at boundary → outer snap-y ── */
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    let startX = 0;
+    let startY = 0;
+    let locked = false;
+
+    const onTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    };
+
+    const onTouchEnd = (e: TouchEvent) => {
+      if (locked) return;
+      const dx = startX - e.changedTouches[0].clientX;
+      const dy = startY - e.changedTouches[0].clientY;
+
+      // Only handle if primarily horizontal swipe
+      if (Math.abs(dx) <= Math.abs(dy) || Math.abs(dx) < 30) return;
+
+      const idx     = activeIdxRef.current;
+      const atStart = idx === 0;
+      const atEnd   = idx === items.length - 1;
+
+      if (dx > 0 && !atEnd) {
+        locked = true;
+        goTo(idx + 1);
+        setTimeout(() => { locked = false; }, 600);
+      } else if (dx < 0 && !atStart) {
+        locked = true;
+        goTo(idx - 1);
+        setTimeout(() => { locked = false; }, 600);
+      }
+      // at boundary → no preventDefault, outer snap-y handles vertical swipe
+    };
+
+    section.addEventListener("touchstart", onTouchStart, { passive: true });
+    section.addEventListener("touchend", onTouchEnd, { passive: true });
+    return () => {
+      section.removeEventListener("touchstart", onTouchStart);
+      section.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [goTo, items.length]);
+
   /* ── Track active index via IntersectionObserver on each card ── */
   useEffect(() => {
     const track = trackRef.current;

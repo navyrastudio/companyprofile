@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SplashScreen from "@/components/ui/SplashScreen";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} ${poppins.variable} antialiased`}>
       <body className="h-screen overflow-hidden bg-white text-slate-900">
+        <SplashScreen />
         {/* Explicit scroll container — snap-y snap-mandatory must be on the actual scrolling element */}
         <div
           id="scroll-container"
