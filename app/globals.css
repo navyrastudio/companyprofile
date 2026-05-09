@@ -3,6 +3,18 @@
 @theme inline {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-poppins);
+
+  /* Navyra brand blue */
+  --color-brand-50:  #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3d6fe0;
+  --color-brand:     #1A56DB;
+  --color-brand-700: #1741b0;
+  --color-brand-800: #113088;
+  --color-brand-900: #0d2060;
 }
 
 html {
@@ -32,11 +44,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e40af;
+  background: #1A56DB;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: #3d6fe0;
 }
 
 /* Noise texture overlay */
@@ -109,4 +121,93 @@ h1, h2, h3, h4, h5, h6 {
 .animate-pulse-ring {
   animation: pulse-ring 2s ease-out infinite;
 }
+
+@keyframes spin-y {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+.animate-spin-y {
+  animation: spin-y 6s linear infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+@keyframes icon-sway {
+  0%, 100% { transform: rotateY(-22deg) rotateX(10deg)  translateY(0px); }
+  30%       { transform: rotateY(12deg)  rotateX(-7deg)  translateY(-10px); }
+  60%       { transform: rotateY(20deg)  rotateX(6deg)   translateY(-4px); }
+  80%       { transform: rotateY(-10deg) rotateX(-5deg)  translateY(-14px); }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { opacity: 0.25; transform: scaleX(1); }
+  40%      { opacity: 0.12; transform: scaleX(0.7); }
+  70%      { opacity: 0.2;  transform: scaleX(0.85); }
+}
+
+.animate-icon-sway {
+  animation: icon-sway 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.animate-shadow-pulse {
+  animation: shadow-pulse 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+  will-change: transform;
+}
+
+/* ─── Orb drift — hero background ambiance ─── */
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0px,   0px)   scale(1);    }
+  33%       { transform: translate(45px, -35px)  scale(1.08); }
+  66%       { transform: translate(-25px, 30px)  scale(0.94); }
+}
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0px,   0px)   scale(1);    }
+  40%       { transform: translate(-40px, 28px)  scale(1.10); }
+  75%       { transform: translate(28px, -22px)  scale(0.92); }
+}
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0px, 0px)  scale(1);    }
+  50%       { transform: translate(20px, 18px) scale(1.06); }
+}
+.animate-orb-1 { animation: orb-drift-1 16s ease-in-out infinite; will-change: transform; }
+.animate-orb-2 { animation: orb-drift-2 20s ease-in-out infinite; will-change: transform; }
+.animate-orb-3 { animation: orb-drift-3 12s ease-in-out infinite; will-change: transform; }
+
+/* ─── Hero logo: fade-up entry → float loop ─── */
+.animate-hero-logo {
+  animation: hero-fade-up 0.6s ease-out 0.1s both, float 7s ease-in-out 0.7s infinite;
+}
+
+/* ─── Gradient shimmer text ─── */
+@keyframes gradient-pan {
+  0%   { background-position: 0%   center; }
+  100% { background-position: 200% center; }
+}
+.text-gradient-brand {
+  background: linear-gradient(135deg, #1A56DB 0%, #60a5fa 45%, #93c5fd 65%, #1A56DB 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-pan 5s linear infinite;
+}
+
+/* ─── Scroll-down hint ─── */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0);  opacity: 0.7; }
+  50%       { transform: translateY(7px); opacity: 0.25; }
+}
+.animate-scroll-bounce { animation: scroll-bounce 2s ease-in-out infinite; }
 

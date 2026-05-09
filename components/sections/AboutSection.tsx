@@ -5,7 +5,7 @@ import companyData from "@/data/company.json";
 
 export default function AboutSection() {
   return (
-    <section id="tentang" className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+    <section id="tentang" className="snap-start min-h-screen py-20 lg:py-28 bg-gray-50 relative overflow-hidden flex flex-col justify-center">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-125 h-125 bg-blue-100/50 blur-[120px] pointer-events-none" />
 

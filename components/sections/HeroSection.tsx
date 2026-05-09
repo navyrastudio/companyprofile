@@ -1,138 +1,111 @@
 import Image from "next/image";
-import Button from "@/components/ui/Button";
-import { ScrollIcon, TrendIcon } from "@/components/ui/Icons";
 import companyData from "@/data/company.json";
+import Button from "@/components/ui/Button";
 
 export default function HeroSection() {
   return (
     <section
       id="beranda"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16"
+      className="snap-start relative min-h-screen bg-white flex items-center justify-center overflow-hidden"
     >
-      {/* Background grid */}
+      {/* Gradient orb — top left */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="animate-orb-1 absolute -top-40 -left-40 w-150 h-150 rounded-full pointer-events-none"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(59,130,246,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.4) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          background: "radial-gradient(circle, rgba(26,86,219,0.20) 0%, transparent 70%)",
+          filter: "blur(60px)",
         }}
       />
 
-      {/* Gradient orbs */}
-      <div className="absolute top-0 right-0 w-150 h-150 bg-blue-200/40 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-100 h-100 bg-blue-100/60 blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-blue-50/80 blur-[80px] pointer-events-none" />
+      {/* Gradient orb — bottom right */}
+      <div
+        className="animate-orb-2 absolute -bottom-48 -right-48 w-175 h-175 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(99,143,230,0.16) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center py-16 lg:py-24">
-          {/* Left: Content */}
-          <div className="flex flex-col gap-7 max-w-xl order-last lg:order-first">
-            
+      {/* Gradient orb — top right accent */}
+      <div
+        className="animate-orb-3 absolute top-10 right-0 w-87.5 h-87.5 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(147,197,253,0.15) 0%, transparent 70%)",
+          filter: "blur(50px)",
+        }}
+      />
 
-            {/* Heading */}
-            <div className="animate-hero-h1 space-y-1">
-              <h1 className="text-2xl sm:text-5xl lg:text-[2.75rem] font-bold text-slate-900 leading-[1.08] tracking-tight">
-                {companyData.tagline}
-              </h1>
-              <h1 className="text-2xl sm:text-5xl lg:text-[2.75rem] font-bold text-blue-600 leading-[1.08] tracking-tight">
-                {companyData.taglineAccent}
-              </h1>
-            </div>
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(148,163,184,0.45) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
 
-            {/* Description */}
-            <p className="animate-hero-desc text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg">
-              {companyData.description}
-            </p>
+      {/* Edge vignette — fade dots to white at edges */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 75% 70% at 50% 50%, transparent 40%, rgba(255,255,255,0.85) 75%, white 100%)",
+        }}
+      />
 
-            {/* Horizontal rule */}
-            <div className="w-16 h-px bg-blue-500/50" />
+      {/* Content */}
+      <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto">
 
-            {/* CTAs */}
-            <div className="animate-hero-cta flex flex-wrap gap-3">
-              <Button href="#portofolio" variant="primary" size="md" showArrow className="sm:px-7 sm:py-3.5 sm:text-base">
-                Lihat Portofolio
-              </Button>
-              <Button href="#tentang" variant="outline" size="md" className="sm:px-7 sm:py-3.5 sm:text-base">
-                Tentang Kami
-              </Button>
-            </div>
+        {/* Logo — float animation */}
+        <Image
+          src="/navyra-logo.png"
+          alt="Navyra Studio"
+          width={200}
+          height={200}
+          className="animate-hero-logo object-contain"
+          priority
+        />
 
-            {/* Scroll indicator */}
-            <div className="flex items-center gap-2 text-slate-400 mt-2">
-              <ScrollIcon className="w-4 h-4" />
-              <span className="text-xs font-medium tracking-widest uppercase">
-                Scroll untuk menjelajahi
-              </span>
-            </div>
-          </div>
-
-          {/* Right: Hero 3D image */}
-          <div className="animate-hero-image relative flex items-center justify-center h-72 sm:h-95 lg:h-135 order-first lg:order-last" style={{ perspective: '800px' }}>
-            {/* Glow behind image */}
-            <div className="absolute inset-12 bg-blue-200/40 blur-3xl pointer-events-none" />
-
-            {/* 3D image */}
-            <div className="relative w-72 h-72 sm:w-95 sm:h-95 lg:w-115 lg:h-115 animate-3d-float">
-              <Image
-                src="/heroicon.png"
-                alt="Navyra Studio 3D Mark"
-                fill
-                className="object-contain drop-shadow-2xl"
-                priority
-              />
-            </div>
-
-            {/* Floating card 1 - highlights */}
-            <div className="animate-hero-card1 absolute top-4 right-0 lg:-right-2 bg-white/95 backdrop-blur-md border border-slate-200 shadow-md p-4 min-w-35">
-              <div className="flex flex-col gap-2">
-                {companyData.highlights.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <span className="w-1 h-1 bg-blue-600 shrink-0" />
-                    <span className="text-xs font-medium text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Floating card 2 - since year */}
-            <div className="animate-hero-card2 absolute bottom-8 right-2 lg:right-0 bg-white/95 backdrop-blur-md border border-slate-200 shadow-md p-4">
-              <div className="flex flex-col gap-2.5">
-                <div className="flex items-center gap-2">
-                  <TrendIcon className="w-4 h-4 text-blue-600" />
-                  <span className="text-xs font-semibold text-slate-700 uppercase tracking-widest">
-                    Since {companyData.since}
-                  </span>
-                </div>
-                {/* Mini chart bars */}
-                <div className="flex items-end gap-1 h-8">
-                  {[30, 50, 40, 70, 55, 80, 65, 90].map((h, i) => (
-                    <div
-                      key={i}
-                      className="w-2.5 bg-blue-100"
-                      style={{ height: `${h}%` }}
-                    >
-                      <div
-                        className="w-full bg-blue-500"
-                        style={{ height: i >= 5 ? "100%" : "60%" }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Corner decorations */}
-            <div className="absolute top-0 left-4 w-px h-12 bg-linear-to-b from-blue-500/60 to-transparent" />
-            <div className="absolute top-0 left-4 w-8 h-px bg-linear-to-r from-blue-500/60 to-transparent" />
-            <div className="absolute bottom-0 right-4 w-px h-12 bg-linear-to-t from-blue-500/60 to-transparent" />
-            <div className="absolute bottom-0 right-4 w-8 h-px bg-linear-to-l from-blue-500/60 to-transparent" />
-          </div>
+        {/* Eyebrow badge */}
+        <div className="animate-hero-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+          <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
+            Digital Studio
+          </span>
+          <span className="w-px h-3 bg-slate-200" />
+          <span className="text-[10px] font-medium text-blue-500 tracking-wide">Est. 2026</span>
         </div>
+
+        {/* Heading */}
+        <h1 className="animate-hero-h1 text-2xl sm:text-5xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+         Merancang Produk Digital yang <span className="text-blue-500">Bertumbuh Bersama Bisnis Anda</span>
+        </h1>
+
+        {/* Description */}
+        <p className="animate-hero-desc text-slate-400 text-xs sm:text-base leading-relaxed max-w-3xl">
+          {companyData.description}
+        </p>
+
+        {/* CTA */}
+        <div className="animate-hero-cta">
+          <Button href="#kontak" variant="primary" showArrow>
+            Mari Bekerja Sama
+          </Button>
+        </div>
+
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white to-transparent pointer-events-none" />
+      {/* Scroll-down hint */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-hero-cta pointer-events-none">
+        <span className="text-[9px] uppercase tracking-[0.3em] text-slate-400 font-medium">Scroll</span>
+        <div className="animate-scroll-bounce">
+          <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
     </section>
   );
 }
+
+

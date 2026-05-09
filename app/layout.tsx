@@ -37,10 +37,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${inter.variable} ${poppins.variable} antialiased`}>
-      <body className="min-h-screen flex flex-col bg-white text-slate-900">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="h-screen overflow-hidden bg-white text-slate-900">
+        {/* Explicit scroll container — snap-y snap-mandatory must be on the actual scrolling element */}
+        <div
+          id="scroll-container"
+          className="h-full overflow-y-scroll snap-y snap-mandatory"
+          style={{ scrollbarWidth: "thin", scrollbarColor: "#1A56DB #f1f5f9" }}
+        >
+          {/* <Navbar /> */}
+          <main>{children}</main>
+          {/* Footer as last snap target */}
+          <div className="snap-start">
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );

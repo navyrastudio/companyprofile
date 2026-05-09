@@ -64,7 +64,7 @@ export default function Navbar() {
             </div>
 
             {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <Link
                 href={navData.cta.href}
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 text-sm font-semibold font-heading hover:bg-blue-500 transition-all duration-200 border border-blue-500/40"
@@ -72,7 +72,7 @@ export default function Navbar() {
                 {navData.cta.label}
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
-            </div>
+            </div> */}
 
             {/* Mobile menu button */}
             <button
@@ -152,7 +152,7 @@ export default function Navbar() {
           </nav>
 
           {/* Bottom CTA */}
-          <div
+          {/* <div
             className={`mt-8 flex flex-col gap-4 transition-all duration-300 ${
               isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
@@ -169,7 +169,7 @@ export default function Navbar() {
             <p className="text-center text-xs text-slate-400">
               hello@navyrastudio.com
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

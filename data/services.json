@@ -3,18 +3,40 @@
     "id": 1,
     "title": "Web Development",
     "description": "Membangun website dan sistem digital yang modern, fungsional, dan scalable untuk membantu bisnis berkembang di era digital.",
-    "items": ["Company Profile", "SaaS", "POS System"]
+    "items": ["Company Profile", "SaaS", "POS System"],
+    "techStack": [
+      { "name": "React",     "icon": "SiReact",     "lib": "si", "color": "#61DAFB" },
+      { "name": "Next.js",   "icon": "SiNextdotjs", "lib": "si", "color": "#000000" },
+      { "name": "Laravel",   "icon": "SiLaravel",   "lib": "si", "color": "#FF2D20" },
+      { "name": "WordPress", "icon": "SiWordpress", "lib": "si", "color": "#21759B" },
+      { "name": "Webflow",   "icon": "SiWebflow",   "lib": "si", "color": "#4353FF" },
+      { "name": "Vue.js",    "icon": "SiVuedotjs",  "lib": "si", "color": "#4FC08D" }
+    ]
   },
   {
     "id": 2,
     "title": "UI/UX Design",
     "description": "Merancang pengalaman digital yang intuitif, modern, dan nyaman digunakan untuk menghadirkan interaksi yang lebih bermakna.",
-    "items": ["Mobile App Design", "Web Design", "Prototype", "Design System"]
+    "items": ["Mobile App Design", "Web Design", "Prototype", "Design System"],
+    "techStack": [
+      { "name": "Figma",   "icon": "SiFigma",   "lib": "si", "color": "#F24E1E" },
+      { "name": "Webflow", "icon": "SiWebflow", "lib": "si", "color": "#4353FF" },
+      { "name": "Framer",  "icon": "SiFramer",  "lib": "si", "color": "#0055FF" }
+    ]
   },
   {
     "id": 3,
     "title": "Branding",
     "description": "Menciptakan identitas visual yang kuat, konsisten, dan relevan agar brand tampil lebih profesional dan mudah diingat.",
-    "items": ["Logo Design", "Brand Identity", "Social Media Design", "Mockup Design"]
+    "items": ["Logo Design", "Brand Identity", "Social Media Design", "Mockup Design"],
+    "techStack": [
+      { "name": "Figma",       "icon": "SiFigma",                        "lib": "si",       "color": "#F24E1E" },
+      { "name": "Photoshop",   "icon": "simple-icons:adobephotoshop",    "lib": "iconify", "color": "#31A8FF" },
+      { "name": "Illustrator", "icon": "simple-icons:adobeillustrator",  "lib": "iconify", "color": "#FF9A00" },
+      { "name": "InDesign",    "icon": "simple-icons:adobeindesign",     "lib": "iconify", "color": "#FF3366" },
+      { "name": "Canva",       "icon": "SiCanva",                        "lib": "si",       "color": "#00C4CC" },
+      { "name": "Behance",     "icon": "SiBehance",                      "lib": "si",       "color": "#1769FF" },
+      { "name": "Dribbble",    "icon": "SiDribbble",                     "lib": "si",       "color": "#EA4C89" }
+    ]
   }
 ]

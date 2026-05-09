@@ -37,10 +37,10 @@ export default function AnimateIn({
   }, []);
 
   const hiddenClass = {
-    bottom: "opacity-0 translate-y-10",
-    left: "opacity-0 -translate-x-10",
-    right: "opacity-0 translate-x-10",
-    fade: "opacity-0",
+    bottom: "opacity-0 translate-y-10 blur-sm",
+    left:   "opacity-0 -translate-x-10 blur-sm",
+    right:  "opacity-0 translate-x-10 blur-sm",
+    fade:   "opacity-0 blur-sm",
   }[from];
 
   const C = Tag as React.ElementType;
@@ -48,7 +48,7 @@ export default function AnimateIn({
   return (
     <C
       ref={ref}
-      className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-x-0 translate-y-0" : hiddenClass} ${className}`}
+      className={`transition-all duration-700 ease-out ${visible ? "opacity-100 translate-x-0 translate-y-0 blur-none" : hiddenClass} ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
