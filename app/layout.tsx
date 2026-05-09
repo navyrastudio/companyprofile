@@ -43,8 +43,8 @@ export default function RootLayout({
         {/* Explicit scroll container — snap-y snap-mandatory must be on the actual scrolling element */}
         <div
           id="scroll-container"
-          className="h-full overflow-y-scroll snap-y snap-mandatory"
-          style={{ scrollbarWidth: "thin", scrollbarColor: "#1A56DB #f1f5f9" }}
+          className="h-full overflow-y-scroll snap-y snap-proximity"
+          style={{ scrollbarWidth: "thin", scrollbarColor: "#1A56DB #f1f5f9", scrollBehavior: "smooth" }}
         >
           <Navbar />
           <main>{children}</main>

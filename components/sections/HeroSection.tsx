@@ -62,18 +62,18 @@ export default function HeroSection() {
           alt="Navyra Studio"
           width={200}
           height={200}
-          className="animate-hero-logo object-contain"
+          className="animate-hero-logo object-contain w-28 sm:w-36 lg:w-44"
           priority
         />
 
         {/* Eyebrow badge */}
         <div className="animate-hero-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
             Digital Studio
           </span>
           <span className="w-px h-3 bg-slate-200" />
-          <span className="text-[10px] font-medium text-blue-500 tracking-wide">Est. 2026</span>
+          <span className="text-[10px] font-medium text-brand tracking-wide">Est. 2026</span>
         </div>
 
         {/* Heading */}

@@ -1,7 +1,9 @@
 import Button from "@/components/ui/Button";
 import AnimateIn from "@/components/ui/AnimateIn";
+import companyData from "@/data/company.json";
 
 export default function CTASection() {
+  const year = new Date().getFullYear();
   return (
     <section
       id="kontak"
@@ -80,7 +82,7 @@ export default function CTASection() {
         {/* Buttons */}
         <AnimateIn from="bottom">
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button href="mailto:navyrastudio@gmail.com" variant="primary" size="lg" showArrow>
+            <Button href={`mailto:${companyData.email}`} variant="primary" size="lg" showArrow>
               Hubungi Kami
             </Button>
             <Button href="#portofolio" variant="outline" size="lg">
@@ -94,10 +96,10 @@ export default function CTASection() {
           <p className="text-xs text-slate-400 tracking-wide">
             atau kirim langsung ke{" "}
             <a
-              href="mailto:navyrastudio@gmail.com"
+              href={`mailto:${companyData.email}`}
               className="text-brand font-medium hover:underline underline-offset-4 transition-colors"
             >
-              navyrastudio@gmail.com
+              {companyData.email}
             </a>
           </p>
         </AnimateIn>
@@ -106,7 +108,7 @@ export default function CTASection() {
       {/* ── Bottom label ── */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center">
         <span className="text-[9px] uppercase tracking-[0.3em] text-slate-300 font-semibold">
-          Navyra Studio · 2025
+          Navyra Studio · {year}
         </span>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import portfolioData from "@/data/portfolio.json";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 type PortfolioItem = {
   id: number;
@@ -120,17 +121,14 @@ export default function PortfolioSection() {
       className="snap-start h-screen flex flex-col bg-white overflow-hidden"
     >
       {/* Section label */}
-      <div className="shrink-0 flex items-center justify-between px-6 sm:px-12 lg:px-20 pt-16 sm:pt-18 pb-0">
-        <div className="flex items-center gap-3">
-          <div className="w-5 h-px bg-brand" />
-          <p className="text-[9px] uppercase tracking-[0.3em] text-slate-400 font-semibold">Proyek Kami</p>
-        </div>
+      {/* <div className="shrink-0 flex items-center justify-between px-6 sm:px-12 lg:px-20 pt-16 sm:pt-18 pb-0">
+        <SectionLabel>Proyek Kami</SectionLabel>
         <span className="font-mono text-[10px] tabular-nums text-slate-400">
           <span className="text-slate-700 font-semibold text-xs">{String(activeIdx + 1).padStart(2, "0")}</span>
           {" — "}
           {String(items.length).padStart(2, "0")}
         </span>
-      </div>
+      </div> */}
 
       {/* Slide track */}
       <div
