@@ -22,9 +22,9 @@ export default function ServicesSection() {
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
 
   return (
-    <section id="layanan" className="snap-start min-h-screen py-20 bg-gray-50 relative overflow-hidden flex flex-col justify-center">
+    <section id="layanan" className="snap-start h-screen py-20 bg-gray-50 relative flex flex-col justify-center overflow-y-auto">
       {/* Subtle background accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-linear-to-b from-transparent via-blue-500/40 to-transparent" />
+
 
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

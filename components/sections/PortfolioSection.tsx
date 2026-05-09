@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
-import SectionLabel from "@/components/ui/SectionLabel";
 import portfolioData from "@/data/portfolio.json";
 
 type PortfolioItem = {
@@ -19,176 +18,195 @@ type PortfolioItem = {
 
 export default function PortfolioSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const trackRef   = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
+  const activeIdxRef = useRef(0); // always-current ref for use inside wheel handler
 
   const items = portfolioData as PortfolioItem[];
 
-  /* ── Snap to specific slide ── */
+  /* ── Snap to slide by index ── */
   const goTo = useCallback((idx: number) => {
     const track = trackRef.current;
     if (!track) return;
-    const cardWidth = track.querySelector<HTMLElement>("[data-card]")?.offsetWidth ?? track.clientWidth;
-    track.scrollTo({ left: idx * cardWidth, behavior: "smooth" });
+    track.scrollTo({ left: idx * track.clientWidth, behavior: "smooth" });
   }, []);
 
-  /* ── Wheel: horizontal inside, vertical at boundaries → outer container ── */
+  /* ── Keep ref in sync with state ── */
+  useEffect(() => { activeIdxRef.current = activeIdx; }, [activeIdx]);
+
+  /* ── Wheel: use activeIdx ref so boundary is always accurate ── */
   useEffect(() => {
     const section = sectionRef.current;
-    const track = trackRef.current;
-    if (!section || !track) return;
+    if (!section) return;
 
-    let ticking = false;
+    let locked = false;
 
     const onWheel = (e: WheelEvent) => {
-      if (ticking) return;
+      if (locked) { e.preventDefault(); return; }
 
-      const atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 8;
-      const atStart = track.scrollLeft <= 8;
+      const idx      = activeIdxRef.current;
+      const atStart  = idx === 0;
+      const atEnd    = idx === items.length - 1;
+      const goRight  = e.deltaY > 0 || e.deltaX > 0;
+      const goLeft   = e.deltaY < 0 || e.deltaX < 0;
 
-      const goingRight = e.deltaY > 0 || e.deltaX > 0;
-      const goingLeft  = e.deltaY < 0 || e.deltaX < 0;
-
-      if (goingRight && !atEnd) {
-        // Consume event — scroll inner track horizontally
+      if (goRight && !atEnd) {
         e.preventDefault();
-        ticking = true;
-        requestAnimationFrame(() => { ticking = false; });
-        track.scrollBy({ left: Math.abs(e.deltaY || e.deltaX) * 2, behavior: "smooth" });
-      } else if (goingLeft && !atStart) {
-        // Consume event — scroll inner track horizontally
+        locked = true;
+        goTo(idx + 1);
+        setTimeout(() => { locked = false; }, 600);
+      } else if (goLeft && !atStart) {
         e.preventDefault();
-        ticking = true;
-        requestAnimationFrame(() => { ticking = false; });
-        track.scrollBy({ left: -Math.abs(e.deltaY || e.deltaX) * 2, behavior: "smooth" });
+        locked = true;
+        goTo(idx - 1);
+        setTimeout(() => { locked = false; }, 600);
       }
-      // At boundary → do NOT preventDefault; let event bubble naturally
-      // to #scroll-container so snap-y mandatory takes over
+      // at boundary → don't preventDefault → bubbles to outer snap-y container
     };
 
     section.addEventListener("wheel", onWheel, { passive: false });
     return () => section.removeEventListener("wheel", onWheel);
-  }, []);
+  }, [goTo, items.length]);
 
-  /* ── Track active index as inner track scrolls ── */
+  /* ── Track active index via IntersectionObserver on each card ── */
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
+    const cards = Array.from(track.querySelectorAll<HTMLElement>("[data-card]"));
 
-    const onScroll = () => {
-      const cardWidth = track.querySelector<HTMLElement>("[data-card]")?.offsetWidth ?? track.clientWidth;
-      const idx = Math.round(track.scrollLeft / cardWidth);
-      setActiveIdx(Math.max(0, Math.min(idx, items.length - 1)));
-    };
-
-    track.addEventListener("scroll", onScroll, { passive: true });
-    return () => track.removeEventListener("scroll", onScroll);
-  }, [items.length]);
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = cards.indexOf(entry.target as HTMLElement);
+            if (idx !== -1) setActiveIdx(idx);
+          }
+        });
+      },
+      { root: track, threshold: 0.5 }
+    );
+    cards.forEach((c) => obs.observe(c));
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <section
       ref={sectionRef}
       id="portofolio"
-      className="snap-start h-screen flex flex-col bg-slate-50 overflow-hidden"
+      className="snap-start h-screen flex flex-col bg-white overflow-hidden"
     >
-      {/* ── Header bar ── */}
-      <div className="shrink-0 flex items-center justify-between px-6 sm:px-10 lg:px-16 pt-10 pb-6">
-        <SectionLabel>Portofolio</SectionLabel>
+      {/* ── Top bar ── */}
+      <div className="shrink-0 flex items-end justify-between px-8 sm:px-14 lg:px-20 pt-12 pb-5 border-b border-slate-100">
+        <div>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-semibold mb-1">Portofolio</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 leading-tight">
+            Karya yang Berbicara
+          </h2>
+        </div>
 
-        <span className="font-mono text-xs text-slate-400 tabular-nums tracking-widest">
-          <span className="text-slate-900 font-semibold">{String(activeIdx + 1).padStart(2, "0")}</span>
-          {" / "}
+        {/* Fraction */}
+        <span className="font-mono text-sm tabular-nums text-slate-300">
+          <span className="text-slate-900 font-bold text-lg">{String(activeIdx + 1).padStart(2, "0")}</span>
+          <span className="mx-1">/</span>
           {String(items.length).padStart(2, "0")}
         </span>
-
-        <div className="hidden sm:flex items-center gap-2 text-slate-400">
-          <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Geser</span>
-          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </div>
       </div>
 
-      {/* Section title */}
-      <div className="shrink-0 px-6 sm:px-10 lg:px-16 mb-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
-          Karya yang Berbicara
-        </h2>
-        <p className="text-slate-500 text-sm mt-1">
-          Setiap proyek kami kerjakan dengan dedikasi penuh.
-        </p>
-      </div>
-
-      {/* ── Horizontal scroll track ── */}
+      {/* ── Card track ── */}
       <div
         ref={trackRef}
-        className="flex-1 flex gap-4 overflow-x-auto overflow-y-hidden snap-x snap-mandatory pl-6 sm:pl-10 lg:pl-16 pr-6"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="flex-1 flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory"
+        style={{ scrollbarWidth: "none" }}
       >
         {items.map((item, i) => (
           <div
             key={item.id}
             data-card
-            className="snap-start shrink-0 w-[78vw] sm:w-[55vw] lg:w-[40vw] h-full relative rounded-2xl overflow-hidden group cursor-pointer"
+            className="snap-start shrink-0 w-full h-full relative group"
             style={{ backgroundColor: item.bgColor }}
           >
-            {/* Image */}
             <Image
               src={item.image}
               alt={item.title}
               fill
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              sizes="(max-width: 640px) 78vw, (max-width: 1024px) 55vw, 40vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              sizes="100vw"
               priority={i === 0}
             />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/25 to-transparent" />
-
-            {/* Top: category */}
-            <div className="absolute top-5 left-5 flex items-center gap-2.5">
-              <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/75 border border-white/20 backdrop-blur-sm px-2.5 py-1 rounded-full">
-                {item.category}
-              </span>
-              <span className="text-[9px] font-mono text-white/35 tabular-nums">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-            </div>
-
-            {/* Bottom: info */}
-            <div className="absolute bottom-6 left-5 right-5">
-              <p className="text-[11px] text-white/50 mb-1.5 font-medium tracking-wide">
-                {item.subtitle}
-              </p>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight tracking-tight">
-                {item.title}
-              </h3>
-              <div
-                className="mt-3 h-0.5 w-8 group-hover:w-16 transition-all duration-500"
-                style={{ backgroundColor: item.accentColor }}
-              />
+            {/* Bottom info */}
+            <div className="absolute bottom-0 left-0 right-0 px-8 sm:px-14 lg:px-20 pb-10">
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <span className="inline-block text-[9px] font-semibold uppercase tracking-[0.25em] text-white/50 mb-3">
+                    {item.category}
+                  </span>
+                  <h3 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/45 mt-2 font-medium">{item.subtitle}</p>
+                </div>
+                {/* Accent dot */}
+                <div
+                  className="shrink-0 w-2.5 h-2.5 rounded-full mb-2"
+                  style={{ backgroundColor: item.accentColor }}
+                />
+              </div>
+              {/* Progress line */}
+              <div className="mt-5 h-px bg-white/10 relative overflow-hidden">
+                <div
+                  className="absolute inset-y-0 left-0 transition-all duration-500"
+                  style={{
+                    width: `${((activeIdx + 1) / items.length) * 100}%`,
+                    backgroundColor: item.accentColor,
+                  }}
+                />
+              </div>
             </div>
           </div>
         ))}
-
-        {/* Trailing spacer so last card snaps left */}
-        <div className="shrink-0 w-px h-full" aria-hidden="true" />
       </div>
 
-      {/* ── Dot progress ── */}
-      <div className="shrink-0 flex items-center justify-center gap-2 py-5">
-        {items.map((_, i) => (
+      {/* ── Dot nav ── */}
+      <div className="shrink-0 flex items-center justify-between px-8 sm:px-14 lg:px-20 py-4">
+        <div className="flex items-center gap-2">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              aria-label={`Proyek ${i + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === activeIdx ? "w-5 h-1 bg-slate-900" : "w-1 h-1 bg-slate-300 hover:bg-slate-400"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Prev / Next arrows */}
+        <div className="flex items-center gap-3">
           <button
-            key={i}
-            onClick={() => goTo(i)}
-            aria-label={`Proyek ${i + 1}`}
-            className={`rounded-full transition-all duration-300 ${
-              i === activeIdx
-                ? "w-6 h-1.5 bg-brand"
-                : "w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400"
-            }`}
-          />
-        ))}
+            onClick={() => goTo(activeIdx - 1)}
+            disabled={activeIdx === 0}
+            className="w-8 h-8 border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-400 disabled:opacity-25 transition-all duration-200"
+            aria-label="Sebelumnya"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={() => goTo(activeIdx + 1)}
+            disabled={activeIdx === items.length - 1}
+            className="w-8 h-8 border border-slate-200 flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-400 disabled:opacity-25 transition-all duration-200"
+            aria-label="Berikutnya"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
   );
