@@ -11,23 +11,19 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const container = document.getElementById("scroll-container");
-    if (!container) return;
-    const handleScroll = () => setScrolled(container.scrollTop > 10);
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock scroll container when mobile menu is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    const container = document.getElementById("scroll-container");
-    if (!container) return;
     if (isOpen) {
-      container.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
     } else {
-      container.style.overflow = "";
+      document.body.style.overflow = "";
     }
-    return () => { if (container) container.style.overflow = ""; };
+    return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
   return (

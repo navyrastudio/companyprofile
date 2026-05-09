@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section
       id="beranda"
-      className="snap-start relative min-h-screen bg-white flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden"
     >
       {/* Gradient orb — top left */}
       <div

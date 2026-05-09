@@ -7,7 +7,7 @@ export default function CTASection() {
   return (
     <section
       id="kontak"
-      className="snap-start relative min-h-screen bg-white flex flex-col items-center justify-center overflow-hidden"
+      className="relative py-32 lg:py-40 bg-white flex flex-col items-center justify-center overflow-hidden"
     >
       {/* ── Ambient orbs (same language as Hero) ── */}
       <div
