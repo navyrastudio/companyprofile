@@ -1,8 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PortfolioDetail from "@/components/sections/PortfolioDetail";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { getPortfolioIdFromSlug, getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 import portfolioData from "@/data/portfolio.json";
 
@@ -44,11 +42,9 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
   return (
     <>
-      <Navbar />
       <main className="min-h-screen bg-white">
         <PortfolioDetail portfolioId={portfolioId} />
       </main>
-      <Footer />
     </>
   );
 }

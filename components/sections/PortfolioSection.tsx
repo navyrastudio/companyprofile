@@ -37,7 +37,7 @@ export default function PortfolioSection() {
             return (
               <AnimateIn key={item.id} delay={i * 60}>
                 <Link href={`/portfolio/${slug}`}>
-                  <div className="group relative overflow-hidden aspect-4/3 bg-slate-100 cursor-pointer">
+                  <div className="group relative overflow-hidden bg-slate-100 cursor-pointer rounded-sm" style={{ aspectRatio: '5/4' }}>
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -64,7 +64,7 @@ export default function PortfolioSection() {
         {/* CTA Button */}
         <AnimateIn className="flex justify-center">
           <Link href="/portfolio">
-            <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-brand text-white text-sm sm:text-base font-semibold hover:bg-brand/90 transition-all duration-200 active:scale-95">
+            <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm bg-brand text-white text-sm sm:text-base font-semibold hover:bg-brand/90 transition-all duration-200 active:scale-95">
               Lihat Semua Portofolio →
             </button>
           </Link>

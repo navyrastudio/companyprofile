@@ -76,7 +76,7 @@ export default function PortfolioGrid() {
 
             return (
               <Link key={project.id} href={`/portfolio/${slug}`}>
-                <div className="group relative overflow-hidden rounded-sm aspect-square sm:aspect-auto sm:h-80 cursor-pointer">
+                <div className="group relative overflow-hidden rounded-sm cursor-pointer" style={{ aspectRatio: '5/4' }}>
                   {/* Background color fallback */}
                   <div
                     className="absolute inset-0"

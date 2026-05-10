@@ -1,7 +1,5 @@
 import { Metadata } from "next";
 import PortfolioGrid from "@/components/sections/PortfolioGrid";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Portofolio Lengkap - Navyra Studio",
@@ -11,11 +9,9 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen bg-white">
         <PortfolioGrid />
       </main>
-      <Footer />
     </>
   );
 }

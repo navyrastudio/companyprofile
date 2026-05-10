@@ -86,7 +86,7 @@ export default function PortfolioDetail({ portfolioId }: PortfolioDetailProps) {
 
           {/* ── Hero Image ── */}
           <AnimateIn delay={100}>
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-slate-100">
+            <div className="relative w-full rounded-sm overflow-hidden border border-slate-100" style={{ aspectRatio: '5/4' }}>
               <Image
                 src={project.image}
                 alt={project.title}
@@ -174,7 +174,7 @@ export default function PortfolioDetail({ portfolioId }: PortfolioDetailProps) {
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-brand mb-4 sm:mb-6">
                       Hasil
                     </h2>
-                    <div className="rounded-lg bg-brand p-5 sm:p-6 shadow-lg shadow-brand/20 max-w-3xl">
+                    <div className="rounded-sm bg-brand p-5 sm:p-6 shadow-lg shadow-brand/20 max-w-3xl">
                       <p className="text-white/90 leading-relaxed text-sm sm:text-base">
                         {projectData.results}
                       </p>
@@ -199,7 +199,7 @@ export default function PortfolioDetail({ portfolioId }: PortfolioDetailProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Previous Project */}
             <Link href={`/portfolio/${getPortfolioSlug(prevProject.id)}`}>
-              <div className="group flex items-center gap-4 p-5 sm:p-6 rounded-lg border border-slate-200 bg-white hover:border-brand hover:shadow-sm transition-all duration-200">
+              <div className="group flex items-center gap-4 p-5 sm:p-6 rounded-sm border border-slate-200 bg-white hover:border-brand hover:shadow-sm transition-all duration-200">
                 <div className="shrink-0 flex items-center justify-center w-9 h-9 rounded border border-slate-200 text-slate-400 group-hover:border-brand group-hover:text-brand transition-all duration-200">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -217,7 +217,7 @@ export default function PortfolioDetail({ portfolioId }: PortfolioDetailProps) {
 
             {/* Next Project */}
             <Link href={`/portfolio/${getPortfolioSlug(nextProject.id)}`}>
-              <div className="group flex items-center justify-between gap-4 p-5 sm:p-6 rounded-lg border border-slate-200 bg-white hover:border-brand hover:shadow-sm transition-all duration-200">
+              <div className="group flex items-center justify-between gap-4 p-5 sm:p-6 rounded-sm border border-slate-200 bg-white hover:border-brand hover:shadow-sm transition-all duration-200">
                 <div className="min-w-0 text-right flex-1">
                   <p className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mb-0.5">Selanjutnya</p>
                   <h3 className="text-sm sm:text-base font-bold text-slate-800 group-hover:text-brand transition-colors duration-200 truncate">
