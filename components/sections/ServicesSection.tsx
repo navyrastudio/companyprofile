@@ -141,8 +141,8 @@ export default function ServicesSection() {
 
                     {/* CTA Button */}
                     <Link href={`/layanan/${getServiceSlug(service.id)}`}>
-                      <button className="px-5 py-2.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand/90 transition-colors duration-200">
-                        Lihat Harga Lengkap →
+                      <button className="px-5 py-2.5 rounded-full bg-brand text-white text-sm font-semibold hover:bg-brand/90 transition-colors duration-200">
+                        Lihat Harga Lengkap
                       </button>
                     </Link>
                   </div>
