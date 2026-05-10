@@ -40,7 +40,7 @@ export default function PortfolioGrid() {
 
         {/* ── Header ── */}
         <AnimateIn className="flex flex-col items-start gap-3 mb-6 sm:mb-10">
-          <SectionLabel>Portofolio</SectionLabel>
+          <SectionLabel>Proyek</SectionLabel>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 leading-tight">
             Seluruh Proyek Kami
           </h2>

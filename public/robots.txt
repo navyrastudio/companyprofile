@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap is set to production domain
+Sitemap: https://navyra.id/sitemap.xml

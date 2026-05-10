@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import ServicePricelist from "@/components/sections/ServicePricelist";
 import { getServiceIdFromSlug, getServiceSlug } from "@/lib/slugUtils";
 import servicesData from "@/data/services.json";
+import companyData from "@/data/company.json";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -19,10 +20,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const service = servicesData.find((s) => s.id === serviceId);
-  
+  const siteUrl = companyData.siteUrl || "https://navyra.id";
+  const title = `${service?.title} - Pricelist Lengkap | Navyra Studio`;
+  const description = service?.description || "Lihat pricelist dan paket layanan kami";
+
   return {
-    title: `${service?.title} - Pricelist Lengkap | Navyra Studio`,
-    description: service?.description || "Lihat pricelist dan paket layanan kami",
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/layanan/${getServiceSlug(serviceId)}`,
+    },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 

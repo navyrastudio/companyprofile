@@ -2,6 +2,7 @@
   {
     "id": 1,
     "title": "Web Development",
+    "slug": "webdevelopment",
     "description": "Membangun website dan sistem digital yang modern, fungsional, dan scalable untuk membantu bisnis berkembang di era digital.",
     "items": ["Company Profile", "SaaS", "POS System"],
     "techStack": [
@@ -29,6 +30,7 @@
   {
     "id": 2,
     "title": "UI/UX Design",
+    "slug": "uiux",
     "description": "Merancang pengalaman digital yang intuitif, modern, dan nyaman digunakan untuk menghadirkan interaksi yang lebih bermakna.",
     "items": ["Mobile App Design", "Web Design", "Prototype", "Design System"],
     "techStack": [
@@ -53,6 +55,7 @@
   {
     "id": 3,
     "title": "Branding",
+    "slug": "branding",
     "description": "Menciptakan identitas visual yang kuat, konsisten, dan relevan agar brand tampil lebih profesional dan mudah diingat.",
     "items": ["Logo Design", "Brand Identity", "Social Media Design", "Mockup Design"],
     "techStack": [

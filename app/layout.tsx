@@ -19,15 +19,15 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Navyra Studio — Creative Digital Agency",
+  title: "Navyra Studio",
   description:
-    "Studio kreatif yang berfokus pada desain brand, visual, dan digital untuk membantu bisnis tampil berkesan dan relevan di era digital.",
+    "Merancang Produk Digital yang Bertumbuh Bersama Bisnis Anda. Kami membantu bisnis menghadirkan website, sistem, dan identitas visual yang tidak hanya terlihat modern, tetapi juga memberikan dampak nyata bagi perkembangan brand dan pengalaman pengguna.",
   keywords: [
-    "brand identity",
-    "web design",
+    "Brand Identity",
+    "Web Development",
     "UI/UX design",
-    "digital agency",
-    "Jakarta",
+    "Digital Agency",
+    "Surakarta",
   ],
 };
 

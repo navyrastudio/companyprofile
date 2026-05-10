@@ -2,35 +2,34 @@
  * Convert service title to slug
  * e.g., "Web Development" -> "web-development"
  */
-export function generateServiceSlug(title: string): string {
-  return title
+import servicesData from "@/data/services.json";
+
+function slugify(str: string): string {
+  return str
     .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "");
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
-/**
- * Map service ID to slug
- */
-const serviceIdToSlug: Record<number, string> = {
-  1: "web-development",
-  2: "ui-ux-design",
-  3: "branding",
-};
+export function generateServiceSlug(title: string): string {
+  return slugify(title);
+}
+
+// Build mappings from data file so slugs are editable in content
+const serviceIdToSlug: Record<number, string> = {};
+const slugToServiceId: Record<string, number> = {};
+
+servicesData.forEach((s: any) => {
+  const slug = (s.slug as string) || slugify(s.title || `service-${s.id}`);
+  serviceIdToSlug[s.id] = slug;
+  slugToServiceId[slug] = s.id;
+});
 
 export function getServiceSlug(serviceId: number): string {
-  return serviceIdToSlug[serviceId] || generateServiceSlug(`Service ${serviceId}`);
+  return serviceIdToSlug[serviceId] || generateServiceSlug(`service-${serviceId}`);
 }
 
-/**
- * Map slug to service ID
- */
-const slugToServiceId: Record<string, number> = {
-  "web-development": 1,
-  "ui-ux-design": 2,
-  branding: 3,
-};
-
 export function getServiceIdFromSlug(slug: string): number | null {
-  return slugToServiceId[slug.toLowerCase()] || null;
+  const id = slugToServiceId[slug.toLowerCase()];
+  return typeof id === "number" ? id : null;
 }

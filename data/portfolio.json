@@ -37,8 +37,8 @@
     "accentColor": "#93c5fd",
     "featured": true,
     "slug": "navyra",
-    "challenge": "Navyra Studio membutuhkan website yang tidak hanya beautiful secara visual, tetapi juga showcase kemampuan mereka sebagai design & development studio dengan portfolio yang impressive.",
-    "solution": "Kami develop website yang mengkombinasikan modern design dengan smooth animations, responsive layout, dan fast loading performance. Architecture yang scalable memungkinkan mudah untuk menambah portfolio dan konten.",
+    "challenge": "Navyra Studio membutuhkan website yang tidak hanya beautiful secara visual, tetapi juga showcase kemampuan mereka sebagai design & development studio dengan proyek yang impressive.",
+    "solution": "Kami develop website yang mengkombinasikan modern design dengan smooth animations, responsive layout, dan fast loading performance. Architecture yang scalable memungkinkan mudah untuk menambah proyek dan konten.",
     "workDetails": [
       "Web Design & Prototyping (Figma)",
       "Frontend Development (Next.js, React)",
@@ -143,7 +143,7 @@
     "accentColor": "#6b7280",
     "featured": false,
     "slug": "lumira",
-    "challenge": "Lumira Interior Studio membutuhkan mobile app untuk connect dengan clients, showcase portfolio mereka, dan facilitate online consultation dan project collaboration.",
+    "challenge": "Lumira Interior Studio membutuhkan mobile app untuk connect dengan clients, showcase proyek mereka, dan facilitate online consultation dan project collaboration.",
     "solution": "Kami design aplikasi dengan user-friendly interface yang memudahkan client browsing design samples, request consultation, dan track project progress. Integration dengan calendar dan messaging system untuk seamless communication.",
     "workDetails": [
       "User Research & Personas",

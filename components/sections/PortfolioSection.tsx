@@ -19,7 +19,7 @@ export default function PortfolioSection() {
   const items = (portfolioData as PortfolioItem[]).filter((item) => item.featured).slice(0, 3);
 
   return (
-    <section id="portofolio" className="py-24 lg:py-32 bg-white">
+    <section id="proyek" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -65,7 +65,7 @@ export default function PortfolioSection() {
         <AnimateIn className="flex justify-center">
           <Link href="/portfolio">
             <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm bg-brand text-white text-sm sm:text-base font-semibold hover:bg-brand/90 transition-all duration-200 active:scale-95">
-              Lihat Semua Portofolio
+              Lihat Semua Proyek
             </button>
           </Link>
         </AnimateIn>

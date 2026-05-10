@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SectionLabel from "@/components/ui/SectionLabel";
 import AnimateIn from "@/components/ui/AnimateIn";
 import companyData from "@/data/company.json";
@@ -93,6 +94,14 @@ export default function AboutSection() {
             <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
               Karena bagi kami, produk digital terbaik bukan hanya tentang tampilan, tetapi tentang bagaimana sebuah solusi dapat membantu bisnis bertumbuh dan terhubung lebih dekat dengan penggunanya.
             </p>
+        
+            <div className="mt-6">
+              <Link href="/about">
+                <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand/90 transition-colors duration-200">
+                  Selengkapnya Tentang Kami
+                </button>
+              </Link>
+            </div>
 
             {/* Stats grid */}
             {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 mt-2 border-t border-slate-200">

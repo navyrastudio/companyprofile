@@ -85,7 +85,7 @@ export default function CTASection() {
             <Button href={`mailto:${companyData.email}`} variant="primary" size="lg" showArrow>
               Hubungi Kami
             </Button>
-            <Button href="#portofolio" variant="outline" size="lg">
+            <Button href="#projeck" variant="outline" size="lg">
               Lihat Karya
             </Button>
           </div>
