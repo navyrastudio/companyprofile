@@ -10,7 +10,19 @@
     "bgColor": "#1a1a1a",
     "textColor": "#ffffff",
     "accentColor": "#c8a96e",
-    "featured": true
+    "featured": true,
+    "slug": "koha-coffee",
+    "challenge": "KOHA Coffee membutuhkan identitas brand yang kuat dan memorable untuk membedakan mereka di pasar kopi premium lokal yang semakin kompetitif.",
+    "solution": "Kami menciptakan identitas visual yang sophisticated dengan palet warna warm earth tones yang mencerminkan kehangatan dan kualitas premium produk mereka. Desain logo yang elegan dan timeless menjadi foundation untuk seluruh ekosistem branding.",
+    "workDetails": [
+      "Logo Design dengan multiple variations",
+      "Brand Guidelines & Style Guide lengkap",
+      "Packaging Design (tas kopi & kemasan retail)",
+      "Social Media Templates & Assets",
+      "Photography Direction & Styling",
+      "Merchandise Design (cup, tumbler, apparel)"
+    ],
+    "results": "Brand KOHA berhasil meningkat recognition di kalangan target market dengan konsistensi visual yang kuat di semua touchpoint."
   },
   {
     "id": 2,
@@ -23,7 +35,20 @@
     "bgColor": "#1A56DB",
     "textColor": "#ffffff",
     "accentColor": "#93c5fd",
-    "featured": true
+    "featured": true,
+    "slug": "navyra",
+    "challenge": "Navyra Studio membutuhkan website yang tidak hanya beautiful secara visual, tetapi juga showcase kemampuan mereka sebagai design & development studio dengan portfolio yang impressive.",
+    "solution": "Kami develop website yang mengkombinasikan modern design dengan smooth animations, responsive layout, dan fast loading performance. Architecture yang scalable memungkinkan mudah untuk menambah portfolio dan konten.",
+    "workDetails": [
+      "Web Design & Prototyping (Figma)",
+      "Frontend Development (Next.js, React)",
+      "UI/UX Optimization",
+      "Responsive Mobile Design",
+      "Animation & Interaction Design",
+      "Performance Optimization & SEO",
+      "Deployment & Maintenance"
+    ],
+    "results": "Website yang professional dan functional, meningkatkan conversion rate inquiry dan membangun credibility di mata potential clients."
   },
   {
     "id": 3,
@@ -36,7 +61,20 @@
     "bgColor": "#e8d5c4",
     "textColor": "#1a1a1a",
     "accentColor": "#8b6343",
-    "featured": true
+    "featured": true,
+    "slug": "olivia",
+    "challenge": "Olivia Beauty membutuhkan visual assets berkualitas tinggi yang dapat showcase produk mereka dengan cara yang elegant dan aspirational untuk campaign marketing mereka.",
+    "solution": "Kami melakukan professional product photography session dengan lighting setup yang sophisticated, styling yang konsisten dengan brand aesthetic, dan post-processing yang meningkatkan visual impact tanpa mengorbankan authenticity produk.",
+    "workDetails": [
+      "Product Photography Session (50+ shots)",
+      "Styling & Props Direction",
+      "Professional Lighting Setup",
+      "Post-Processing & Color Grading",
+      "Retouching & Image Enhancement",
+      "Packaging & Flat Lay Photography",
+      "Lifestyle Photography"
+    ],
+    "results": "Photo assets yang high-quality meningkatkan social media engagement hingga 150% dan konversi penjualan online store berkembang signifikan."
   },
   {
     "id": 4,
@@ -49,7 +87,21 @@
     "bgColor": "#0f172a",
     "textColor": "#ffffff",
     "accentColor": "#94a3b8",
-    "featured": true
+    "featured": true,
+    "slug": "vella",
+    "challenge": "VELLA Fashion ingin rebranding untuk meningkatkan positioning mereka sebagai premium fashion label yang aspirational dan modern, melawan kompetitor lokal lain.",
+    "solution": "Kami develop comprehensive rebranding strategy dengan visual identity yang luxury dan sophisticated. Menggunakan minimal color palette, premium typography, dan editorial approach yang menonjolkan craftsmanship dan quality.",
+    "workDetails": [
+      "Brand Strategy & Positioning",
+      "Logo Redesign & Symbol",
+      "Typography Selection & Customization",
+      "Brand Color Palette Development",
+      "Brand Guidelines (200+ pages)",
+      "Packaging & Label Design",
+      "Brand Photography Direction",
+      "Store Design & Environmental Branding"
+    ],
+    "results": "Rebranding yang sukses meningkatkan brand perception ke segment premium market, dengan 40% increase dalam customer acquisition dari target market baru."
   },
   {
     "id": 5,
@@ -62,7 +114,21 @@
     "bgColor": "#0d9488",
     "textColor": "#ffffff",
     "accentColor": "#99f6e4",
-    "featured": false
+    "featured": false,
+    "slug": "arkana",
+    "challenge": "Arkana Tech startup membutuhkan presence online yang strong dengan landing page yang convert dan internal dashboard yang intuitive untuk manage data mereka.",
+    "solution": "Kami develop full-stack solution dengan modern tech stack, responsive design yang beautiful, dan dashboard yang powerful dengan real-time analytics. Focus pada user experience dan performance untuk maximize conversion.",
+    "workDetails": [
+      "Landing Page Design & Development",
+      "Dashboard UI/UX Design",
+      "Frontend Development (React, TypeScript)",
+      "Backend API Development (Node.js)",
+      "Database Design & Optimization",
+      "Real-time Data Visualization",
+      "Authentication & Security",
+      "DevOps & Deployment"
+    ],
+    "results": "Platform yang successful dengan 500+ active users dalam 3 bulan pertama dan conversion rate 8.5% dari landing page traffic."
   },
   {
     "id": 6,
@@ -75,6 +141,20 @@
     "bgColor": "#f3f4f6",
     "textColor": "#111827",
     "accentColor": "#6b7280",
-    "featured": false
+    "featured": false,
+    "slug": "lumira",
+    "challenge": "Lumira Interior Studio membutuhkan mobile app untuk connect dengan clients, showcase portfolio mereka, dan facilitate online consultation dan project collaboration.",
+    "solution": "Kami design aplikasi dengan user-friendly interface yang memudahkan client browsing design samples, request consultation, dan track project progress. Integration dengan calendar dan messaging system untuk seamless communication.",
+    "workDetails": [
+      "User Research & Personas",
+      "Wireframing & Information Architecture",
+      "UI/UX Design (High-fidelity mockups)",
+      "Interaction Design & Animations",
+      "Prototyping & User Testing",
+      "Design System & Component Library",
+      "Mobile App Development (React Native)",
+      "Backend Integration & APIs"
+    ],
+    "results": "App yang sukses meningkatkan consultation requests sebesar 250% dan client satisfaction score mencapai 4.8/5 stars dengan 2000+ downloads."
   }
 ]

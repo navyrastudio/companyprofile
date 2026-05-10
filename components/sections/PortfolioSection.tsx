@@ -1,7 +1,9 @@
 ﻿import Image from "next/image";
+import Link from "next/link";
 import portfolioData from "@/data/portfolio.json";
 import AnimateIn from "@/components/ui/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
+import { getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 
 type PortfolioItem = {
   id: number;
@@ -13,7 +15,7 @@ type PortfolioItem = {
 };
 
 export default function PortfolioSection() {
-  const items = portfolioData as PortfolioItem[];
+  const items = (portfolioData as PortfolioItem[]).filter((item) => item.featured).slice(0, 3);
 
   return (
     <section id="portofolio" className="py-24 lg:py-32 bg-white">
@@ -28,30 +30,44 @@ export default function PortfolioSection() {
         </AnimateIn>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map((item, i) => (
-            <AnimateIn key={item.id} delay={i * 60}>
-              <div className="group relative overflow-hidden aspect-4/3 bg-slate-100">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/55 transition-all duration-400" />
-                <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/60 mb-1">
-                    {item.category} · {item.year}
-                  </span>
-                  <p className="text-base font-bold text-white leading-tight">{item.title}</p>
-                  <p className="text-xs text-white/60 mt-0.5">{item.subtitle}</p>
-                </div>
-              </div>
-            </AnimateIn>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {items.map((item, i) => {
+            const slug = getPortfolioSlug(item.id);
+            return (
+              <AnimateIn key={item.id} delay={i * 60}>
+                <Link href={`/portfolio/${slug}`}>
+                  <div className="group relative overflow-hidden aspect-4/3 bg-slate-100 cursor-pointer">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    {/* Hover overlay */}
+                    <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/55 transition-all duration-400" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                      <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/60 mb-1">
+                        {item.category} · {item.year}
+                      </span>
+                      <p className="text-base font-bold text-white leading-tight">{item.title}</p>
+                      <p className="text-xs text-white/60 mt-0.5">{item.subtitle}</p>
+                    </div>
+                  </div>
+                </Link>
+              </AnimateIn>
+            );
+          })}
         </div>
+
+        {/* CTA Button */}
+        <AnimateIn className="flex justify-center">
+          <Link href="/portfolio">
+            <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg bg-brand text-white text-sm sm:text-base font-semibold hover:bg-brand/90 transition-all duration-200 active:scale-95">
+              Lihat Semua Portofolio →
+            </button>
+          </Link>
+        </AnimateIn>
       </div>
     </section>
   );
