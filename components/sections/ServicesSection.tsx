@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { IconType } from "react-icons";
 import {
   SiReact, SiNextdotjs, SiLaravel, SiWordpress, SiWebflow, SiVuedotjs,
@@ -10,6 +11,7 @@ import { Icon as IconifyIcon } from "@iconify/react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import AnimateIn from "@/components/ui/AnimateIn";
 import servicesData from "@/data/services.json";
+import { getServiceSlug } from "@/lib/slugUtils";
 
 const siIconMap: Record<string, IconType> = {
   SiReact, SiNextdotjs, SiLaravel, SiWordpress, SiWebflow, SiVuedotjs,
@@ -111,7 +113,7 @@ export default function ServicesSection() {
 
                     {/* Tech stack */}
                     {service.techStack && (
-                      <div className="flex items-center gap-4 flex-wrap">
+                      <div className="flex items-center gap-4 flex-wrap mb-6">
                         <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold shrink-0">Tech Stack</span>
                         {service.techStack.map((tech) => {
                           const t = tech as { name: string; icon: string; lib?: string; color?: string };
@@ -136,6 +138,13 @@ export default function ServicesSection() {
                         })}
                       </div>
                     )}
+
+                    {/* CTA Button */}
+                    <Link href={`/layanan/${getServiceSlug(service.id)}`}>
+                      <button className="px-5 py-2.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand/90 transition-colors duration-200">
+                        Lihat Harga Lengkap →
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

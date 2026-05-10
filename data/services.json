@@ -11,7 +11,20 @@
       { "name": "WordPress", "icon": "SiWordpress", "lib": "si", "color": "#21759B" },
       { "name": "Webflow",   "icon": "SiWebflow",   "lib": "si", "color": "#4353FF" },
       { "name": "Vue.js",    "icon": "SiVuedotjs",  "lib": "si", "color": "#4FC08D" }
-    ]
+    ],
+    "pricing": {
+      "medium": {
+        "price": 5000000,
+        "description": "Website sederhana dengan 5-10 halaman, responsive design, dan integrasi dasar."
+      },
+      "menengah": {
+        "price": 15000000,
+        "description": "Website kompleks dengan sistem manajemen konten, e-commerce, atau aplikasi web."
+      },
+      "high": {
+        "description": "Solusi custom untuk enterprise, sistem terintegrasi, atau proyek skala besar. Harga berdasarkan kompleksitas."
+      }
+    }
   },
   {
     "id": 2,
@@ -22,7 +35,20 @@
       { "name": "Figma",   "icon": "SiFigma",   "lib": "si", "color": "#F24E1E" },
       { "name": "Webflow", "icon": "SiWebflow", "lib": "si", "color": "#4353FF" },
       { "name": "Framer",  "icon": "SiFramer",  "lib": "si", "color": "#0055FF" }
-    ]
+    ],
+    "pricing": {
+      "medium": {
+        "price": 3000000,
+        "description": "Desain UI/UX untuk 1-3 halaman/screen dengan wireframe dan mockup."
+      },
+      "menengah": {
+        "price": 8000000,
+        "description": "Desain lengkap aplikasi atau website dengan prototype interaktif dan design system."
+      },
+      "high": {
+        "description": "Desain UX research, user testing, dan solusi kompleks untuk produk digital. Harga berdasarkan scope."
+      }
+    }
   },
   {
     "id": 3,
@@ -37,6 +63,19 @@
       { "name": "Canva",       "icon": "SiCanva",                        "lib": "si",       "color": "#00C4CC" },
       { "name": "Behance",     "icon": "SiBehance",                      "lib": "si",       "color": "#1769FF" },
       { "name": "Dribbble",    "icon": "SiDribbble",                     "lib": "si",       "color": "#EA4C89" }
-    ]
+    ],
+    "pricing": {
+      "medium": {
+        "price": 2000000,
+        "description": "Logo design dengan 2-3 konsep dan brand guideline dasar."
+      },
+      "menengah": {
+        "price": 5000000,
+        "description": "Brand identity lengkap termasuk logo, stationery, dan digital assets."
+      },
+      "high": {
+        "description": "Rebranding menyeluruh, brand strategy, dan implementasi multi-channel. Harga berdasarkan kompleksitas."
+      }
+    }
   }
 ]
