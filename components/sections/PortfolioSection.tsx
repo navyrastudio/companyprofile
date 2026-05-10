@@ -12,6 +12,7 @@ type PortfolioItem = {
   category: string;
   year: string;
   image: string;
+  featured?: boolean;
 };
 
 export default function PortfolioSection() {

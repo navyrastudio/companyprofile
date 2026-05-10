@@ -34,6 +34,14 @@ export default function PortfolioDetail({ portfolioId }: PortfolioDetailProps) {
     results?: string;
   };
 
+  function mapCategoryToServiceLabel(category: string) {
+    const c = (category || "").toLowerCase();
+    if (c.includes("web")) return "Web Development";
+    if (c.includes("ui") || c.includes("ux")) return "UI/UX Design";
+    if (c.includes("brand") || c.includes("photograph") || c.includes("photo")) return "Branding";
+    return "Branding";
+  }
+
   return (
     <>
       {/* ── Hero Section ── */}
@@ -71,7 +79,7 @@ export default function PortfolioDetail({ portfolioId }: PortfolioDetailProps) {
               <span className="w-px h-4 bg-slate-200" />
               <div className="flex items-center gap-2">
                 <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-semibold">Layanan</span>
-                <span className="text-sm font-bold text-slate-800">{project.service}</span>
+                <span className="text-sm font-bold text-slate-800">{mapCategoryToServiceLabel(project.category)}</span>
               </div>
             </div>
           </AnimateIn>
