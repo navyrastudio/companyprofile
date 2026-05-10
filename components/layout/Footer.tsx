@@ -21,25 +21,25 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900">
+    <footer className="bg-brand-100">
       {/* Top accent */}
       <div className="h-px bg-linear-to-r from-transparent via-brand to-transparent" />
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8 py-14 flex flex-col items-center gap-8 text-center">
 
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" aria-label="Navyra Studio - Beranda">
           <Image
             src="/navyra-logo.png"
-            alt="Navyra Studio"
+            alt="Logo Navyra Studio, kembali ke beranda"
             width={140}
             height={50}
-            className="h-8 w-auto object-contain brightness-0 invert"
+            className="h-8 w-auto object-contain"
           />
         </Link>
 
         {/* Tagline */}
-        <p className="text-sm text-slate-500 max-w-xs leading-relaxed">
+        <p className="text-sm text-slate-700 max-w-xs leading-relaxed">
           Studio kreatif untuk brand, web, dan produk digital yang berkesan.
         </p>
 
@@ -49,7 +49,7 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs text-slate-500 hover:text-white transition-colors duration-200"
+              className="text-xs text-slate-700 hover:text-brand transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -65,7 +65,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-8 h-8 flex items-center justify-center text-slate-500 hover:text-brand transition-colors duration-200"
+              className="w-8 h-8 flex items-center justify-center text-slate-700 hover:text-brand transition-colors duration-200"
             >
               <FontAwesomeIcon icon={icon} className="w-4 h-4" />
             </Link>
@@ -74,12 +74,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/6">
+      <div className="border-t border-slate-300/60">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-1">
-          <p className="text-[11px] text-slate-600">
+          <p className="text-[11px] text-slate-700">
             &copy; {year} Navyra Studio. All rights reserved.
           </p>
-          <p className="text-[11px] text-slate-600">
+          <p className="text-[11px] text-slate-700">
             Surakarta, Indonesia.
           </p>
         </div>

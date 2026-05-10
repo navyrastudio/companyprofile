@@ -39,9 +39,14 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} ${poppins.variable} antialiased`}>
       <body className="bg-white text-slate-900" style={{ scrollBehavior: "smooth" }}>
+        <a href="#main-content" className="skip-link absolute left-2 top-2 z-50 bg-brand text-white px-4 py-2 rounded focus:block focus:outline-none sr-only focus:not-sr-only">Lewati ke konten utama</a>
         <SplashScreen />
-        <Navbar />
-        <main>{children}</main>
+        <header>
+          <Navbar />
+        </header>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -41,7 +41,7 @@ export default function Navbar() {
             <Link href="/" aria-label="Navyra Studio - Beranda">
               <Image
                 src="/navyra-logo.png"
-                alt="Navyra Studio"
+                alt="Logo Navyra Studio, kembali ke beranda"
                 width={140}
                 height={48}
                 className="h-7 sm:h-9 w-auto object-contain"
@@ -51,16 +51,19 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {navData.links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200 relative group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand group-hover:w-full transition-all duration-300" />
-                </Link>
-              ))}
+              <nav aria-label="Navigasi utama">
+                {navData.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200 relative group"
+                    aria-current={typeof window !== 'undefined' && window.location.pathname === link.href ? 'page' : undefined}
+                  >
+                    <span className="sr-only">Menu: </span>{link.label}
+                    <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-brand group-hover:w-full transition-all duration-300" />
+                  </Link>
+                ))}
+              </nav>
             </div>
 
             {/* CTA Button */}
@@ -132,7 +135,7 @@ export default function Navbar() {
           </div>
 
           {/* Nav links */}
-          <nav className="flex flex-col gap-1 flex-1">
+          <nav className="flex flex-col gap-1 flex-1" aria-label="Navigasi utama">
             {navData.links.map((link, i) => (
               <Link
                 key={link.href}
@@ -142,7 +145,9 @@ export default function Navbar() {
                   isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
                 }`}
                 style={{ transitionDelay: isOpen ? `${i * 60}ms` : "0ms" }}
+                aria-current={typeof window !== 'undefined' && window.location.pathname === link.href ? 'page' : undefined}
               >
+                <span className="sr-only">Menu: </span>
                 <span className="text-xl font-bold font-heading text-slate-900 group-hover:text-brand transition-colors duration-200">
                   {link.label}
                 </span>

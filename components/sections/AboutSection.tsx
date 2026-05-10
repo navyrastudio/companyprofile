@@ -60,7 +60,7 @@ export default function AboutSection() {
             <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-white border border-slate-200 shadow-md p-5">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-brand-50 border border-brand-300/50 flex items-center justify-center p-1.5">
-                    <Image src="/inilogo.png" alt="Navyra Studio" width={40} height={40} className="w-full h-full object-contain" />
+                  <Image src="/inilogo.png" alt="Logo Navyra Studio" width={40} height={40} className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 font-medium uppercase tracking-widest">Berdiri sejak</div>

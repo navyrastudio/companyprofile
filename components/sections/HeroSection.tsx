@@ -59,7 +59,7 @@ export default function HeroSection() {
         {/* Logo — float animation */}
         <Image
           src="/navyra-logo.png"
-          alt="Navyra Studio"
+          alt="Logo Navyra Studio, kembali ke beranda"
           width={200}
           height={200}
           className="animate-hero-logo object-contain w-28 sm:w-36 lg:w-44"
@@ -78,7 +78,8 @@ export default function HeroSection() {
 
         {/* Heading */}
         <h1 className="animate-hero-h1 text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
-         Merancang Produk Digital yang <span className="text-brand">Bertumbuh Bersama Bisnis Anda</span>
+          <span className="sr-only">Navyra Studio</span>
+          Merancang Produk Digital yang <span className="text-brand">Bertumbuh Bersama Bisnis Anda</span>
         </h1>
 
         {/* Description */}
