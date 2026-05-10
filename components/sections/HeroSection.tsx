@@ -54,7 +54,7 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto pt-14 sm:pt-16 lg:pt-18">
+      <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto">
 
         {/* Logo — float animation */}
         <Image
