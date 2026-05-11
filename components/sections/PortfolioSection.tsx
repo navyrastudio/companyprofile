@@ -3,6 +3,7 @@ import Link from "next/link";
 import portfolioData from "@/data/portfolio.json";
 import AnimateIn from "@/components/ui/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
+import Button from "@/components/ui/Button";
 import { getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 
 type PortfolioItem = {
@@ -63,11 +64,9 @@ export default function PortfolioSection() {
 
         {/* CTA Button */}
         <AnimateIn className="flex justify-center">
-          <Link href="/portfolio">
-            <button className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-sm bg-brand text-white text-sm sm:text-base font-semibold hover:bg-brand/90 transition-all duration-200 active:scale-95">
-              Lihat Semua Proyek
-            </button>
-          </Link>
+          <Button href="/portfolio" variant="primary" showArrow>
+            Lihat Semua Proyek
+          </Button>
         </AnimateIn>
       </div>
     </section>

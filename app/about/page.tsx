@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Button from "@/components/ui/Button";
 import AboutSection from "@/components/sections/AboutSection";
 import AnimateIn from "@/components/ui/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -94,8 +95,8 @@ export default function AboutPage() {
               <div>
                 <p className="text-slate-600">Untuk pertanyaan, kolaborasi, atau studi kasus, hubungi kami:</p>
                 <div className="mt-4 flex flex-col sm:flex-row gap-3">
-                  <a href={`mailto:${companyData.email}`} className="px-4 py-2 rounded-lg bg-brand text-white font-semibold">Email: {companyData.email}</a>
-                  <a href={`tel:${companyData.phone.replace(/\s+/g, "")}`} className="px-4 py-2 rounded-lg border border-slate-200 text-slate-700">Telepon: {companyData.phone}</a>
+                  <Button href={`mailto:${companyData.email}`} variant="primary" size="sm">Email: {companyData.email}</Button>
+                  <Button href={`tel:${companyData.phone.replace(/\s+/g, "")}`} variant="outline" size="sm">Telepon: {companyData.phone}</Button>
                 </div>
               </div>
 

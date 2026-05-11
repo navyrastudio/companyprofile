@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
 import AnimateIn from "@/components/ui/AnimateIn";
 import companyData from "@/data/company.json";
@@ -96,11 +96,9 @@ export default function AboutSection() {
             </p>
         
             <div className="mt-6">
-              <Link href="/about">
-                <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand text-white text-sm font-semibold hover:bg-brand/90 transition-colors duration-200">
-                  Selengkapnya Tentang Kami
-                </button>
-              </Link>
+              <Button href="/about" variant="primary" showArrow>
+                Selengkapnya Tentang Kami
+              </Button>
             </div>
 
             {/* Stats grid */}
