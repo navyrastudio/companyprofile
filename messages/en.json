@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "siteTitle": "Navyra Studio",
+    "siteDescription": "Digital Agency - Navyra Studio",
+    "ogTitle": "Navyra Studio",
+    "ogDescription": "Design and web development studio",
+    "twitterDescription": "Navyra Studio — Digital Agency",
+    "aboutTitle": "About",
+    "layananTitle": "Services",
+    "layananDescription": "The services we offer",
+    "portfolioTitle": "Portfolio",
+    "portfolioDescription": "A collection of our projects and case studies",
+    "serviceNotFound": "Service not found",
+    "servicePricelistSuffix": "Pricelist",
+    "serviceDescriptionFallback": "Service description not available",
+    "projectNotFound": "Project not found",
+    "projectSuffix": "Project",
+    "projectDescriptionFallback": "Project description not available"
+  },
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "mainNav": "Main Navigation",
+    "mainNavMobile": "Mobile Navigation",
+    "home": "Home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "logoHome": "Navyra Studio - Home"
+  },
+  "lang": {
+    "switchLang": "Switch language",
+    "switchTo": "Switch to English",
+    "switchFrom": "Switch to Indonesian"
+  },
+  "about": {
+    "companyHeading": "About Navyra Studio",
+    "companyDescription": "We are a digital studio focused on creating meaningful web solutions, UI/UX design, and branding for your business.",
+    "visionMission": "Vision & Mission",
+    "vision": "Vision",
+    "visionText": "Our vision is to create high-quality digital products.",
+    "mission": "Mission",
+    "missionItems": [
+      "Provide solutions",
+      "Quality design",
+      "Full support"
+    ],
+    "ourValues": "Our Values",
+    "howWeWork": "How We Work",
+    "howWeWorkDesc": "We follow research, design, and implementation processes."
+    ,"research": "Research",
+    "researchDesc": "We conduct user and market research to understand needs.",
+    "design": "Design",
+    "designDesc": "We design intuitive user interfaces and experiences.",
+    "implementation": "Implementation",
+    "implementationDesc": "We build and deliver scalable solutions.",
+    "contactLabel": "Contact Us",
+    "contactDesc": "Interested in working together? Contact our team for a consultation.",
+    "email": "Email",
+    "phone": "Phone",
+    "followUs": "Follow us"
+    ,"sectionLabel": "About Us",
+    "cta": "More",
+    "longDesc": "Because to us, the best digital products aren't just about looks — they're about how a solution helps businesses grow and connect with users.",
+    "logoAlt": "Navyra Studio logo",
+    "values": [
+      { "label": "Strategic Design", "desc": "Every design decision grounded in data and business goals." },
+      { "label": "Modern Tech", "desc": "Current stacks for best performance and scalability." },
+      { "label": "Full Collaboration", "desc": "We’re your partner, not just a vendor." }
+    ]
+  },
+  "pricelist": {
+    "customPrice": "Custom (Contact Us)",
+    "waMessage": "Hi, I'm interested in the service {service} — {item} ({tier}). Price: {price}. Please share more details.",
+    "fullLabel": "Full Pricelist",
+    "heading": "Our Services",
+    "headingBreak": "Package Options",
+    "subheading": "Choose a package that fits your needs",
+    "tools": "Tools",
+    "recommended": "Recommended",
+    "contactUs": "Contact Us",
+    "consultNow": "Consult Now"
+  },
+  "portfolio": {
+    "portfolioTitle": "Portfolio",
+    "portfolioDescription": "Selected projects",
+    "sectionLabel": "Our Projects",
+    "headline": "Work We\nTake Pride In.",
+    "otherProjectsButton": "More Projects",
+    "footerCount": "{count} of {total} projects",
+    "totalLabel": "Total",
+    "noProjects": "No projects in this category.",
+    "notFound": "Project not found.",
+    "backLink": "All Projects",
+    "waInquiry": "Hi, I'm interested in working on a similar project like {title}. Can we discuss?",
+    "meta": {
+      "year": "Year",
+      "category": "Category",
+      "client": "Client",
+      "deliverable": "Deliverable"
+    },
+    "resultsTitle": "Results & Impact",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "workDoneTitle": "Work Performed",
+    "interestedTitle": "Interested in collaborating?",
+    "discussCTA": "Discuss Project",
+    "prevLabel": "Previous",
+    "nextLabel": "Next",
+    "filters": {
+      "all": "All Works",
+      "web": "Web Dev",
+      "uiux": "UI/UX",
+      "branding": "Branding"
+    }
+    ,"displayed": "{count} projects displayed",
+    "projects": [
+      {
+        "id": 1,
+        "challenge": "KOHA Coffee needed a strong and memorable brand identity to stand out in the increasingly competitive local premium coffee market.",
+        "solution": "We created a sophisticated visual identity with a warm earth tone color palette reflecting the warmth and premium quality of their products. An elegant and timeless logo design became the foundation for the entire branding ecosystem.",
+        "workDetails": ["Logo Design with multiple variations", "Complete Brand Guidelines & Style Guide", "Packaging Design (coffee bags & retail packaging)", "Social Media Templates & Assets", "Photography Direction & Styling", "Merchandise Design (cups, tumblers, apparel)"],
+        "results": "KOHA's brand recognition increased significantly among target market with strong visual consistency across all touchpoints."
+      },
+      {
+        "id": 2,
+        "challenge": "Navyra Studio needed a website that was not only visually beautiful but also showcased their capabilities as a design & development studio with impressive projects.",
+        "solution": "We developed a website combining modern design with smooth animations, responsive layout, and fast loading performance. A scalable architecture makes it easy to add projects and content.",
+        "workDetails": ["Web Design & Prototyping (Figma)", "Frontend Development (Next.js, React)", "UI/UX Optimization", "Responsive Mobile Design", "Animation & Interaction Design", "Performance Optimization & SEO", "Deployment & Maintenance"],
+        "results": "A professional and functional website that increased inquiry conversion rates and built credibility with potential clients."
+      },
+      {
+        "id": 3,
+        "challenge": "Olivia Beauty needed high-quality visual assets that could showcase their products in an elegant and aspirational way for their marketing campaigns.",
+        "solution": "We conducted professional product photography sessions with sophisticated lighting setups, styling consistent with brand aesthetics, and post-processing that enhanced visual impact without compromising product authenticity.",
+        "workDetails": ["Product Photography Session (50+ shots)", "Styling & Props Direction", "Professional Lighting Setup", "Post-Processing & Color Grading", "Retouching & Image Enhancement", "Packaging & Flat Lay Photography", "Lifestyle Photography"],
+        "results": "High-quality photo assets increased social media engagement by 150% and significantly boosted online store conversion rates."
+      },
+      {
+        "id": 4,
+        "challenge": "VELLA Fashion wanted a comprehensive rebrand to increase their positioning as an aspirational and modern premium fashion label, competing with other local competitors.",
+        "solution": "We developed a comprehensive rebranding strategy with a luxury and sophisticated visual identity. Using a minimal color palette, premium typography, and an editorial approach that highlights craftsmanship and quality.",
+        "workDetails": ["Brand Strategy & Positioning", "Logo Redesign & Symbol", "Typography Selection & Customization", "Brand Color Palette Development", "Brand Guidelines (200+ pages)", "Packaging & Label Design", "Brand Photography Direction", "Store Design & Environmental Branding"],
+        "results": "A successful rebrand that elevated brand perception in the premium market segment, with 40% increase in customer acquisition from the new target market."
+      },
+      {
+        "id": 5,
+        "challenge": "Arkana Tech startup needed a strong online presence with a converting landing page and an intuitive internal dashboard to manage their data.",
+        "solution": "We developed a full-stack solution with modern tech stack, beautiful responsive design, and a powerful dashboard with real-time analytics. Focused on user experience and performance to maximize conversion.",
+        "workDetails": ["Landing Page Design & Development", "Dashboard UI/UX Design", "Frontend Development (React, TypeScript)", "Backend API Development (Node.js)", "Database Design & Optimization", "Real-time Data Visualization", "Authentication & Security", "DevOps & Deployment"],
+        "results": "A successful platform with 500+ active users in the first 3 months and 8.5% conversion rate from landing page traffic."
+      },
+      {
+        "id": 6,
+        "challenge": "Lumira Interior Studio needed a mobile app to connect with clients, showcase their projects, and facilitate online consultations and project collaboration.",
+        "solution": "We designed an app with a user-friendly interface that makes it easy for clients to browse design samples, request consultations, and track project progress. Integration with calendar and messaging systems for seamless communication.",
+        "workDetails": ["User Research & Personas", "Wireframing & Information Architecture", "UI/UX Design (High-fidelity mockups)", "Interaction Design & Animations", "Prototyping & User Testing", "Design System & Component Library", "Mobile App Development (React Native)", "Backend Integration & APIs"],
+        "results": "A successful app that increased consultation requests by 250% and achieved 4.8/5 star client satisfaction score with 2000+ downloads."
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Digital Studio",
+    "heading": "Designing Digital Products that",
+    "highlight": "Grow With Your Business",
+    "description": "We help businesses deliver websites, systems, and visual identities that not only look modern but also create measurable impact for brand growth and user experience.",
+    "cta": "Let's Start!",
+    "scrollHint": "Scroll",
+    "logoAlt": "Navyra Studio logo, back to home",
+    "established": "Est. 2026"
+  },
+  "clients": {
+    "label": "Our Clients & Partners"
+  },
+  "cta": {
+    "label": "Start a Project",
+    "heading": "Got an idea?",
+    "highlight": "Let's make it happen.",
+    "description": "We're open for collaboration — from brand identity, web, to memorable digital product design.",
+    "contactButton": "Contact Us",
+    "orSendTo": "or send directly to"
+  },
+  "faq": {
+    "sectionLabel": "Frequently Asked",
+    "title": "FAQ",
+    "description": "Find answers to common questions about our services and process.",
+    "sideTitle": "Still have questions?",
+    "sideText": "Don't hesitate to contact us directly. Our team is ready to help.",
+    "items": [
+      {
+        "question": "How long does it take to complete a project?",
+        "answer": "Timeline depends on project complexity. Simple web development takes 4-6 weeks, UI/UX design 3-4 weeks, and branding 2-3 weeks. We'll provide a detailed timeline breakdown during consultation."
+      },
+      {
+        "question": "Is there a revision process after the project is complete?",
+        "answer": "Yes, absolutely. Each service package includes unlimited revisions until you're satisfied with the results. Transparent communication is our priority."
+      },
+      {
+        "question": "How do I start collaborating with Navyra Studio?",
+        "answer": "Simple! Contact us via WhatsApp, email, or the contact form on our website. We'll conduct a free consultation to understand your needs, then prepare a proposal and timeline together."
+      },
+      {
+        "question": "Do you accept remote projects?",
+        "answer": "Of course. We work with clients from various locations online. Communication via Zoom, Slack, and email ensures effective collaboration."
+      },
+      {
+        "question": "What's included in the branding package?",
+        "answer": "Our branding package includes: logo design, brand guidelines, color palette, typography, social media templates, and mockups. More details are available on our services page."
+      },
+      {
+        "question": "What about support after delivery?",
+        "answer": "We provide post-delivery maintenance and support. Support details depend on the package you choose. You can consult further for your specific needs."
+      }
+    ]
+  },
+  "services": {
+    "sectionLabel": "Our Services",
+    "headline": "Digital solutions designed to grow with your business.",
+    "description": "Web Development, UI/UX Design, and Branding — all under one roof.",
+    "subServices": "{count} sub-services",
+    "stackLabel": "Stack",
+    "detailButton": "View Details",
+    "data": [
+      {
+        "id": 1,
+        "title": "Web Development",
+        "description": "Building modern, functional, and scalable websites and digital systems to help your business grow in the digital era.",
+        "items": [
+          {
+            "name": "Company Profile",
+            "description": "Professional website to introduce your business. Responsive, SEO-friendly, and easy to manage.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 2500000, "description": "3-5 page website, professional appearance, responsive, without CMS.", "features": ["3–5 Pages", "Responsive Design", "Contact Form", "Deploy & Hosting Setup"] },
+              "menengah": { "label": "Standard", "price": 5000000, "description": "5-10 page website, simple CMS, basic SEO, and light animations.", "features": ["5–10 Pages", "Simple CMS", "Basic SEO", "Animations & Transitions", "3x Revisions"] },
+              "high": { "label": "Professional", "price": null, "description": "Multilingual website, API integration, high performance, and full support.", "features": ["Unlimited Pages", "Multilingual", "API Integration", "Performance Optimization", "3 Months Support"] }
+            }
+          },
+          {
+            "name": "Landing Page",
+            "description": "High-performance single page for campaigns, products, or ad conversions.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 800000, "description": "Landing page 1 section with basic form and CTA.", "features": ["1 Page", "Contact Form", "Mobile Friendly", "Simple Design"] },
+              "menengah": { "label": "Standard", "price": 1800000, "description": "Modern animated landing page, speed optimization, and form integration.", "features": ["Modern Animations", "Speed Optimization", "WhatsApp Integration", "Google Analytics", "2x Revisions"] },
+              "high": { "label": "Premium", "price": null, "description": "A/B testing landing page, ad tracking, and maximum conversion.", "features": ["A/B Testing", "Tracking Pixel", "Heatmap", "Performance Report", "1 Month Support"] }
+            }
+          },
+          {
+            "name": "POS System",
+            "description": "Integrated digital cash register system to manage transactions, inventory, and business reporting.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 6000000, "description": "Basic digital cashier with products, transactions, and receipts.", "features": ["Product Management", "Cashier Transactions", "Receipt Printing", "Daily Reports"] },
+              "menengah": { "label": "Standard", "price": 12000000, "description": "Multi-register POS with inventory, discounts, and complete reports.", "features": ["Multi-register", "Inventory Management", "Discounts & Promos", "Admin Dashboard", "2x Revisions"] },
+              "high": { "label": "Enterprise", "price": null, "description": "POS integrated with e-commerce, accounting, and multi-branch.", "features": ["Multi-branch", "E-commerce Integration", "Accounting Module", "Open API", "6 Months Support"] }
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "UI/UX Design",
+        "description": "Designing intuitive, modern, and comfortable digital experiences to create more meaningful interactions.",
+        "items": [
+          {
+            "name": "Mobile App Design",
+            "description": "Complete UI design for iOS & Android mobile applications with planned UX flow.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 2500000, "description": "Design 5-10 screens with wireframe and basic mockup.", "features": ["5–10 Screens", "Wireframe", "Hi-fi Mockup", "Asset Export"] },
+              "menengah": { "label": "Standard", "price": 6000000, "description": "Complete design up to 30 screens with prototype and user flow.", "features": ["Up to 30 Screens", "User Flow", "Interactive Prototype", "3x Revisions", "Handoff File"] },
+              "high": { "label": "Premium", "price": null, "description": "Full design with UX research, usability testing, and design system.", "features": ["UX Research", "Usability Testing", "Design System", "Documentation", "Revision Support"] }
+            }
+          },
+          {
+            "name": "Web Design",
+            "description": "Modern website design with attractive appearance and optimal user experience.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 1500000, "description": "Design 1-3 pages with hi-fi mockup and basic assets.", "features": ["1–3 Pages", "Hi-fi Mockup", "Basic Assets", "Figma Format"] },
+              "menengah": { "label": "Standard", "price": 3500000, "description": "Complete responsive website design with prototype and handoff.", "features": ["Responsive Design", "Prototype", "Developer Handoff", "2x Revisions", "Style Guide"] },
+              "high": { "label": "Premium", "price": null, "description": "Full design system with component library and documentation.", "features": ["Component Library", "Complete Documentation", "Micro Animations", "Multi-breakpoint", "Revision Support"] }
+            }
+          },
+          {
+            "name": "Prototype & Testing",
+            "description": "Interactive prototype for idea validation before full development begins.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 800000, "description": "Clickable prototype for 5-10 main screens.", "features": ["5–10 Screens", "Clickable Prototype", "Figma Format", "1x Revision"] },
+              "menengah": { "label": "Standard", "price": 2000000, "description": "Interactive prototype + user testing session and report.", "features": ["Interactive Prototype", "User Testing", "Feedback Report", "2x Iterations", "2x Revisions"] },
+              "high": { "label": "Premium", "price": null, "description": "Comprehensive UX testing with multiple sessions and in-depth analysis.", "features": ["Multiple Testing Sessions", "In-depth Analysis", "Heatmap Simulation", "Executive Report", "Advanced Recommendations"] }
+            }
+          },
+          {
+            "name": "Design System",
+            "description": "Consistent and scalable design component system for your product team.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 3000000, "description": "Basic design system with color token, typography, and 20 components.", "features": ["Color Token", "Typography", "20 Components", "Figma Format"] },
+              "menengah": { "label": "Standard", "price": 6000000, "description": "Complete design system with Figma Variables and documentation.", "features": ["Figma Variables", "50+ Components", "Documentation", "Dark Mode", "2x Revisions"] },
+              "high": { "label": "Premium", "price": null, "description": "Enterprise design system with multi-brand and code integration.", "features": ["Multi-brand", "Code Integration", "Storybook", "Team Training", "3 Months Support"] }
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Branding",
+        "description": "Creating strong, consistent, and relevant visual identity so your brand looks more professional and memorable.",
+        "items": [
+          {
+            "name": "Logo Design",
+            "description": "Professional logo design that reflects your brand's values and personality.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 500000, "description": "Logo design with basic concept and 3 alternatives.", "features": ["3 Concepts", "Vector File", "1 Revision", "PNG & SVG Format"] },
+              "menengah": { "label": "Standard", "price": 1200000, "description": "Professional logo design with brand research and 5 alternatives.", "features": ["5 Concepts", "Brand Research", "Unlimited Revisions", "Complete Files", "Brand Guideline"] },
+              "high": { "label": "Premium", "price": null, "description": "Custom logo design with animation and multi-media application.", "features": ["Custom Exploration", "Logo Animation", "Mockup Application", "Complete Documentation", "Revision Support"] }
+            }
+          },
+          {
+            "name": "Brand Identity",
+            "description": "Complete visual identity including logo, color palette, typography, and brand guidelines.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 2000000, "description": "Logo, colors, fonts, and basic guidelines.", "features": ["Logo", "Color Palette", "Typography", "Basic Guideline", "PNG/PDF Files"] },
+              "menengah": { "label": "Standard", "price": 5000000, "description": "Complete visual identity with mockups and brand application.", "features": ["Complete Logo", "Brand Guidelines", "Application Mockup", "Business Card", "3x Revisions"] },
+              "high": { "label": "Premium", "price": null, "description": "Enterprise identity with multiple touchpoints and in-depth documentation.", "features": ["Custom System", "All Touchpoints", "Video Guidelines", "Team Training", "3 Months Support"] }
+            }
+          },
+          {
+            "name": "Packaging Design",
+            "description": "Attractive product packaging design that increases market value.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 800000, "description": "Packaging design for 1 product with basic concept.", "features": ["1 Design", "3 Revisions", "PDF/CDR File", "Print Sample"] },
+              "menengah": { "label": "Standard", "price": 2000000, "description": "Packaging design for 3 products with market research.", "features": ["3 Designs", "Market Research", "5x Revisions", "Complete Files", "Print Consultation"] },
+              "high": { "label": "Premium", "price": null, "description": "Premium packaging design with sustainable materials and 3D mockup.", "features": ["Custom Design", "Sustainable Materials", "3D Mockup", "Documentation", "Production Support"] }
+            }
+          },
+          {
+            "name": "Marketing Material",
+            "description": "Ready-to-use marketing design materials for digital and print.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 600000, "description": "Design 5 basic marketing templates (social, email, print).", "features": ["5 Templates", "Digital & Print", "Editable File", "1 Revision"] },
+              "menengah": { "label": "Standard", "price": 1500000, "description": "Design 10+ marketing templates with brand consistency.", "features": ["10+ Templates", "Social Frames", "Flyer & Poster", "Email Template", "2x Revisions"] },
+              "high": { "label": "Premium", "price": null, "description": "Complete marketing material package with animations and video template.", "features": ["20+ Templates", "Video Template", "Animated GIF", "Documentation", "Revision Support"] }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "sectionLabel": "Our Achievements",
+    "heading": "Trusted by\nDozens of Clients",
+    "description": "We have helped local and international businesses grow through innovative and sustainable digital solutions.",
+    "labels": {
+      "project": "Projects Completed",
+      "client": "Satisfied Clients",
+      "experience": "Years Experience",
+      "quality": "Quality Commitment"
+    }
+  }
+  ,
+  "footer": {
+    "tagline": "A creative studio for memorable brands, websites, and digital products.",
+    "copyright": "© {year} Navyra Studio. All rights reserved.",
+    "location": "Surakarta, Indonesia",
+    "services": "Services",
+    "serviceItems": [
+      "Web Development",
+      "UI/UX Design",
+      "Branding"
+    ],
+    "company": "Company",
+    "companyItems": [
+      "About Us",
+      "Portfolio",
+      "Contact"
+    ],
+    "contactEmail": "navyrastudio@gmail.com",
+    "homeLink": "Navyra Studio - Home",
+    "logoAlt": "Navyra Studio logo"
+  }
+}

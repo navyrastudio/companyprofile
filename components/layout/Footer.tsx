@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import companyData from "@/data/company.json";
 import navData from "@/data/navigation.json";
+import { useTranslations } from "next-intl";
 
 const socials = [
   { href: companyData.socials.instagram, label: "Instagram",   icon: faInstagram  },
@@ -17,27 +18,28 @@ const socials = [
   { href: companyData.socials.behance,   label: "Behance",     icon: faBehance    },
 ];
 
-const footerLinks = [
-  {
-    title: "Layanan",
-    items: [
-      { label: "Web Development", href: "/layanan/webdevelopment" },
-      { label: "UI/UX Design",    href: "/layanan/uiux"    },
-      { label: "Branding",        href: "/layanan/branding"       },
-    ],
-  },
-  {
-    title: "Perusahaan",
-    items: [
-      { label: "Tentang Kami", href: "/about"     },
-      { label: "Portfolio",    href: "/portfolio" },
-      { label: "Kontak",       href: "/#kontak"   },
-    ],
-  },
-];
-
 export default function Footer() {
   const year = new Date().getFullYear();
+  const t = useTranslations("footer");
+  
+  const footerLinks = [
+    {
+      title: t("services"),
+      items: [
+        { label: t("serviceItems.0"), href: "/layanan/webdevelopment" },
+        { label: t("serviceItems.1"), href: "/layanan/uiux"    },
+        { label: t("serviceItems.2"), href: "/layanan/branding"       },
+      ],
+    },
+    {
+      title: t("company"),
+      items: [
+        { label: t("companyItems.0"), href: "/about"     },
+        { label: t("companyItems.1"), href: "/portfolio" },
+        { label: t("companyItems.2"), href: "/#kontak"   },
+      ],
+    },
+  ];
 
   return (
     <footer className="bg-slate-950 border-t border-slate-800">
@@ -48,10 +50,10 @@ export default function Footer() {
 
           {/* Brand col */}
           <div className="flex flex-col gap-6">
-            <Link href="/" aria-label="Navyra Studio - Beranda">
+            <Link href="/" aria-label={t("homeLink")}>
               <Image
                 src="/navyra-logo.png"
-                alt="Logo Navyra Studio"
+                alt={t("logoAlt")}
                 width={120}
                 height={40}
                 className="h-7 w-auto object-contain brightness-0 invert"
@@ -59,7 +61,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-[240px]">
-              Studio kreatif untuk brand, web, dan produk digital yang berkesan.
+              {t("tagline")}
             </p>
 
             {/* Socials */}
@@ -106,10 +108,10 @@ export default function Footer() {
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[11px] text-slate-600">
-            © {year} Navyra Studio. All rights reserved.
+            {t("copyright", { year })}
           </p>
           <p className="text-[11px] text-slate-600">
-            Surakarta, Indonesia.
+            {t("location")}
           </p>
         </div>
       </div>

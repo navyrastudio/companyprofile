@@ -9,6 +9,7 @@ import { Icon as IconifyIcon } from "@iconify/react";
 import AnimateIn from "@/components/ui/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import servicesData from "@/data/services.json";
+import { useTranslations } from "next-intl";
 
 const siIconMap: Record<string, IconType> = {
   SiReact, SiNextdotjs, SiLaravel, SiWordpress, SiWebflow, SiVuedotjs,
@@ -16,20 +17,6 @@ const siIconMap: Record<string, IconType> = {
 };
 
 const WA_NUMBER = "6285163665100";
-
-function buildWaUrl(serviceTitle: string, itemName: string, tierLabel: string, price?: number | null): string {
-  const priceText = price ? `Rp ${price.toLocaleString("id-ID")}` : "Custom (Hubungi Kami)";
-  const message = [
-    `Halo, saya tertarik untuk berkonsultasi mengenai layanan berikut:`,
-    ``,
-    `📌 *Layanan*: ${serviceTitle} — ${itemName}`,
-    `📦 *Paket*: ${tierLabel}`,
-    `💰 *Harga*: ${priceText}`,
-    ``,
-    `Mohon informasinya lebih lanjut. Terima kasih! 🙏`,
-  ].join("\n");
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
-}
 
 const WaIcon = () => (
   <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -49,13 +36,25 @@ type Service = {
 interface Props { serviceId: number; }
 
 export default function ServicePricelist({ serviceId }: Props) {
-  const service = (servicesData as Service[]).find((s) => s.id === serviceId);
+  const tServices = useTranslations("services");
+  const rawData = tServices.raw("data") as any;
+  const servicesFromTranslations = Array.isArray(rawData) ? rawData : [];
+  const service = servicesFromTranslations.find((s: any) => s.id === serviceId);
+  
+  const tPricelist = useTranslations("pricelist");
+  const tMeta = useTranslations("meta");
+
+  const buildWaUrl = (serviceTitle: string, itemName: string, tierLabel: string, price?: number | null): string => {
+    const priceText = price ? `Rp ${price.toLocaleString("id-ID")}` : tPricelist("customPrice");
+    const message = tPricelist("waMessage", { service: serviceTitle, item: itemName, tier: tierLabel, price: priceText });
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  };
 
   if (!service) {
     return (
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-slate-900">Layanan tidak ditemukan</h2>
+          <h2 className="text-2xl font-bold text-slate-900">{tMeta("serviceNotFound")}</h2>
         </div>
       </section>
     );
@@ -67,7 +66,7 @@ export default function ServicePricelist({ serviceId }: Props) {
 
         {/* Header */}
         <AnimateIn className="flex flex-col items-start gap-3 mb-12 sm:mb-20">
-          <SectionLabel>Pricelist</SectionLabel>
+          <SectionLabel>{tPricelist("fullLabel")}</SectionLabel>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
             {service.title}
           </h2>
@@ -80,8 +79,8 @@ export default function ServicePricelist({ serviceId }: Props) {
         <AnimateIn delay={80}>
           {service.techStack && (
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mb-16">
-              <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-semibold">Tools</span>
-              {service.techStack.map((tech) => {
+              <span className="text-[10px] uppercase tracking-[0.15em] text-slate-400 font-semibold">{tPricelist("tools")}</span>
+              {service.techStack.map((tech: any) => {
                 const color = tech.color ?? "#94a3b8";
                 if (tech.lib === "iconify") {
                   return (
@@ -105,7 +104,7 @@ export default function ServicePricelist({ serviceId }: Props) {
 
         {/* Per-item pricing */}
         <div className="space-y-16 sm:space-y-20">
-          {service.items.map((item, idx) => {
+          {service.items.map((item: any, idx: number) => {
             const tiers = [
               { key: "medium",   data: item.pricing.medium,   accent: false, dark: false },
               { key: "menengah", data: item.pricing.menengah, accent: true,  dark: false },
@@ -127,7 +126,7 @@ export default function ServicePricelist({ serviceId }: Props) {
 
                 {/* 3-tier cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pl-0 sm:pl-8">
-                  {tiers.map(({ key, data, accent, dark }) => (
+                  {tiers.map(({ key, data, accent, dark }: any) => (
                     <div
                       key={key}
                       className={`relative flex flex-col rounded-2xl p-5 sm:p-6 transition-all duration-200 ${
@@ -140,7 +139,7 @@ export default function ServicePricelist({ serviceId }: Props) {
                     >
                       {accent && (
                         <span className="absolute -top-3 left-5 bg-white text-brand text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm border border-brand/10">
-                          Recommended
+                          {tPricelist("recommended")}
                         </span>
                       )}
 
@@ -156,7 +155,7 @@ export default function ServicePricelist({ serviceId }: Props) {
                       <div className={`text-2xl sm:text-3xl font-bold tabular-nums mb-2 ${
                         accent ? "text-white" : dark ? "text-white" : "text-slate-900"
                       }`}>
-                        {data.price ? `Rp ${data.price.toLocaleString("id-ID")}` : "Hubungi Kami"}
+                        {data.price ? `Rp ${data.price.toLocaleString("id-ID")}` : tPricelist("contactUs")}
                       </div>
 
                       {/* Description */}
@@ -168,7 +167,7 @@ export default function ServicePricelist({ serviceId }: Props) {
 
                       {/* Features */}
                       <ul className="space-y-1.5 mb-5">
-                        {data.features.map((f) => (
+                        {data.features.map((f: any) => (
                           <li key={f} className={`flex items-start gap-2 text-xs ${
                             accent ? "text-white/80" : dark ? "text-slate-400" : "text-slate-500"
                           }`}>
@@ -192,7 +191,7 @@ export default function ServicePricelist({ serviceId }: Props) {
                         }`}
                       >
                         <WaIcon />
-                        Konsultasi Sekarang
+                        {tPricelist("consultNow")}
                       </a>
                     </div>
                   ))}

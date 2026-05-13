@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import portfolioData from "@/data/portfolio.json";
 import AnimateIn from "@/components/ui/AnimateIn";
 import Button from "@/components/ui/Button";
 import { getPortfolioSlug } from "@/lib/portfolioSlugUtils";
+import { useTranslations } from "next-intl";
 
 type PortfolioItem = {
   id: number;
@@ -76,6 +79,7 @@ function PortfolioCard({
 }
 
 export default function PortfolioSection() {
+  const t = useTranslations("portfolio");
   const items = (portfolioData as PortfolioItem[]).filter((i) => i.featured).slice(0, 4);
   const [hero, second, third, fourth] = items;
 
@@ -87,15 +91,20 @@ export default function PortfolioSection() {
         <AnimateIn className="mb-12">
           <div className="flex items-center gap-3 mb-5">
             <span className="h-px w-8 bg-brand" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">Proyek Kami</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">{t("sectionLabel")}</span>
           </div>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5">
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-              Karya yang kami<br />banggakan.
+              {t("headline").split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < t("headline").split("\n").length - 1 && <br />}
+                </span>
+              ))}
             </h2>
             <div className="sm:pb-1 shrink-0 hidden md:block">
               <Button href="/portfolio" variant="outline" size="sm">
-                Proyek Lainnya
+                {t("otherProjectsButton")}
               </Button>
             </div>
           </div>
@@ -145,8 +154,7 @@ export default function PortfolioSection() {
         {/* ── Footer ── */}
         <AnimateIn delay={280} className="mt-8 flex items-center justify-between">
           <p className="text-slate-400 text-sm">
-            <span className="text-slate-700 font-medium">4</span> dari{" "}
-            <span className="text-slate-700 font-medium">{portfolioData.length}</span> proyek
+            {t("footerCount", { count: 4, total: portfolioData.length })}
           </p>
           <div className="sm:pb-1 shrink-0 md:hidden">
             <Button href="/portfolio" variant="outline" size="sm">

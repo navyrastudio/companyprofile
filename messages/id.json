@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "siteTitle": "Navyra Studio",
+    "siteDescription": "Digital Agency - Navyra Studio",
+    "ogTitle": "Navyra Studio",
+    "ogDescription": "Studio desain dan pengembangan web",
+    "twitterDescription": "Navyra Studio — Digital Agency",
+    "aboutTitle": "Tentang Kami",
+    "layananTitle": "Layanan",
+    "layananDescription": "Layanan yang kami tawarkan",
+    "portfolioTitle": "Portofolio",
+    "portfolioDescription": "Kumpulan proyek dan studi kasus kami",
+    "serviceNotFound": "Layanan tidak ditemukan",
+    "servicePricelistSuffix": "Pricelist",
+    "serviceDescriptionFallback": "Deskripsi layanan tidak tersedia",
+    "projectNotFound": "Proyek tidak ditemukan",
+    "projectSuffix": "Proyek",
+    "projectDescriptionFallback": "Deskripsi proyek tidak tersedia"
+  },
+  "nav": {
+    "projects": "Proyek",
+    "services": "Layanan",
+    "about": "Tentang",
+    "contact": "Kontak",
+    "mainNav": "Navigasi Utama",
+    "mainNavMobile": "Navigasi Mobile",
+    "home": "Beranda",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "logoHome": "Navyra Studio - Beranda"
+  },
+  "lang": {
+    "switchLang": "Ganti Bahasa",
+    "switchTo": "Ganti ke Bahasa Inggris",
+    "switchFrom": "Ganti ke Bahasa Indonesia"
+  },
+  "about": {
+    "companyHeading": "Tentang Navyra Studio",
+    "companyDescription": "Kami adalah studio digital yang fokus pada menciptakan solusi web, desain UI/UX, dan branding yang bermakna untuk bisnis Anda.",
+    "visionMission": "Visi & Misi",
+    "vision": "Visi",
+    "visionText": "Visi kami adalah menciptakan produk digital berkualitas.",
+    "mission": "Misi",
+    "missionItems": [
+      "Memberi solusi",
+      "Desain berkualitas",
+      "Dukungan penuh"
+    ],
+    "ourValues": "Nilai Kami",
+    "howWeWork": "Cara Kami Bekerja",
+    "howWeWorkDesc": "Kami mengikuti proses riset, desain, dan implementasi.",
+    "research": "Riset",
+    "researchDesc": "Kami melakukan riset pengguna dan pasar untuk memahami kebutuhan.",
+    "design": "Desain",
+    "designDesc": "Kami merancang antarmuka dan pengalaman pengguna yang intuitif.",
+    "implementation": "Implementasi",
+    "implementationDesc": "Kami membangun dan mengirimkan solusi yang dapat diskalakan.",
+    "contactLabel": "Hubungi Kami",
+    "contactDesc": "Tertarik bekerja sama? Hubungi tim kami untuk konsultasi.",
+    "email": "Email",
+    "phone": "Telepon",
+    "followUs": "Ikuti kami",
+    "sectionLabel": "Tentang Kami",
+    "cta": "Yuk, Kenalan!",
+    "longDesc": "Karena bagi kami, produk digital terbaik bukan hanya tentang tampilan, tetapi tentang bagaimana sebuah solusi dapat membantu bisnis bertumbuh dan terhubung lebih dekat dengan penggunanya.",
+    "logoAlt": "Logo Navyra Studio",
+    "values": [
+      { "label": "Desain Strategis", "desc": "Setiap keputusan desain berbasis data dan tujuan bisnis." },
+      { "label": "Teknologi Modern", "desc": "Stack terkini untuk performa dan skalabilitas terbaik." },
+      { "label": "Kolaborasi Penuh", "desc": "Kami mitra Anda, bukan sekadar vendor." }
+    ]
+  },
+  "pricelist": {
+    "customPrice": "Custom (Hubungi Kami)",
+    "waMessage": "Halo, saya tertarik untuk layanan {service} — {item} ({tier}). Harga: {price}. Mohon info lebih lanjut.",
+    "fullLabel": "Daftar Harga Lengkap",
+    "heading": "Layanan Kami",
+    "headingBreak": "Pilihan Paket",
+    "subheading": "Pilih paket sesuai kebutuhan Anda",
+    "tools": "Tools",
+    "recommended": "Direkomendasikan",
+    "contactUs": "Hubungi Kami",
+    "consultNow": "Konsultasi Sekarang"
+  },
+  "portfolio": {
+    "portfolioTitle": "Portofolio",
+    "portfolioDescription": "Beberapa proyek pilihan kami",
+    "sectionLabel": "Proyek Kami",
+    "headline": "Karya yang kami\nbanggakan.",
+    "otherProjectsButton": "Proyek Lainnya",
+    "footerCount": "{count} dari {total} proyek",
+    "totalLabel": "Total",
+    "noProjects": "Tidak ada proyek dalam kategori ini.",
+    "notFound": "Project tidak ditemukan.",
+    "backLink": "Semua Proyek",
+    "waInquiry": "Halo, saya tertarik untuk mengerjakan proyek serupa dengan {title}. Boleh kita diskusi?",
+    "meta": {
+      "year": "Tahun",
+      "category": "Kategori",
+      "client": "Client",
+      "deliverable": "Deliverable"
+    },
+    "resultsTitle": "Hasil & Dampak",
+    "challenge": "Tantangan",
+    "solution": "Solusi",
+    "workDoneTitle": "Pekerjaan Dilakukan",
+    "interestedTitle": "Tertarik Berkolaborasi?",
+    "discussCTA": "Diskusi Proyek",
+    "prevLabel": "Sebelumnya",
+    "nextLabel": "Selanjutnya",
+    "filters": {
+      "all": "Semua Karya",
+      "web": "Web Dev",
+      "uiux": "UI/UX",
+      "branding": "Branding"
+    }
+    ,"displayed": "{count} proyek ditampilkan",
+    "projects": [
+      {
+        "id": 1,
+        "challenge": "KOHA Coffee membutuhkan identitas brand yang kuat dan memorable untuk membedakan mereka di pasar kopi premium lokal yang semakin kompetitif.",
+        "solution": "Kami menciptakan identitas visual yang sophisticated dengan palet warna warm earth tones yang mencerminkan kehangatan dan kualitas premium produk mereka. Desain logo yang elegan dan timeless menjadi foundation untuk seluruh ekosistem branding.",
+        "workDetails": ["Logo Design dengan multiple variations", "Brand Guidelines & Style Guide lengkap", "Packaging Design (tas kopi & kemasan retail)", "Social Media Templates & Assets", "Photography Direction & Styling", "Merchandise Design (cup, tumbler, apparel)"],
+        "results": "Brand KOHA berhasil meningkat recognition di kalangan target market dengan konsistensi visual yang kuat di semua touchpoint."
+      },
+      {
+        "id": 2,
+        "challenge": "Navyra Studio membutuhkan website yang tidak hanya beautiful secara visual, tetapi juga showcase kemampuan mereka sebagai design & development studio dengan proyek yang impressive.",
+        "solution": "Kami develop website yang mengkombinasikan modern design dengan smooth animations, responsive layout, dan fast loading performance. Architecture yang scalable memungkinkan mudah untuk menambah proyek dan konten.",
+        "workDetails": ["Web Design & Prototyping (Figma)", "Frontend Development (Next.js, React)", "UI/UX Optimization", "Responsive Mobile Design", "Animation & Interaction Design", "Performance Optimization & SEO", "Deployment & Maintenance"],
+        "results": "Website yang professional dan functional, meningkatkan conversion rate inquiry dan membangun credibility di mata potential clients."
+      },
+      {
+        "id": 3,
+        "challenge": "Olivia Beauty membutuhkan visual assets berkualitas tinggi yang dapat showcase produk mereka dengan cara yang elegant dan aspirational untuk campaign marketing mereka.",
+        "solution": "Kami melakukan professional product photography session dengan lighting setup yang sophisticated, styling yang konsisten dengan brand aesthetic, dan post-processing yang meningkatkan visual impact tanpa mengorbankan authenticity produk.",
+        "workDetails": ["Product Photography Session (50+ shots)", "Styling & Props Direction", "Professional Lighting Setup", "Post-Processing & Color Grading", "Retouching & Image Enhancement", "Packaging & Flat Lay Photography", "Lifestyle Photography"],
+        "results": "Photo assets yang high-quality meningkatkan social media engagement hingga 150% dan konversi penjualan online store berkembang signifikan."
+      },
+      {
+        "id": 4,
+        "challenge": "VELLA Fashion ingin rebranding untuk meningkatkan positioning mereka sebagai premium fashion label yang aspirational dan modern, melawan kompetitor lokal lain.",
+        "solution": "Kami develop comprehensive rebranding strategy dengan visual identity yang luxury dan sophisticated. Menggunakan minimal color palette, premium typography, dan editorial approach yang menonjolkan craftsmanship dan quality.",
+        "workDetails": ["Brand Strategy & Positioning", "Logo Redesign & Symbol", "Typography Selection & Customization", "Brand Color Palette Development", "Brand Guidelines (200+ pages)", "Packaging & Label Design", "Brand Photography Direction", "Store Design & Environmental Branding"],
+        "results": "Rebranding yang sukses meningkatkan brand perception ke segment premium market, dengan 40% increase dalam customer acquisition dari target market baru."
+      },
+      {
+        "id": 5,
+        "challenge": "Arkana Tech startup membutuhkan presence online yang strong dengan landing page yang convert dan internal dashboard yang intuitive untuk manage data mereka.",
+        "solution": "Kami develop full-stack solution dengan modern tech stack, responsive design yang beautiful, dan dashboard yang powerful dengan real-time analytics. Focus pada user experience dan performance untuk maximize conversion.",
+        "workDetails": ["Landing Page Design & Development", "Dashboard UI/UX Design", "Frontend Development (React, TypeScript)", "Backend API Development (Node.js)", "Database Design & Optimization", "Real-time Data Visualization", "Authentication & Security", "DevOps & Deployment"],
+        "results": "Platform yang successful dengan 500+ active users dalam 3 bulan pertama dan conversion rate 8.5% dari landing page traffic."
+      },
+      {
+        "id": 6,
+        "challenge": "Lumira Interior Studio membutuhkan mobile app untuk connect dengan clients, showcase proyek mereka, dan facilitate online consultation dan project collaboration.",
+        "solution": "Kami design aplikasi dengan user-friendly interface yang memudahkan client browsing design samples, request consultation, dan track project progress. Integration dengan calendar dan messaging system untuk seamless communication.",
+        "workDetails": ["User Research & Personas", "Wireframing & Information Architecture", "UI/UX Design (High-fidelity mockups)", "Interaction Design & Animations", "Prototyping & User Testing", "Design System & Component Library", "Mobile App Development (React Native)", "Backend Integration & APIs"],
+        "results": "App yang sukses meningkatkan consultation requests sebesar 250% dan client satisfaction score mencapai 4.8/5 stars dengan 2000+ downloads."
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Digital Studio",
+    "heading": "Merancang Produk Digital yang",
+    "highlight": "Bertumbuh Bersama Bisnis Anda",
+    "description": "Kami membantu bisnis menghadirkan website, sistem, dan identitas visual yang tidak hanya terlihat modern, tetapi juga memberikan dampak nyata bagi perkembangan brand dan pengalaman pengguna.",
+    "cta": "Ayo Mulai!",
+    "scrollHint": "Scroll",
+    "logoAlt": "Logo Navyra Studio, kembali ke beranda",
+    "established": "Est. 2026"
+  },
+  "clients": {
+    "label": "Klien & Partner Kami"
+  },
+  "cta": {
+    "label": "Mulai Proyek",
+    "heading": "Punya ide?",
+    "highlight": "Mari wujudkan bersama.",
+    "description": "Kami terbuka untuk kolaborasi — dari brand identity, web, hingga desain produk digital yang berkesan.",
+    "contactButton": "Hubungi Kami",
+    "orSendTo": "atau kirim langsung ke"
+  },
+  "faq": {
+    "sectionLabel": "Pertanyaan Umum",
+    "title": "FAQ",
+    "description": "Cari jawaban untuk pertanyaan yang sering diajukan tentang layanan dan proses kami.",
+    "sideTitle": "Masih ada pertanyaan?",
+    "sideText": "Jangan ragu untuk menghubungi kami langsung. Tim kami siap membantu Anda.",
+    "items": [
+      {
+        "question": "Berapa lama timeline untuk menyelesaikan sebuah proyek?",
+        "answer": "Timeline tergantung kompleksitas proyek. Web Development sederhana bisa 4-6 minggu, UI/UX Design 3-4 minggu, dan Branding 2-3 minggu. Kami akan memberikan breakdown timeline detail saat konsultasi."
+      },
+      {
+        "question": "Apakah ada proses revisi setelah proyek selesai?",
+        "answer": "Ya, tentu. Setiap paket layanan kami include revisi unlimited sampai Anda puas dengan hasilnya. Komunikasi yang transparan adalah prioritas kami."
+      },
+      {
+        "question": "Bagaimana cara memulai kolaborasi dengan Navyra Studio?",
+        "answer": "Mudah! Hubungi kami via WhatsApp, email, atau form kontak di website. Kami akan melakukan konsultasi gratis untuk memahami kebutuhan Anda, kemudian proposal dan timeline disusun bersama."
+      },
+      {
+        "question": "Apakah Anda menerima proyek jarak jauh?",
+        "answer": "Tentu saja. Kami bekerja dengan klien dari berbagai lokasi secara online. Komunikasi via Zoom, Slack, dan email memastikan kolaborasi yang efektif."
+      },
+      {
+        "question": "Apa yang termasuk dalam paket branding?",
+        "answer": "Paket branding kami mencakup: logo design, brand guidelines, color palette, typography, social media templates, dan mockups. Detail lebih lengkap ada di halaman layanan kami."
+      },
+      {
+        "question": "Bagaimana dengan support setelah delivery?",
+        "answer": "Kami menyediakan maintenance dan support post-delivery. Detail support tergantung paket yang Anda pilih. Bisa konsultasi lebih lanjut untuk kebutuhan spesifik Anda."
+      }
+    ]
+  },
+  "services": {
+    "sectionLabel": "Layanan Kami",
+    "headline": "Solusi digital yang dirancang untuk tumbuh bersama bisnis Anda.",
+    "description": "Web Development, UI/UX Design, dan Branding — semua dalam satu atap.",
+    "subServices": "{count} sub-layanan",
+    "stackLabel": "Stack",
+    "detailButton": "Lihat Detail",
+    "data": [
+      {
+        "id": 1,
+        "title": "Web Development",
+        "description": "Membangun website dan sistem digital yang modern, fungsional, dan scalable untuk membantu bisnis berkembang di era digital.",
+        "items": [
+          {
+            "name": "Company Profile",
+            "description": "Website profesional untuk memperkenalkan bisnis Anda. Responsive, SEO-friendly, dan mudah dikelola.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 2500000, "description": "Website 3–5 halaman, tampilan profesional, responsive, tanpa CMS.", "features": ["3–5 Halaman", "Responsive Design", "Form Kontak", "Deploy & Hosting Setup"] },
+              "menengah": { "label": "Standard", "price": 5000000, "description": "Website 5–10 halaman, CMS sederhana, SEO dasar, dan animasi ringan.", "features": ["5–10 Halaman", "CMS Sederhana", "SEO Dasar", "Animasi & Transisi", "Revisi 3x"] },
+              "high": { "label": "Professional", "price": null, "description": "Website multi-bahasa, integrasi API, performa tinggi, dan dukungan penuh.", "features": ["Unlimited Halaman", "Multi-bahasa", "Integrasi API", "Optimasi Performa", "Support 3 Bulan"] }
+            }
+          },
+          {
+            "name": "Landing Page",
+            "description": "Halaman tunggal berkinerja tinggi untuk kampanye, produk, atau konversi iklan.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 800000, "description": "Landing page 1 seksi dengan form dan CTA dasar.", "features": ["1 Halaman", "Form Kontak", "Mobile Friendly", "Desain Sederhana"] },
+              "menengah": { "label": "Standard", "price": 1800000, "description": "Landing page animasi modern, optimasi kecepatan, dan integrasi form.", "features": ["Animasi Modern", "Optimasi Speed", "Integrasi WhatsApp", "Google Analytics", "Revisi 2x"] },
+              "high": { "label": "Premium", "price": null, "description": "Landing page A/B testing, tracking iklan, dan konversi maksimal.", "features": ["A/B Testing", "Tracking Pixel", "Heatmap", "Laporan Performa", "Support 1 Bulan"] }
+            }
+          },
+          {
+            "name": "POS System",
+            "description": "Sistem kasir digital terintegrasi untuk mengelola transaksi, stok, dan laporan bisnis.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 6000000, "description": "Kasir digital dasar dengan produk, transaksi, dan struk.", "features": ["Manajemen Produk", "Transaksi Kasir", "Cetak Struk", "Laporan Harian"] },
+              "menengah": { "label": "Standard", "price": 12000000, "description": "POS multi-kasir dengan stok, diskon, dan laporan lengkap.", "features": ["Multi-kasir", "Manajemen Stok", "Diskon & Promo", "Dashboard Admin", "Revisi 2x"] },
+              "high": { "label": "Enterprise", "price": null, "description": "POS terintegrasi e-commerce, akuntansi, dan multi-cabang.", "features": ["Multi-cabang", "Integrasi E-commerce", "Modul Akuntansi", "API Terbuka", "Support 6 Bulan"] }
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "UI/UX Design",
+        "description": "Merancang pengalaman digital yang intuitif, modern, dan nyaman digunakan untuk menghadirkan interaksi yang lebih bermakna.",
+        "items": [
+          {
+            "name": "Mobile App Design",
+            "description": "Desain UI lengkap untuk aplikasi mobile iOS & Android dengan alur UX yang terencana.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 2500000, "description": "Desain 5–10 screen dengan wireframe dan mockup dasar.", "features": ["5–10 Screen", "Wireframe", "Mockup Hi-fi", "Export Asset"] },
+              "menengah": { "label": "Standard", "price": 6000000, "description": "Desain lengkap hingga 30 screen dengan prototype dan user flow.", "features": ["Hingga 30 Screen", "User Flow", "Prototype Interaktif", "Revisi 3x", "Handoff File"] },
+              "high": { "label": "Premium", "price": null, "description": "Desain penuh dengan UX research, usability testing, dan design system.", "features": ["UX Research", "Usability Testing", "Design System", "Dokumentasi", "Support Revisi"] }
+            }
+          },
+          {
+            "name": "Web Design",
+            "description": "Desain website modern dengan tampilan yang menarik dan pengalaman pengguna yang optimal.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 1500000, "description": "Desain 1–3 halaman dengan mockup hi-fi dan aset dasar.", "features": ["1–3 Halaman", "Mockup Hi-fi", "Aset Dasar", "Format Figma"] },
+              "menengah": { "label": "Standard", "price": 3500000, "description": "Desain website responsif lengkap dengan prototype dan handoff.", "features": ["Desain Responsif", "Prototype", "Handoff Dev", "Revisi 2x", "Style Guide"] },
+              "high": { "label": "Premium", "price": null, "description": "Desain sistem penuh dengan komponen library dan dokumentasi.", "features": ["Komponen Library", "Dokumentasi Lengkap", "Animasi Micro", "Multi-breakpoint", "Support Revisi"] }
+            }
+          },
+          {
+            "name": "Prototype & Testing",
+            "description": "Prototype interaktif untuk validasi ide sebelum pengembangan penuh dimulai.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 800000, "description": "Prototype clickable untuk 5–10 screen utama.", "features": ["5–10 Screen", "Clickable Prototype", "Format Figma", "Revisi 1x"] },
+              "menengah": { "label": "Standard", "price": 2000000, "description": "Prototype interaktif + sesi user testing dan laporan.", "features": ["Prototype Interaktif", "User Testing", "Laporan Feedback", "Iterasi 2x", "Revisi 2x"] },
+              "high": { "label": "Premium", "price": null, "description": "UX testing komprehensif dengan multiple sesi dan analisis mendalam.", "features": ["Multiple Sesi Testing", "Analisis Mendalam", "Heatmap Simulasi", "Laporan Eksekutif", "Rekomendasi Lanjutan"] }
+            }
+          },
+          {
+            "name": "Design System",
+            "description": "Sistem komponen desain yang konsisten dan scalable untuk tim produk Anda.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 3000000, "description": "Design system dasar dengan color token, tipografi, dan 20 komponen.", "features": ["Color Token", "Tipografi", "20 Komponen", "Format Figma"] },
+              "menengah": { "label": "Standard", "price": 6000000, "description": "Design system lengkap dengan Figma Variables dan dokumentasi.", "features": ["Figma Variables", "50+ Komponen", "Dokumentasi", "Dark Mode", "Revisi 2x"] },
+              "high": { "label": "Premium", "price": null, "description": "Design system enterprise dengan multi-brand dan integrasi kode.", "features": ["Multi-brand", "Code Integration", "Storybook", "Tim Training", "Support 3 Bulan"] }
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Branding",
+        "description": "Menciptakan identitas visual yang kuat, konsisten, dan relevan agar brand tampil lebih profesional dan mudah diingat.",
+        "items": [
+          {
+            "name": "Logo Design",
+            "description": "Desain logo profesional yang mencerminkan nilai dan kepribadian brand Anda.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 500000, "description": "Desain logo dengan konsep dasar dan 3 alternatif.", "features": ["3 Konsep", "File Vektor", "1 Revisi", "Format PNG & SVG"] },
+              "menengah": { "label": "Standard", "price": 1200000, "description": "Desain logo profesional dengan riset brand dan 5 alternatif.", "features": ["5 Konsep", "Riset Brand", "Revisi Unlimited", "File Lengkap", "Brand Guideline"] },
+              "high": { "label": "Premium", "price": null, "description": "Desain logo custom dengan animasi dan aplikasi multi-media.", "features": ["Custom Exploration", "Logo Animasi", "Aplikasi Mockup", "Dokumentasi Lengkap", "Support Revisi"] }
+            }
+          },
+          {
+            "name": "Brand Identity",
+            "description": "Identitas visual lengkap mencakup logo, color palette, typography, dan brand guidelines.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 2000000, "description": "Logo, warna, font, dan guideline dasar.", "features": ["Logo", "Color Palette", "Typography", "Guideline Dasar", "File PNG/PDF"] },
+              "menengah": { "label": "Standard", "price": 5000000, "description": "Identitas visual lengkap dengan mockup dan aplikasi brand.", "features": ["Logo Lengkap", "Brand Guidelines", "Mockup Aplikasi", "Business Card", "Revisi 3x"] },
+              "high": { "label": "Premium", "price": null, "description": "Identitas enterprise dengan multiple touchpoint dan dokumentasi mendalam.", "features": ["Custom System", "Semua Touchpoint", "Video Guidelines", "Tim Training", "Support 3 Bulan"] }
+            }
+          },
+          {
+            "name": "Packaging Design",
+            "description": "Desain kemasan produk yang menarik dan meningkatkan nilai jual di pasaran.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 800000, "description": "Desain packaging untuk 1 produk dengan konsep dasar.", "features": ["1 Desain", "3 Revisi", "File PDF/CDR", "Cetak Sample"] },
+              "menengah": { "label": "Standard", "price": 2000000, "description": "Desain packaging untuk 3 produk dengan riset pasar.", "features": ["3 Desain", "Riset Pasar", "Revisi 5x", "File Lengkap", "Konsultasi Cetak"] },
+              "high": { "label": "Premium", "price": null, "description": "Desain packaging premium dengan sustainable materials dan 3D mockup.", "features": ["Custom Design", "Sustainable Materials", "3D Mockup", "Dokumentasi", "Support Produksi"] }
+            }
+          },
+          {
+            "name": "Marketing Material",
+            "description": "Desain material pemasaran siap pakai untuk digital dan cetak.",
+            "pricing": {
+              "medium": { "label": "Starter", "price": 600000, "description": "Desain 5 template marketing dasar (social, email, print).", "features": ["5 Template", "Digital & Print", "Editable File", "1 Revisi"] },
+              "menengah": { "label": "Standard", "price": 1500000, "description": "Desain 10+ template marketing dengan brand consistency.", "features": ["10+ Template", "Social Frames", "Flyer & Poster", "Email Template", "Revisi 2x"] },
+              "high": { "label": "Premium", "price": null, "description": "Paket marketing material lengkap dengan animasi dan video template.", "features": ["20+ Template", "Video Template", "Animasi GIF", "Dokumentasi", "Support Revisi"] }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "sectionLabel": "Pencapaian Kami",
+    "heading": "Dipercaya oleh\nPuluhan Klien",
+    "description": "Kami telah membantu bisnis lokal dan internasional berkembang melalui solusi digital yang inovatif dan berkelanjutan.",
+    "labels": {
+      "project": "Proyek Selesai",
+      "client": "Klien Puas",
+      "experience": "Tahun Pengalaman",
+      "quality": "Komitmen Kualitas"
+    }
+  }
+  ,
+  "footer": {
+    "tagline": "Studio kreatif untuk brand, web, dan produk digital yang berkesan.",
+    "copyright": "© {year} Navyra Studio. Hak cipta dilindungi.",
+    "location": "Surakarta, Indonesia",
+    "services": "Layanan",
+    "serviceItems": [
+      "Web Development",
+      "UI/UX Design",
+      "Branding"
+    ],
+    "company": "Perusahaan",
+    "companyItems": [
+      "Tentang Kami",
+      "Portfolio",
+      "Kontak"
+    ],
+    "contactEmail": "navyrastudio@gmail.com",
+    "homeLink": "Navyra Studio - Beranda",
+    "logoAlt": "Logo Navyra Studio"
+  }
+}

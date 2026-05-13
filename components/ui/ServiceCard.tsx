@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight, BrandIcon, WebIcon, UIIcon, PhotoIcon, DevIcon, SEOIcon } from "@/components/ui/Icons";
 
 interface ServiceCardProps {
@@ -18,6 +19,7 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
 };
 
 export default function ServiceCard({ icon, title, description, href }: ServiceCardProps) {
+  const tMeta = useTranslations("meta");
   const IconComponent = iconMap[icon] || BrandIcon;
 
   return (
@@ -37,7 +39,7 @@ export default function ServiceCard({ icon, title, description, href }: ServiceC
       <Link
         href={href}
         className="self-start w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 group-hover:border-blue-600 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all duration-300"
-        aria-label={`Lihat lebih lanjut tentang ${title}`}
+        aria-label={`${tMeta("serviceCardLabel")} ${title}`}
       >
         <ArrowRight className="w-4 h-4" />
       </Link>

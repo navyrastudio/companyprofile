@@ -1,45 +1,39 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import PortfolioDetail from "@/components/sections/PortfolioDetail";
 import { getPortfolioIdFromSlug, getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 import portfolioData from "@/data/portfolio.json";
 import companyData from "@/data/company.json";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
   const portfolioId = getPortfolioIdFromSlug(slug);
 
   if (!portfolioId) {
-    return {
-      title: "Project tidak ditemukan - Navyra Studio",
-    };
+    return { title: t("projectNotFound") };
   }
 
   const project = portfolioData.find((p) => p.id === portfolioId);
-
   const siteUrl = companyData.siteUrl || "https://navyra.id";
-  const title = `${project?.title} - Proyek | Navyra Studio`;
-  const description = project?.description || "Lihat detail proyek kami";
-
+  const title = `${project?.title} - ${t("projectSuffix")}`;
+  const description = project?.description || t("projectDescriptionFallback");
   const imageUrl = project?.image ? `${siteUrl}${project.image}` : undefined;
 
   return {
     title,
     description,
     openGraph: {
-      title,
-      description,
-      url: `${siteUrl}/portfolio/${slug}`,
+      title, description,
+      url: `${siteUrl}/${locale}/portfolio/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
-    twitter: {
-      title,
-      description,
-    },
+    twitter: { title, description },
   };
 }
 
@@ -50,18 +44,15 @@ export async function generateStaticParams() {
 }
 
 export default async function PortfolioDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
   const portfolioId = getPortfolioIdFromSlug(slug);
 
-  if (!portfolioId) {
-    notFound();
-  }
+  if (!portfolioId) notFound();
 
   return (
-    <>
-      <main className="min-h-screen bg-white">
-        <PortfolioDetail portfolioId={portfolioId} />
-      </main>
-    </>
+    <main className="min-h-screen bg-white">
+      <PortfolioDetail portfolioId={portfolioId} />
+    </main>
   );
 }

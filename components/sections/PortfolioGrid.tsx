@@ -9,11 +9,13 @@ import { getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 
 type FilterKey = "all" | "web-development" | "ui-ux-design" | "branding";
 
-const FILTERS: { key: FilterKey; label: string }[] = [
-  { key: "all",             label: "Semua Karya" },
-  { key: "web-development", label: "Web Dev" },
-  { key: "ui-ux-design",   label: "UI/UX" },
-  { key: "branding",        label: "Branding" },
+import { useTranslations } from "next-intl";
+
+const FILTERS: { key: FilterKey; labelKey: string }[] = [
+  { key: "all",             labelKey: "all" },
+  { key: "web-development", labelKey: "web" },
+  { key: "ui-ux-design",   labelKey: "uiux" },
+  { key: "branding",        labelKey: "branding" },
 ];
 
 function mapCategory(category: string): FilterKey {
@@ -84,6 +86,7 @@ function ProjectCard({
 }
 
 export default function PortfolioGrid() {
+  const t = useTranslations("portfolio");
   const [filter, setFilter] = useState<FilterKey>("all");
 
   const filtered = useMemo(() => {
@@ -105,18 +108,23 @@ export default function PortfolioGrid() {
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
 
             {/* Left: title */}
-            <div>
+              <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-brand mb-3">
-                Portofolio
+                {t("sectionLabel")}
               </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tight leading-[0.95]">
-                Karya<br />& Proyek
+                {t("headline").split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < t("headline").split("\n").length - 1 && <br />}
+                  </span>
+                ))}
               </h1>
             </div>
 
             {/* Right: big number */}
             <div className="text-right">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-1">Total</p>
+              <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-1">{t("totalLabel")}</p>
               <p className="text-6xl sm:text-7xl font-bold text-slate-100 tabular-nums leading-none select-none">
                 {String(filtered.length).padStart(2, "0")}
               </p>
@@ -135,13 +143,13 @@ export default function PortfolioGrid() {
                     : "text-slate-500 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
-                {f.label}
+                {t(`filters.${f.labelKey}`)}
               </button>
             ))}
 
             {/* Divider + count */}
             <span className="ml-auto text-[11px] text-slate-300 hidden sm:block font-mono">
-              {filtered.length} proyek
+              {t("displayed", { count: filtered.length })}
             </span>
           </div>
         </AnimateIn>
@@ -156,7 +164,7 @@ export default function PortfolioGrid() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10">
         {filtered.length === 0 ? (
           <AnimateIn className="py-32 text-center">
-            <p className="text-slate-300 text-sm">Tidak ada proyek dalam kategori ini.</p>
+            <p className="text-slate-300 text-sm">{t("noProjects")}</p>
           </AnimateIn>
         ) : (
           <AnimateIn delay={80} className="space-y-4">
@@ -178,10 +186,10 @@ export default function PortfolioGrid() {
 
         {/* Footer rule */}
         {filtered.length > 0 && (
-          <div className="mt-16 flex items-center gap-4">
+            <div className="mt-16 flex items-center gap-4">
             <span className="h-px flex-1 bg-slate-100" />
             <span className="text-[10px] uppercase tracking-[0.3em] text-slate-300 shrink-0">
-              {filtered.length} proyek ditampilkan
+              {t("displayed", { count: filtered.length })}
             </span>
             <span className="h-px flex-1 bg-slate-100" />
           </div>

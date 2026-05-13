@@ -5,6 +5,7 @@ import Link from "next/link";
 import AnimateIn from "@/components/ui/AnimateIn";
 import portfolioData from "@/data/portfolio.json";
 import { getPortfolioSlug } from "@/lib/portfolioSlugUtils";
+import { useTranslations } from "next-intl";
 
 type Project = (typeof portfolioData)[0] & {
   challenge?: string;
@@ -14,7 +15,14 @@ type Project = (typeof portfolioData)[0] & {
 };
 
 export default function PortfolioDetail({ portfolioId }: { portfolioId: number }) {
+  const t = useTranslations("portfolio");
   const project = portfolioData.find((p) => p.id === portfolioId) as Project | undefined;
+  
+  // Get translated project details
+  const rawProjects = t.raw("projects") as any;
+  const projectsFromTranslations = Array.isArray(rawProjects) ? rawProjects : [];
+  const translatedProjectDetails = projectsFromTranslations.find((p: any) => p.id === portfolioId);
+  
   const idx = portfolioData.findIndex((p) => p.id === portfolioId);
   const prev = idx > 0 ? portfolioData[idx - 1] : portfolioData[portfolioData.length - 1];
   const next = idx < portfolioData.length - 1 ? portfolioData[idx + 1] : portfolioData[0];
@@ -22,12 +30,19 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <p className="text-slate-400 text-sm">Project tidak ditemukan.</p>
+        <p className="text-slate-400 text-sm">{t("notFound")}</p>
       </div>
     );
   }
 
+  // Use translated details if available, otherwise fall back to static data
+  const challenge = translatedProjectDetails?.challenge || project.challenge;
+  const solution = translatedProjectDetails?.solution || project.solution;
+  const workDetails = translatedProjectDetails?.workDetails || project.workDetails;
+  const results = translatedProjectDetails?.results || project.results;
+
   const num = String(project.id).padStart(2, "0");
+  const WA_NUMBER = "6285163665100";
 
   return (
     <div className="bg-white mt-16 sm:mt-[72px]">
@@ -60,7 +75,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </span>
-          <span className="text-xs font-medium">Semua Proyek</span>
+          <span className="text-xs font-medium">{t("backLink")}</span>
         </Link>
 
         {/* Project number */}
@@ -68,26 +83,6 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
           <span className="text-[11px] font-mono text-white/30">{num}</span>
         </div>
 
-        {/* Bottom content */}
-        <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-10 pb-10 lg:pb-14 max-w-7xl mx-auto">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-              <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-[9px] font-semibold uppercase tracking-[0.35em] text-white/50">
-                    {project.category}
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-white/30" />
-                  <span className="text-[9px] font-mono text-white/40">{project.year}</span>
-                </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] font-bold text-white leading-[1.0] tracking-tight">
-                  {project.title}
-                </h1>
-                <p className="text-white/50 text-sm sm:text-base mt-2 font-light">{project.subtitle}</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* ══════════════════════════════════════
@@ -97,10 +92,10 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <AnimateIn className="flex items-center gap-8 py-4 overflow-x-auto scrollbar-hide">
             {[
-              { label: "Tahun", value: project.year },
-              { label: "Kategori", value: project.category },
-              { label: "Client", value: project.title },
-              ...(project.workDetails ? [{ label: "Deliverable", value: `${project.workDetails.length} Item` }] : []),
+              { label: t("meta.year"), value: project.year },
+              { label: t("meta.category"), value: project.category },
+              { label: t("meta.client"), value: project.title },
+              ...(project.workDetails ? [{ label: t("meta.deliverable"), value: `${project.workDetails.length} Item` }] : []),
             ].map((meta, i, arr) => (
               <div key={meta.label} className="flex items-center gap-8 shrink-0">
                 <div>
@@ -131,7 +126,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
 
             <div className="space-y-14">
               {/* Challenge */}
-              {project.challenge && (
+              {challenge && (
                 <AnimateIn delay={60}>
                   <div className="grid grid-cols-[40px_1fr] gap-6">
                     <div className="pt-0.5">
@@ -139,10 +134,10 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
                     </div>
                     <div>
                       <h2 className="text-[10px] font-semibold uppercase tracking-[0.25em] text-brand mb-4">
-                        Tantangan
+                        {t("challenge")}
                       </h2>
                       <p className="text-slate-500 leading-relaxed text-sm sm:text-base">
-                        {project.challenge}
+                        {challenge}
                       </p>
                     </div>
                   </div>
@@ -150,7 +145,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
               )}
 
               {/* Solution */}
-              {project.solution && (
+              {solution && (
                 <AnimateIn delay={80}>
                   <div className="grid grid-cols-[40px_1fr] gap-6">
                     <div className="pt-0.5">
@@ -158,10 +153,10 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
                     </div>
                     <div>
                       <h2 className="text-[10px] font-semibold uppercase tracking-[0.25em] text-brand mb-4">
-                        Solusi
+                        {t("solution")}
                       </h2>
                       <p className="text-slate-500 leading-relaxed text-sm sm:text-base">
-                        {project.solution}
+                        {solution}
                       </p>
                     </div>
                   </div>
@@ -170,7 +165,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
             </div>
 
             {/* Results — full-width dark card */}
-            {project.results && (
+            {results && (
               <AnimateIn delay={100} className="mt-14">
                 <div className="rounded-2xl bg-slate-950 p-8 sm:p-10 relative overflow-hidden">
                   {/* Decorative number */}
@@ -178,10 +173,10 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
                     {num}
                   </span>
                   <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/30 mb-5">
-                    Hasil & Dampak
+                    {t("resultsTitle")}
                   </p>
                   <p className="text-white text-lg sm:text-xl leading-relaxed font-light relative z-10">
-                    &ldquo;{project.results}&rdquo;
+                    &ldquo;{results}&rdquo;
                   </p>
                 </div>
               </AnimateIn>
@@ -189,16 +184,16 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
           </div>
 
           {/* ── Right: sticky sidebar ── */}
-          {project.workDetails && project.workDetails.length > 0 && (
+          {workDetails && workDetails.length > 0 && (
             <AnimateIn delay={100} className="lg:sticky lg:top-32 self-start space-y-8">
 
               {/* Work list */}
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400 mb-6">
-                  Pekerjaan Dilakukan
-                </p>
+                    {t("workDoneTitle")}
+                  </p>
                 <ul className="space-y-4">
-                  {project.workDetails.map((detail, i) => (
+                  {workDetails.map((detail: any, i: number) => (
                     <li key={i} className="flex items-start gap-3.5 group">
                       <span className="mt-0.5 text-[10px] font-mono text-slate-300 shrink-0 w-5 tabular-nums">
                         {String(i + 1).padStart(2, "0")}
@@ -217,10 +212,10 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
               {/* CTA */}
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-400 mb-3">
-                  Tertarik Berkolaborasi?
-                </p>
+                    {t("interestedTitle")}
+                  </p>
                 <a
-                  href={`https://wa.me/6285163665100?text=${encodeURIComponent(`Halo, saya tertarik untuk mengerjakan proyek serupa dengan ${project.title}. Boleh kita diskusi?`)}`}
+                  href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t("waInquiry", { title: project.title }))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-2.5 rounded-full bg-slate-900 text-white text-xs font-semibold hover:bg-brand transition-colors duration-200"
@@ -228,7 +223,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
                   <svg className="w-3.5 h-3.5 shrink-0 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                   </svg>
-                  Diskusi Proyek
+                  {t("discussCTA")}
                 </a>
               </div>
             </AnimateIn>
@@ -243,9 +238,9 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-2 divide-x divide-slate-100">
 
-            {[
-              { project: prev, dir: "prev", label: "Sebelumnya", icon: "M15 19l-7-7 7-7" },
-              { project: next, dir: "next", label: "Selanjutnya", icon: "M9 5l7 7-7 7" },
+              {[
+              { project: prev, dir: "prev", label: t("prevLabel"), icon: "M15 19l-7-7 7-7" },
+              { project: next, dir: "next", label: t("nextLabel"), icon: "M9 5l7 7-7 7" },
             ].map(({ project: p, dir, label, icon }) => (
               <Link
                 key={dir}
@@ -259,7 +254,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
                 </div>
 
                 <div className={`min-w-0 ${dir === "next" ? "text-right" : ""}`}>
-                  <div className="flex items-center gap-2 mb-0.5 ${dir === 'next' ? 'justify-end' : ''}">
+                  <div className={`flex items-center gap-2 mb-0.5 ${dir === 'next' ? 'justify-end' : ''}`}>
                     <svg className={`w-3 h-3 text-slate-400 shrink-0 ${dir === "next" ? "order-last" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={icon} />
                     </svg>

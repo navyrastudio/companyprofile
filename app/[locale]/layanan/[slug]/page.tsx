@@ -1,41 +1,37 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import ServicePricelist from "@/components/sections/ServicePricelist";
 import { getServiceIdFromSlug, getServiceSlug } from "@/lib/slugUtils";
 import servicesData from "@/data/services.json";
 import companyData from "@/data/company.json";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
   const serviceId = getServiceIdFromSlug(slug);
-  
+
   if (!serviceId) {
-    return {
-      title: "Layanan tidak ditemukan - Navyra Studio",
-    };
+    return { title: t("serviceNotFound") };
   }
 
   const service = servicesData.find((s) => s.id === serviceId);
   const siteUrl = companyData.siteUrl || "https://navyra.id";
-  const title = `${service?.title} - Pricelist Lengkap | Navyra Studio`;
-  const description = service?.description || "Lihat pricelist dan paket layanan kami";
+  const title = `${service?.title} - ${t("servicePricelistSuffix")}`;
+  const description = service?.description || t("serviceDescriptionFallback");
 
   return {
     title,
     description,
     openGraph: {
-      title,
-      description,
-      url: `${siteUrl}/layanan/${getServiceSlug(serviceId)}`,
+      title, description,
+      url: `${siteUrl}/${locale}/layanan/${getServiceSlug(serviceId)}`,
     },
-    twitter: {
-      title,
-      description,
-    },
+    twitter: { title, description },
   };
 }
 
@@ -46,12 +42,11 @@ export async function generateStaticParams() {
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
   const serviceId = getServiceIdFromSlug(slug);
 
-  if (!serviceId) {
-    notFound();
-  }
+  if (!serviceId) notFound();
 
   return (
     <div className="min-h-screen bg-white">

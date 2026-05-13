@@ -1,7 +1,7 @@
 {
   "links": [
-    { "label": "Layanan", "href": "/#layanan" },
     { "label": "Proyek", "href": "/#proyek" },
+    { "label": "Layanan", "href": "/#layanan" },
     { "label": "Tentang Kami", "href": "/#tentang" },
     { "label": "Kontak", "href": "/#kontak" }
   ],

@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import clientsData from "@/data/clients.json";
+import { useTranslations } from "next-intl";
 
 type Client = { id: number; name: string; logo: string };
 const clients = clientsData as Client[];
 const ticker = [...clients, ...clients, ...clients];
 
 export default function ClientsSection() {
+  const t = useTranslations("clients");
   return (
     <section className="py-12 bg-white border-t border-slate-100">
 
@@ -15,7 +17,7 @@ export default function ClientsSection() {
       <div className="flex items-center gap-4 px-6 lg:px-10 mb-8 max-w-7xl mx-auto">
         <span className="h-px flex-1 bg-slate-100" />
         <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-brand shrink-0">
-          Klien & Partner Kami
+          {t("label")}
         </span>
         <span className="h-px flex-1 bg-slate-100" />
       </div>

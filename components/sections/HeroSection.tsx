@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import companyData from "@/data/company.json";
 import Button from "@/components/ui/Button";
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
+  const t = useTranslations("hero");
   return (
     <section
       id="home"
@@ -59,7 +63,7 @@ export default function HeroSection() {
         {/* Logo — float animation */}
         <Image
           src="/navyra-logo.png"
-          alt="Logo Navyra Studio, kembali ke beranda"
+          alt={t("logoAlt")}
           width={200}
           height={200}
           className="animate-hero-logo object-contain w-28 sm:w-36 lg:w-44"
@@ -70,27 +74,27 @@ export default function HeroSection() {
         <div className="animate-hero-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
-            Digital Studio
+            {t("eyebrow")}
           </span>
           <span className="w-px h-3 bg-slate-200" />
-          <span className="text-[10px] font-medium text-brand tracking-wide">Est. 2026</span>
+          <span className="text-[10px] font-medium text-brand tracking-wide">{t("established")}</span>
         </div>
 
         {/* Heading */}
         <h1 className="animate-hero-h1 text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
           <span className="sr-only">Navyra Studio</span>
-          Merancang Produk Digital yang <span className="text-brand">Bertumbuh Bersama Bisnis Anda</span>
+          {t("heading")} <span className="text-brand">{t("highlight")}</span>
         </h1>
 
         {/* Description */}
         <p className="animate-hero-desc text-slate-400 text-xs sm:text-base leading-relaxed max-w-3xl">
-          {companyData.description}
+          {t("description")}
         </p>
 
         {/* CTA */}
         <div className="animate-hero-cta">
           <Button href="#kontak" variant="primary" showArrow>
-            Ayo Mulai!
+            {t("cta")}
           </Button>
         </div>
 
@@ -98,7 +102,7 @@ export default function HeroSection() {
 
       {/* Scroll-down hint */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-hero-cta pointer-events-none">
-        <span className="text-[9px] uppercase tracking-[0.3em] text-slate-400 font-medium">Scroll</span>
+        <span className="text-[9px] uppercase tracking-[0.3em] text-slate-400 font-medium">{t("scrollHint")}</span>
         <div className="animate-scroll-bounce">
           <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />

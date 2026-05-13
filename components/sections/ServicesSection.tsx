@@ -9,8 +9,9 @@ import {
 } from "react-icons/si";
 import { Icon as IconifyIcon } from "@iconify/react";
 import AnimateIn from "@/components/ui/AnimateIn";
-import servicesData from "@/data/services.json";
+import servicesDataStatic from "@/data/services.json";
 import { getServiceSlug } from "@/lib/slugUtils";
+import { useTranslations } from "next-intl";
 
 const siIconMap: Record<string, IconType> = {
   SiReact, SiNextdotjs, SiLaravel, SiWordpress, SiWebflow, SiVuedotjs,
@@ -19,6 +20,18 @@ const siIconMap: Record<string, IconType> = {
 
 export default function ServicesSection() {
   const [openId, setOpenId] = useState<number | null>(null);
+  const t = useTranslations("services");
+  const rawData = t.raw("data") as any;
+  const servicesData = Array.isArray(rawData) ? rawData : [];
+  
+  // Extract tech stack from static data (not translated)
+  const techStackMap: Record<number, any[]> = {};
+  servicesDataStatic.forEach((service: any) => {
+    if (service.techStack) {
+      techStackMap[service.id] = service.techStack;
+    }
+  });
+  
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
 
   return (
@@ -29,21 +42,21 @@ export default function ServicesSection() {
         <AnimateIn className="mb-16">
           <div className="flex items-center gap-3 mb-5">
             <span className="h-px w-8 bg-brand" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">Layanan Kami</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">{t("sectionLabel")}</span>
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight max-w-lg">
-              Solusi digital yang dirancang untuk tumbuh bersama bisnis Anda.
+              {t("headline")}
             </h2>
             <p className="text-slate-500 text-sm leading-relaxed max-w-xs md:pb-1 shrink-0">
-              Web Development, UI/UX Design, dan Branding — semua dalam satu atap.
+              {t("description")}
             </p>
           </div>
         </AnimateIn>
 
         {/* ── Accordion ── */}
         <AnimateIn delay={100} className="divide-y divide-slate-100">
-          {servicesData.map((service, index) => {
+          {servicesData.map((service: any, index: number) => {
             const isOpen = openId === service.id;
             const num = String(index + 1).padStart(2, "0");
 
@@ -65,7 +78,7 @@ export default function ServicesSection() {
                   </span>
 
                   <span className="hidden sm:inline-flex text-[10px] font-medium text-slate-400 border border-slate-200 px-2.5 py-1 rounded-full mr-4 shrink-0">
-                    {service.items.length} sub-layanan
+                    {t("subServices", { count: service.items.length })}
                   </span>
 
                   {/* chevron */}
@@ -87,32 +100,32 @@ export default function ServicesSection() {
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-7">
-                        {service.items.map((item) => (
+                        {service.items.map((item: any) => (
                           <span key={item.name} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-50 border border-slate-200 rounded-full hover:bg-brand-50 hover:text-brand hover:border-brand/30 transition-colors duration-150 cursor-default">
                             {item.name}
                           </span>
                         ))}
                       </div>
 
-                      {service.techStack && (
+                      {techStackMap[service.id] && (
                         <div className="flex items-center gap-5 flex-wrap">
-                          <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold shrink-0">Stack</span>
-                          {service.techStack.map((tech) => {
-                            const t = tech as { name: string; icon: string; lib?: string; color?: string };
-                            const color = t.color ?? "#94a3b8";
-                            if (t.lib === "iconify") {
+                          <span className="text-[10px] uppercase tracking-[0.2em] text-slate-300 font-semibold shrink-0">{t("stackLabel")}</span>
+                          {techStackMap[service.id].map((tech) => {
+                            const techItem = tech as { name: string; icon: string; lib?: string; color?: string };
+                            const color = techItem.color ?? "#94a3b8";
+                            if (techItem.lib === "iconify") {
                               return (
-                                <div key={t.name} title={t.name} className="flex items-center gap-1.5 opacity-40 hover:opacity-80 transition-opacity cursor-default">
-                                  <IconifyIcon icon={t.icon} width={14} height={14} style={{ color }} />
-                                  <span className="text-[11px] text-slate-500">{t.name}</span>
+                                <div key={techItem.name} title={techItem.name} className="flex items-center gap-1.5 opacity-40 hover:opacity-80 transition-opacity cursor-default">
+                                  <IconifyIcon icon={techItem.icon} width={14} height={14} style={{ color }} />
+                                  <span className="text-[11px] text-slate-500">{techItem.name}</span>
                                 </div>
                               );
                             }
-                            const SiIcon = siIconMap[t.icon];
+                            const SiIcon = siIconMap[techItem.icon];
                             return SiIcon ? (
-                              <div key={t.name} title={t.name} className="flex items-center gap-1.5 opacity-40 hover:opacity-80 transition-opacity cursor-default">
+                              <div key={techItem.name} title={techItem.name} className="flex items-center gap-1.5 opacity-40 hover:opacity-80 transition-opacity cursor-default">
                                 <SiIcon size={14} style={{ color }} />
-                                <span className="text-[11px] text-slate-500">{t.name}</span>
+                                <span className="text-[11px] text-slate-500">{techItem.name}</span>
                               </div>
                             ) : null;
                           })}
@@ -122,7 +135,7 @@ export default function ServicesSection() {
 
                     <div className="justify-end flex ">
                       <Button href={`/layanan/${getServiceSlug(service.id)}`} variant="outline" size="sm">
-                        Lihat Detail
+                        {t("detailButton")}
                       </Button>
                     </div>
                   </div>

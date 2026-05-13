@@ -2,8 +2,10 @@
 
 import AnimateIn from "@/components/ui/AnimateIn";
 import statsData from "@/data/stats.json";
+import { useTranslations } from "next-intl";
 
 export default function StatsSection() {
+  const t = useTranslations("stats");
   return (
     <section className="bg-slate-900 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -14,14 +16,19 @@ export default function StatsSection() {
             <div>
               <div className="flex items-center gap-3 mb-5">
                 <span className="h-px w-8 bg-brand" />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">Pencapaian Kami</span>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">{t("sectionLabel")}</span>
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight">
-                Dipercaya oleh<br />Puluhan Klien
+                {t("heading").split("\n").map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < t("heading").split("\n").length - 1 && <br />}
+                  </span>
+                ))}
               </h2>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs md:pb-1 shrink-0">
-              Kami telah membantu bisnis lokal dan internasional berkembang melalui solusi digital yang inovatif dan berkelanjutan.
+              {t("description")}
             </p>
           </div>
         </AnimateIn>
@@ -38,7 +45,7 @@ export default function StatsSection() {
                 {stat.value}
               </span>
               <span className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500 mt-1">
-                {stat.label}
+                {t(`labels.${stat.icon === 'award' ? 'experience' : stat.icon}`)}
               </span>
             </AnimateIn>
           ))}
