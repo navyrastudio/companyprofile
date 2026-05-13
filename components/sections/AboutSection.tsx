@@ -1,117 +1,109 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
-import SectionLabel from "@/components/ui/SectionLabel";
 import AnimateIn from "@/components/ui/AnimateIn";
 import companyData from "@/data/company.json";
 
+const values = [
+  { label: "Desain Strategis", desc: "Setiap keputusan desain berbasis data dan tujuan bisnis." },
+  { label: "Teknologi Modern", desc: "Stack terkini untuk performa dan skalabilitas terbaik." },
+  { label: "Kolaborasi Penuh", desc: "Kami mitra Anda, bukan sekadar vendor." },
+];
+
 export default function AboutSection() {
   return (
-    <section id="tentang" className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 left-0 w-125 h-125 bg-brand-100/50 blur-[120px] pointer-events-none" />
+    <section id="tentang" className="py-24 lg:py-32 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section divider line */}
+        {/* ── Section label ── */}
+        <AnimateIn className="mb-16">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-brand" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">Tentang Kami</span>
+          </div>
+        </AnimateIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left: Visual */}
-          <AnimateIn from="left" className="relative">
-            {/* Main card */}
-            <div className="relative overflow-hidden bg-linear-to-br from-brand-50 to-slate-100 border border-slate-200 aspect-4/3">
-              {/* Grid pattern inside */}
-              <div
-                className="absolute inset-0 opacity-[0.08]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(59,130,246,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.3) 1px, transparent 1px)",
-                  backgroundSize: "30px 30px",
-                }}
-              />
+        {/* ── Two-col ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
-              {/* Studio display */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-8">
-                {/* Monitor */}
-                <div className="relative">
-                  <div className="w-48 h-32 bg-white border border-brand-300/50 shadow-lg flex items-center justify-center">
-                    <Image src="/navyra-logo.png" alt="Navyra Studio" width={120} height={40} className="w-28 h-auto object-contain opacity-60" />
-                    {/* Screen glare */}
-                    <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-black/3 to-transparent" />
-                  </div>
-                  <div className="w-12 h-3 bg-slate-200 border-x border-b border-brand-300/20 mx-auto" />
-                  <div className="w-20 h-0.5 bg-brand-300/30 mx-auto" />
-                </div>
-
-                {/* Floating UI chips */}
-                <div className="flex gap-2 absolute top-5 left-5">
-                  <div className="w-2 h-2 bg-brand-300/50 border border-brand-400/30" />
-                  <div className="w-1.5 h-1.5 bg-brand-200/40 border border-brand-300/20 mt-1" />
-                </div>
-
-                {/* Corner accent lines */}
-                <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-brand/30" />
-                <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-brand/30" />
-              </div>
-
-              {/* Bottom gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-brand-100/60 to-transparent" />
-            </div>
-
-            {/* Floating accent card */}
-            <div className="absolute -bottom-5 -right-3 sm:-right-5 bg-white border border-slate-200 shadow-md p-5">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-50 border border-brand-300/50 flex items-center justify-center p-1.5">
-                  <Image src="/inilogo.png" alt="Logo Navyra Studio" width={40} height={40} className="w-full h-full object-contain" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-medium uppercase tracking-widest">Berdiri sejak</div>
-                  <div className="text-2xl font-bold text-slate-900 mt-0.5">{companyData.since}</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative dots grid */}
-            <div className="absolute -top-4 -left-4 grid grid-cols-4 gap-2">
-              {Array.from({ length: 16 }).map((_, i) => (
-                <div key={i} className="w-1 h-1 bg-brand-400/40" />
-              ))}
-            </div>
-          </AnimateIn>
-
-          {/* Right: Content */}
-          <AnimateIn from="right" delay={150} className="flex flex-col gap-7">
-            <SectionLabel>Tentang Kami</SectionLabel>
-
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+          {/* Left col */}
+          <AnimateIn from="left" className="space-y-10">
+            <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight">
               {companyData.about.heading}
             </h2>
 
-            <div className="w-12 h-px bg-brand/50" />
-
-            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="text-slate-500 text-sm leading-relaxed">
               {companyData.about.description}
             </p>
 
-            <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="text-slate-500 text-sm leading-relaxed">
               Karena bagi kami, produk digital terbaik bukan hanya tentang tampilan, tetapi tentang bagaimana sebuah solusi dapat membantu bisnis bertumbuh dan terhubung lebih dekat dengan penggunanya.
             </p>
-        
-            <div className="mt-6">
-              <Button href="/about" variant="primary" showArrow>
-                Selengkapnya Tentang Kami
-              </Button>
-            </div>
 
-            {/* Stats grid */}
-            {/* <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 mt-2 border-t border-slate-200">
-              {statsData.map((stat) => (
-                <StatCard
-                  key={stat.label}
-                  value={stat.value}
-                  label={stat.label}
-                  icon={stat.icon}
-                />
+            {/* Value list */}
+            {/* <div className="space-y-4 pt-2">
+              {values.map((v, i) => (
+                <div key={i} className="flex gap-4 items-start group">
+                  <span className="mt-1 w-1 h-1 rounded-full bg-brand shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-800 mb-0.5">{v.label}</p>
+                    <p className="text-xs text-slate-400 leading-relaxed">{v.desc}</p>
+                  </div>
+                </div>
               ))}
             </div> */}
+
+            <Button href="/about" variant="primary" size="sm">
+              Yuk, Kenalan!
+            </Button>
+          </AnimateIn>
+
+          {/* Right col — visual */}
+          <AnimateIn from="right" delay={100}>
+            <div className="relative">
+              {/* Main image / studio card */}
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 to-slate-100 border border-slate-200 aspect-[4/3]">
+                {/* Grid lines */}
+                <div
+                  className="absolute inset-0 opacity-[0.06]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(rgba(26,86,219,1) 1px, transparent 1px), linear-gradient(90deg, rgba(26,86,219,1) 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                  }}
+                />
+
+                {/* Center content */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+                  <div className="relative bg-white rounded-2xl shadow-lg border border-slate-100 px-8 py-6 flex items-center gap-4">
+                    <Image src="/inilogo.png" alt="Logo" width={40} height={40} className="w-10 h-10 object-contain" />
+                    <div>
+                      <p className="text-base font-bold text-slate-900 leading-none">Navyra Studio</p>
+                      <p className="text-xs text-slate-400 mt-1">Digital Agency · Est. {companyData.since}</p>
+                    </div>
+                  </div>
+
+                  {/* Mini metric cards */}
+                  <div className="flex gap-3">
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-slate-100 px-4 py-3 text-center shadow-sm">
+                      <p className="text-lg font-bold text-slate-900 leading-none">50+</p>
+                      <p className="text-[10px] text-slate-400 mt-1 uppercase tracking-wider">Proyek</p>
+                    </div>
+                    <div className="bg-white/80 backdrop-blur-sm rounded-xl border border-slate-100 px-4 py-3 text-center shadow-sm">
+                      <p className="text-lg font-bold text-slate-900 leading-none">40+</p>
+                      <p className="text-[10px] text-slate-400 mt-1 uppercase tracking-wider">Klien</p>
+                    </div>
+                    <div className="bg-brand rounded-xl px-4 py-3 text-center shadow-sm">
+                      <p className="text-lg font-bold text-white leading-none">100%</p>
+                      <p className="text-[10px] text-brand-200 mt-1 uppercase tracking-wider">Kualitas</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Corner accents */}
+                <span className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-brand/20 rounded-tl-sm" />
+                <span className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-brand/20 rounded-br-sm" />
+              </div>
+            </div>
           </AnimateIn>
         </div>
       </div>

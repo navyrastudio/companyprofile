@@ -6,6 +6,7 @@ import PortfolioSection from "@/components/sections/PortfolioSection";
 import AboutSection from "@/components/sections/AboutSection";
 import FAQSection from "@/components/sections/FAQSection";
 import CTASection from "@/components/sections/CTASection";
+import ClientsSection from "@/components/sections/ClientsSection";
 import companyData from "@/data/company.json";
 
 export const metadata: Metadata = {
@@ -48,8 +49,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <ClientsSection />
       <ServicesSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <PortfolioSection />
       <AboutSection />
       <FAQSection />

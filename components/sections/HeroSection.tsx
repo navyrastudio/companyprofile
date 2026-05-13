@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 export default function HeroSection() {
   return (
     <section
-      id="beranda"
+      id="home"
       className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden"
     >
       {/* Gradient orb — top left */}
@@ -90,7 +90,7 @@ export default function HeroSection() {
         {/* CTA */}
         <div className="animate-hero-cta">
           <Button href="#kontak" variant="primary" showArrow>
-            Mari Bekerja Sama
+            Ayo Mulai!
           </Button>
         </div>
 

@@ -99,7 +99,7 @@ export default function Navbar() {
 
         {/* Decorative gradient */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-100/30 blur-3xl pointer-events-none" />
-
+ 
         {/* Content */}
         <div className="relative h-full flex flex-col pt-24 px-6">
           {/* Nav links */}

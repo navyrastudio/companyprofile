@@ -96,7 +96,7 @@ export default function AboutPage() {
                 <p className="text-slate-600">Untuk pertanyaan, kolaborasi, atau studi kasus, hubungi kami:</p>
                 <div className="mt-4 flex flex-col sm:flex-row gap-3">
                   <Button href={`mailto:${companyData.email}`} variant="primary" size="sm">Email: {companyData.email}</Button>
-                  <Button href={`tel:${companyData.phone.replace(/\s+/g, "")}`} variant="outline" size="sm">Telepon: {companyData.phone}</Button>
+                  <Button href={`tel:${companyData.phone.replace(/\s+/g, "")}`} variant="primary" size="sm">Telepon: {companyData.phone}</Button>
                 </div>
               </div>
 

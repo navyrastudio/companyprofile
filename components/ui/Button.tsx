@@ -41,7 +41,6 @@ export default function Button({
     return (
       <Link href={href} className={baseClasses}>
         {children}
-        {showArrow && <ArrowRight className="w-4 h-4" />}
       </Link>
     );
   }
@@ -49,7 +48,6 @@ export default function Button({
   return (
     <button onClick={onClick} className={baseClasses}>
       {children}
-      {showArrow && <ArrowRight className="w-4 h-4" />}
     </button>
   );
 }
