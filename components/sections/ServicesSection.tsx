@@ -64,9 +64,8 @@ export default function ServicesSection() {
                     {service.title}
                   </span>
 
-                  {/* tag pill */}
                   <span className="hidden sm:inline-flex text-[10px] font-medium text-slate-400 border border-slate-200 px-2.5 py-1 rounded-full mr-4 shrink-0">
-                    {service.items.length} layanan
+                    {service.items.length} sub-layanan
                   </span>
 
                   {/* chevron */}
@@ -89,8 +88,8 @@ export default function ServicesSection() {
 
                       <div className="flex flex-wrap gap-2 mb-7">
                         {service.items.map((item) => (
-                          <span key={item} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-50 border border-slate-200 rounded-full hover:bg-brand-50 hover:text-brand hover:border-brand/30 transition-colors duration-150 cursor-default">
-                            {item}
+                          <span key={item.name} className="px-3 py-1.5 text-xs font-medium text-slate-600 bg-slate-50 border border-slate-200 rounded-full hover:bg-brand-50 hover:text-brand hover:border-brand/30 transition-colors duration-150 cursor-default">
+                            {item.name}
                           </span>
                         ))}
                       </div>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <rect x="8" y="14" width="32" height="32" rx="4" fill="#1e293b"/>
+  <text x="24" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="white">G</text>
+  <text x="52" y="50%" dominant-baseline="middle" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#1e293b">GreenDie</text>
+</svg>

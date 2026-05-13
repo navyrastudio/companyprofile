@@ -4,7 +4,6 @@
     "title": "Web Development",
     "slug": "webdevelopment",
     "description": "Membangun website dan sistem digital yang modern, fungsional, dan scalable untuk membantu bisnis berkembang di era digital.",
-    "items": ["Company Profile", "SaaS", "POS System"],
     "techStack": [
       { "name": "React",     "icon": "SiReact",     "lib": "si", "color": "#61DAFB" },
       { "name": "Next.js",   "icon": "SiNextdotjs", "lib": "si", "color": "#000000" },
@@ -13,72 +12,134 @@
       { "name": "Webflow",   "icon": "SiWebflow",   "lib": "si", "color": "#4353FF" },
       { "name": "Vue.js",    "icon": "SiVuedotjs",  "lib": "si", "color": "#4FC08D" }
     ],
-    "pricing": {
-      "medium": {
-        "price": 5000000,
-        "description": "Website sederhana dengan 5-10 halaman, responsive design, dan integrasi dasar."
+    "items": [
+      {
+        "name": "Company Profile",
+        "description": "Website profesional untuk memperkenalkan bisnis Anda. Responsive, SEO-friendly, dan mudah dikelola.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 2500000,  "description": "Website 3–5 halaman, tampilan profesional, responsive, tanpa CMS.", "features": ["3–5 Halaman", "Responsive Design", "Form Kontak", "Deploy & Hosting Setup"] },
+          "menengah": { "label": "Standard",    "price": 5000000,  "description": "Website 5–10 halaman, CMS sederhana, SEO dasar, dan animasi ringan.", "features": ["5–10 Halaman", "CMS Sederhana", "SEO Dasar", "Animasi & Transisi", "Revisi 3x"] },
+          "high":     { "label": "Professional","price": null,     "description": "Website multi-bahasa, integrasi API, performa tinggi, dan dukungan penuh.", "features": ["Unlimited Halaman", "Multi-bahasa", "Integrasi API", "Optimasi Performa", "Support 3 Bulan"] }
+        }
       },
-      "menengah": {
-        "price": 15000000,
-        "description": "Website kompleks dengan sistem manajemen konten, e-commerce, atau aplikasi web."
+      {
+        "name": "Landing Page",
+        "description": "Halaman tunggal berkinerja tinggi untuk kampanye, produk, atau konversi iklan.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 800000,   "description": "Landing page 1 seksi dengan form dan CTA dasar.", "features": ["1 Halaman", "Form Kontak", "Mobile Friendly", "Desain Sederhana"] },
+          "menengah": { "label": "Standard",    "price": 1800000,  "description": "Landing page animasi modern, optimasi kecepatan, dan integrasi form.", "features": ["Animasi Modern", "Optimasi Speed", "Integrasi WhatsApp", "Google Analytics", "Revisi 2x"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Landing page A/B testing, tracking iklan, dan konversi maksimal.", "features": ["A/B Testing", "Tracking Pixel", "Heatmap", "Laporan Performa", "Support 1 Bulan"] }
+        }
       },
-      "high": {
-        "description": "Solusi custom untuk enterprise, sistem terintegrasi, atau proyek skala besar. Harga berdasarkan kompleksitas."
+      {
+        "name": "POS System",
+        "description": "Sistem kasir digital terintegrasi untuk mengelola transaksi, stok, dan laporan bisnis.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 6000000,  "description": "Kasir digital dasar dengan produk, transaksi, dan struk.", "features": ["Manajemen Produk", "Transaksi Kasir", "Cetak Struk", "Laporan Harian"] },
+          "menengah": { "label": "Standard",    "price": 12000000, "description": "POS multi-kasir dengan stok, diskon, dan laporan lengkap.", "features": ["Multi-kasir", "Manajemen Stok", "Diskon & Promo", "Dashboard Admin", "Revisi 2x"] },
+          "high":     { "label": "Enterprise",  "price": null,     "description": "POS terintegrasi e-commerce, akuntansi, dan multi-cabang.", "features": ["Multi-cabang", "Integrasi E-commerce", "Modul Akuntansi", "API Terbuka", "Support 6 Bulan"] }
+        }
       }
-    }
+    ]
   },
   {
     "id": 2,
     "title": "UI/UX Design",
     "slug": "uiux",
     "description": "Merancang pengalaman digital yang intuitif, modern, dan nyaman digunakan untuk menghadirkan interaksi yang lebih bermakna.",
-    "items": ["Mobile App Design", "Web Design", "Prototype", "Design System"],
     "techStack": [
       { "name": "Figma",   "icon": "SiFigma",   "lib": "si", "color": "#F24E1E" },
       { "name": "Webflow", "icon": "SiWebflow", "lib": "si", "color": "#4353FF" },
       { "name": "Framer",  "icon": "SiFramer",  "lib": "si", "color": "#0055FF" }
     ],
-    "pricing": {
-      "medium": {
-        "price": 3000000,
-        "description": "Desain UI/UX untuk 1-3 halaman/screen dengan wireframe dan mockup."
+    "items": [
+      {
+        "name": "Mobile App Design",
+        "description": "Desain UI lengkap untuk aplikasi mobile iOS & Android dengan alur UX yang terencana.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 2500000,  "description": "Desain 5–10 screen dengan wireframe dan mockup dasar.", "features": ["5–10 Screen", "Wireframe", "Mockup Hi-fi", "Export Asset"] },
+          "menengah": { "label": "Standard",    "price": 6000000,  "description": "Desain lengkap hingga 30 screen dengan prototype dan user flow.", "features": ["Hingga 30 Screen", "User Flow", "Prototype Interaktif", "Revisi 3x", "Handoff File"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Desain penuh dengan UX research, usability testing, dan design system.", "features": ["UX Research", "Usability Testing", "Design System", "Dokumentasi", "Support Revisi"] }
+        }
       },
-      "menengah": {
-        "price": 8000000,
-        "description": "Desain lengkap aplikasi atau website dengan prototype interaktif dan design system."
+      {
+        "name": "Web Design",
+        "description": "Desain website modern dengan tampilan yang menarik dan pengalaman pengguna yang optimal.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 1500000,  "description": "Desain 1–3 halaman dengan mockup hi-fi dan aset dasar.", "features": ["1–3 Halaman", "Mockup Hi-fi", "Aset Dasar", "Format Figma"] },
+          "menengah": { "label": "Standard",    "price": 3500000,  "description": "Desain website responsif lengkap dengan prototype dan handoff.", "features": ["Desain Responsif", "Prototype", "Handoff Dev", "Revisi 2x", "Style Guide"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Desain sistem penuh dengan komponen library dan dokumentasi.", "features": ["Komponen Library", "Dokumentasi Lengkap", "Animasi Micro", "Multi-breakpoint", "Support Revisi"] }
+        }
       },
-      "high": {
-        "description": "Desain UX research, user testing, dan solusi kompleks untuk produk digital. Harga berdasarkan scope."
+      {
+        "name": "Prototype & Testing",
+        "description": "Prototype interaktif untuk validasi ide sebelum pengembangan penuh dimulai.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 800000,   "description": "Prototype clickable untuk 5–10 screen utama.", "features": ["5–10 Screen", "Clickable Prototype", "Format Figma", "Revisi 1x"] },
+          "menengah": { "label": "Standard",    "price": 2000000,  "description": "Prototype interaktif + sesi user testing dan laporan.", "features": ["Prototype Interaktif", "User Testing", "Laporan Feedback", "Iterasi 2x", "Revisi 2x"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "UX testing komprehensif dengan multiple sesi dan analisis mendalam.", "features": ["Multiple Sesi Testing", "Analisis Mendalam", "Heatmap Simulasi", "Laporan Eksekutif", "Rekomendasi Lanjutan"] }
+        }
+      },
+      {
+        "name": "Design System",
+        "description": "Sistem komponen desain yang konsisten dan scalable untuk tim produk Anda.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 3000000,  "description": "Design system dasar dengan color token, tipografi, dan 20 komponen.", "features": ["Color Token", "Tipografi", "20 Komponen", "Format Figma"] },
+          "menengah": { "label": "Standard",    "price": 6000000,  "description": "Design system lengkap dengan Figma Variables dan dokumentasi.", "features": ["Figma Variables", "50+ Komponen", "Dokumentasi", "Dark Mode", "Revisi 2x"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Design system enterprise dengan multi-brand dan integrasi kode.", "features": ["Multi-brand", "Code Integration", "Storybook", "Tim Training", "Support 3 Bulan"] }
+        }
       }
-    }
+    ]
   },
   {
     "id": 3,
     "title": "Branding",
     "slug": "branding",
     "description": "Menciptakan identitas visual yang kuat, konsisten, dan relevan agar brand tampil lebih profesional dan mudah diingat.",
-    "items": ["Logo Design", "Brand Identity", "Social Media Design", "Mockup Design"],
     "techStack": [
       { "name": "Figma",       "icon": "SiFigma",                        "lib": "si",       "color": "#F24E1E" },
       { "name": "Photoshop",   "icon": "simple-icons:adobephotoshop",    "lib": "iconify", "color": "#31A8FF" },
       { "name": "Illustrator", "icon": "simple-icons:adobeillustrator",  "lib": "iconify", "color": "#FF9A00" },
       { "name": "InDesign",    "icon": "simple-icons:adobeindesign",     "lib": "iconify", "color": "#FF3366" },
-      { "name": "Canva",       "icon": "SiCanva",                        "lib": "si",       "color": "#00C4CC" },
-      { "name": "Behance",     "icon": "SiBehance",                      "lib": "si",       "color": "#1769FF" },
-      { "name": "Dribbble",    "icon": "SiDribbble",                     "lib": "si",       "color": "#EA4C89" }
+      { "name": "Canva",       "icon": "SiCanva",                        "lib": "si",       "color": "#00C4CC" }
     ],
-    "pricing": {
-      "medium": {
-        "price": 2000000,
-        "description": "Logo design dengan 2-3 konsep dan brand guideline dasar."
+    "items": [
+      {
+        "name": "Logo Design",
+        "description": "Logo profesional yang mencerminkan karakter dan nilai brand Anda.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 300000,   "description": "1 konsep logo dengan 2x revisi. Format PNG & JPG.", "features": ["1 Konsep", "Revisi 2x", "Format PNG & JPG", "Waktu 3–5 Hari"] },
+          "menengah": { "label": "Standard",    "price": 700000,   "description": "3 konsep logo dengan revisi tidak terbatas. Format lengkap.", "features": ["3 Konsep", "Revisi Bebas", "AI, SVG, PNG, JPG", "Color Palette", "Waktu 5–7 Hari"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Logo + variasi, brand guideline, dan hak cipta penuh.", "features": ["Logo + Variasi", "Brand Guideline", "Hak Cipta Penuh", "Mock-up Presentasi", "Support Revisi"] }
+        }
       },
-      "menengah": {
-        "price": 5000000,
-        "description": "Brand identity lengkap termasuk logo, stationery, dan digital assets."
+      {
+        "name": "Brand Identity",
+        "description": "Identitas brand lengkap yang mencakup logo, warna, tipografi, dan panduan penggunaan.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 1500000,  "description": "Logo + color palette + tipografi + panduan dasar.", "features": ["Logo Design", "Color Palette", "Tipografi", "Panduan Dasar"] },
+          "menengah": { "label": "Standard",    "price": 4000000,  "description": "Brand identity lengkap + stationery + digital assets.", "features": ["Logo + Variasi", "Stationery Design", "Digital Assets", "Brand Guideline", "Revisi 3x"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Rebranding menyeluruh + brand strategy + implementasi.", "features": ["Brand Strategy", "Visual Identity Penuh", "Brand Voice", "Multi-media Assets", "Konsultasi 3 Bulan"] }
+        }
       },
-      "high": {
-        "description": "Rebranding menyeluruh, brand strategy, dan implementasi multi-channel. Harga berdasarkan kompleksitas."
+      {
+        "name": "Social Media Kit",
+        "description": "Template desain konten media sosial yang konsisten dan siap pakai.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 500000,   "description": "5 template feed + 3 template story. Format Canva.", "features": ["5 Template Feed", "3 Template Story", "Format Canva", "1 Revisi"] },
+          "menengah": { "label": "Standard",    "price": 1500000,  "description": "15 template feed + story + highlight cover. Format Canva & Figma.", "features": ["15 Template Feed", "Story Template", "Highlight Cover", "Format Canva & Figma", "Revisi 2x"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Kit lengkap semua platform + panduan konten visual.", "features": ["All Platform Kit", "Panduan Konten", "Reels Template", "Editorial Calendar", "Support 1 Bulan"] }
+        }
+      },
+      {
+        "name": "Mockup Design",
+        "description": "Visualisasi brand pada berbagai media fisik dan digital yang realistis.",
+        "pricing": {
+          "medium":   { "label": "Starter",     "price": 300000,   "description": "3 mockup scene pilihan. Format PNG HD. Revisi 1x.", "features": ["3 Scene Mockup", "Format PNG HD", "Revisi 1x", "Bebas Watermark"] },
+          "menengah": { "label": "Standard",    "price": 800000,   "description": "8 mockup scene beragam media. Format PNG & PSD.", "features": ["8 Scene Mockup", "Berbagai Media", "Format PNG & PSD", "Revisi 2x"] },
+          "high":     { "label": "Premium",     "price": null,     "description": "Mockup custom fotorealistis untuk presentasi klien atau pitching.", "features": ["Mockup Custom", "Fotorealistis", "Unlimited Scene", "Format Presentasi", "Revisi Bebas"] }
+        }
       }
-    }
+    ]
   }
 ]

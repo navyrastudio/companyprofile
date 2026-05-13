@@ -93,7 +93,11 @@ export default function PortfolioSection() {
             <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tight">
               Karya yang kami<br />banggakan.
             </h2>
-            
+            <div className="sm:pb-1 shrink-0 hidden md:block">
+              <Button href="/portfolio" variant="outline" size="sm">
+                Proyek Lainnya
+              </Button>
+            </div>
           </div>
         </AnimateIn>
 
@@ -144,11 +148,11 @@ export default function PortfolioSection() {
             <span className="text-slate-700 font-medium">4</span> dari{" "}
             <span className="text-slate-700 font-medium">{portfolioData.length}</span> proyek
           </p>
-          <div className="sm:pb-1 shrink-0">
-              <Button href="/portfolio" variant="outline" size="sm">
-               Proyek Lainnya
-              </Button>
-            </div>
+          <div className="sm:pb-1 shrink-0 md:hidden">
+            <Button href="/portfolio" variant="outline" size="sm">
+              Proyek Lainnya
+            </Button>
+          </div>
         </AnimateIn>
 
       </div>
