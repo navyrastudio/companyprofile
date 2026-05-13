@@ -13,7 +13,7 @@ function slugify(str: string): string {
 const portfolioIdToSlug: Record<number, string> = {};
 const slugToPortfolioId: Record<string, number> = {};
 
-portfolioData.forEach((p: any) => {
+portfolioData.forEach((p: { id: number; slug?: string; title?: string }) => {
   const slug = (p.slug as string) || slugify(p.title || `project-${p.id}`);
   portfolioIdToSlug[p.id] = slug;
   slugToPortfolioId[slug] = p.id;

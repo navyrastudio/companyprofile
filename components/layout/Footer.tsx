@@ -35,7 +35,7 @@ export default function Footer() {
       title: t("company"),
       items: [
         { label: t("companyItems.0"), href: "/about"     },
-        { label: t("companyItems.1"), href: "/portfolio" },
+        { label: t("companyItems.1"), href: "/project" },
         { label: t("companyItems.2"), href: "/#kontak"   },
       ],
     },

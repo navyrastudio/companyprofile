@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import companyData from "@/data/company.json";
 import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
 

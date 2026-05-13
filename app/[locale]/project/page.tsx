@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import PortfolioGrid from "@/components/sections/PortfolioGrid";
+import ProjectGrid from "@/components/sections/ProjectGrid";
 import companyData from "@/data/company.json";
 
 interface Props {
@@ -13,27 +13,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const siteUrl = companyData.siteUrl || "https://navyra.id";
 
   return {
-    title: t("portfolioTitle"),
-    description: t("portfolioDescription"),
+    title: t("projectTitle"),
+    description: t("projectDescription"),
     openGraph: {
-      title: t("portfolioTitle"),
-      description: t("portfolioDescription"),
-      url: `${siteUrl}/${locale}/portfolio`,
+      title: t("projectTitle"),
+      description: t("projectDescription"),
+      url: `${siteUrl}/${locale}/project`,
     },
     twitter: {
-      title: t("portfolioTitle"),
-      description: t("portfolioDescription"),
+      title: t("projectTitle"),
+      description: t("projectDescription"),
     },
   };
 }
 
-export default async function PortfolioPage({ params }: Props) {
+export default async function ProjectPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
   return (
     <main className="min-h-screen bg-white">
-      <PortfolioGrid />
+      <ProjectGrid />
     </main>
   );
 }

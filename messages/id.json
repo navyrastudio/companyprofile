@@ -8,8 +8,8 @@
     "aboutTitle": "Tentang Kami",
     "layananTitle": "Layanan",
     "layananDescription": "Layanan yang kami tawarkan",
-    "portfolioTitle": "Portofolio",
-    "portfolioDescription": "Kumpulan proyek dan studi kasus kami",
+    "projectTitle": "Proyek",
+    "projectDescription": "Kumpulan proyek dan studi kasus kami",
     "serviceNotFound": "Layanan tidak ditemukan",
     "servicePricelistSuffix": "Pricelist",
     "serviceDescriptionFallback": "Deskripsi layanan tidak tersedia",
@@ -82,9 +82,9 @@
     "contactUs": "Hubungi Kami",
     "consultNow": "Konsultasi Sekarang"
   },
-  "portfolio": {
-    "portfolioTitle": "Portofolio",
-    "portfolioDescription": "Beberapa proyek pilihan kami",
+  "project": {
+    "projectTitle": "Portofolio",
+    "projectDescription": "Beberapa proyek pilihan kami",
     "sectionLabel": "Proyek Kami",
     "headline": "Karya yang kami\nbanggakan.",
     "otherProjectsButton": "Proyek Lainnya",
@@ -118,6 +118,7 @@
     "projects": [
       {
         "id": 1,
+        "description": "Identitas visual menyeluruh untuk kedai kopi lokal — mulai dari logo, packaging, hingga panduan brand yang konsisten.",
         "challenge": "KOHA Coffee membutuhkan identitas brand yang kuat dan memorable untuk membedakan mereka di pasar kopi premium lokal yang semakin kompetitif.",
         "solution": "Kami menciptakan identitas visual yang sophisticated dengan palet warna warm earth tones yang mencerminkan kehangatan dan kualitas premium produk mereka. Desain logo yang elegan dan timeless menjadi foundation untuk seluruh ekosistem branding.",
         "workDetails": ["Logo Design dengan multiple variations", "Brand Guidelines & Style Guide lengkap", "Packaging Design (tas kopi & kemasan retail)", "Social Media Templates & Assets", "Photography Direction & Styling", "Merchandise Design (cup, tumbler, apparel)"],
@@ -125,6 +126,7 @@
       },
       {
         "id": 2,
+        "description": "Website company profile modern untuk studio digital dengan desain minimalis, animasi halus, dan performa tinggi.",
         "challenge": "Navyra Studio membutuhkan website yang tidak hanya beautiful secara visual, tetapi juga showcase kemampuan mereka sebagai design & development studio dengan proyek yang impressive.",
         "solution": "Kami develop website yang mengkombinasikan modern design dengan smooth animations, responsive layout, dan fast loading performance. Architecture yang scalable memungkinkan mudah untuk menambah proyek dan konten.",
         "workDetails": ["Web Design & Prototyping (Figma)", "Frontend Development (Next.js, React)", "UI/UX Optimization", "Responsive Mobile Design", "Animation & Interaction Design", "Performance Optimization & SEO", "Deployment & Maintenance"],
@@ -132,6 +134,7 @@
       },
       {
         "id": 3,
+        "description": "Sesi foto produk profesional untuk brand kecantikan lokal yang menampilkan estetika feminin dan elegan.",
         "challenge": "Olivia Beauty membutuhkan visual assets berkualitas tinggi yang dapat showcase produk mereka dengan cara yang elegant dan aspirational untuk campaign marketing mereka.",
         "solution": "Kami melakukan professional product photography session dengan lighting setup yang sophisticated, styling yang konsisten dengan brand aesthetic, dan post-processing yang meningkatkan visual impact tanpa mengorbankan authenticity produk.",
         "workDetails": ["Product Photography Session (50+ shots)", "Styling & Props Direction", "Professional Lighting Setup", "Post-Processing & Color Grading", "Retouching & Image Enhancement", "Packaging & Flat Lay Photography", "Lifestyle Photography"],
@@ -139,6 +142,7 @@
       },
       {
         "id": 4,
+        "description": "Rebranding menyeluruh untuk label fashion premium dengan pendekatan editorial dan kesan mewah yang kuat.",
         "challenge": "VELLA Fashion ingin rebranding untuk meningkatkan positioning mereka sebagai premium fashion label yang aspirational dan modern, melawan kompetitor lokal lain.",
         "solution": "Kami develop comprehensive rebranding strategy dengan visual identity yang luxury dan sophisticated. Menggunakan minimal color palette, premium typography, dan editorial approach yang menonjolkan craftsmanship dan quality.",
         "workDetails": ["Brand Strategy & Positioning", "Logo Redesign & Symbol", "Typography Selection & Customization", "Brand Color Palette Development", "Brand Guidelines (200+ pages)", "Packaging & Label Design", "Brand Photography Direction", "Store Design & Environmental Branding"],
@@ -146,6 +150,7 @@
       },
       {
         "id": 5,
+        "description": "Pengembangan landing page dan dashboard SaaS untuk startup teknologi dengan UI modern dan UX intuitif.",
         "challenge": "Arkana Tech startup membutuhkan presence online yang strong dengan landing page yang convert dan internal dashboard yang intuitive untuk manage data mereka.",
         "solution": "Kami develop full-stack solution dengan modern tech stack, responsive design yang beautiful, dan dashboard yang powerful dengan real-time analytics. Focus pada user experience dan performance untuk maximize conversion.",
         "workDetails": ["Landing Page Design & Development", "Dashboard UI/UX Design", "Frontend Development (React, TypeScript)", "Backend API Development (Node.js)", "Database Design & Optimization", "Real-time Data Visualization", "Authentication & Security", "DevOps & Deployment"],
@@ -153,6 +158,7 @@
       },
       {
         "id": 6,
+        "description": "Desain aplikasi mobile untuk studio desain interior dengan fitur visualisasi ruang dan konsultasi online.",
         "challenge": "Lumira Interior Studio membutuhkan mobile app untuk connect dengan clients, showcase proyek mereka, dan facilitate online consultation dan project collaboration.",
         "solution": "Kami design aplikasi dengan user-friendly interface yang memudahkan client browsing design samples, request consultation, dan track project progress. Integration dengan calendar dan messaging system untuk seamless communication.",
         "workDetails": ["User Research & Personas", "Wireframing & Information Architecture", "UI/UX Design (High-fidelity mockups)", "Interaction Design & Animations", "Prototyping & User Testing", "Design System & Component Library", "Mobile App Development (React Native)", "Backend Integration & APIs"],
@@ -165,7 +171,7 @@
     "heading": "Merancang Produk Digital yang",
     "highlight": "Bertumbuh Bersama Bisnis Anda",
     "description": "Kami membantu bisnis menghadirkan website, sistem, dan identitas visual yang tidak hanya terlihat modern, tetapi juga memberikan dampak nyata bagi perkembangan brand dan pengalaman pengguna.",
-    "cta": "Ayo Mulai!",
+    "cta": "Hubungi Kami",
     "scrollHint": "Scroll",
     "logoAlt": "Logo Navyra Studio, kembali ke beranda",
     "established": "Est. 2026"
@@ -369,7 +375,7 @@
     "company": "Perusahaan",
     "companyItems": [
       "Tentang Kami",
-      "Portfolio",
+      "Proyek",
       "Kontak"
     ],
     "contactEmail": "navyrastudio@gmail.com",

@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import portfolioData from "@/data/portfolio.json";
+import projectData from "@/data/portfolio.json";
 import AnimateIn from "@/components/ui/AnimateIn";
 import Button from "@/components/ui/Button";
 import { getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 import { useTranslations } from "next-intl";
 
-type PortfolioItem = {
+type ProjectItem = {
   id: number;
   title: string;
   subtitle: string;
@@ -20,19 +20,19 @@ type PortfolioItem = {
   featured?: boolean;
 };
 
-function PortfolioCard({
+function ProjectCard({
   item,
   sizes,
   className = "",
 }: {
-  item: PortfolioItem;
+  item: ProjectItem;
   sizes: string;
   className?: string;
 }) {
   const slug = getPortfolioSlug(item.id);
   return (
     <Link
-      href={`/portfolio/${slug}`}
+      href={`/project/${slug}`}
       className={`group relative block overflow-hidden rounded-2xl bg-slate-100 ${className}`}
     >
       <Image
@@ -78,9 +78,9 @@ function PortfolioCard({
   );
 }
 
-export default function PortfolioSection() {
-  const t = useTranslations("portfolio");
-  const items = (portfolioData as PortfolioItem[]).filter((i) => i.featured).slice(0, 4);
+export default function ProjectSection() {
+  const t = useTranslations("project");
+  const items = (projectData as ProjectItem[]).filter((i) => i.featured).slice(0, 4);
   const [hero, second, third, fourth] = items;
 
   return (
@@ -103,7 +103,7 @@ export default function PortfolioSection() {
               ))}
             </h2>
             <div className="sm:pb-1 shrink-0 hidden md:block">
-              <Button href="/portfolio" variant="outline" size="sm">
+              <Button href="/project" variant="outline" size="sm">
                 {t("otherProjectsButton")}
               </Button>
             </div>
@@ -117,7 +117,7 @@ export default function PortfolioSection() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-3">
             {hero && (
               <AnimateIn delay={0}>
-                <PortfolioCard
+                <ProjectCard
                   item={hero}
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className="aspect-video"
@@ -126,7 +126,7 @@ export default function PortfolioSection() {
             )}
             {second && (
               <AnimateIn delay={80}>
-                <PortfolioCard
+                <ProjectCard
                   item={second}
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="h-full min-h-[260px] lg:aspect-auto"
@@ -140,7 +140,7 @@ export default function PortfolioSection() {
             {[third, fourth].map((item, i) =>
               item ? (
                 <AnimateIn key={item.id} delay={160 + i * 80}>
-                  <PortfolioCard
+                  <ProjectCard
                     item={item}
                     sizes="(max-width: 640px) 100vw, 50vw"
                     className="aspect-4/3"
@@ -154,10 +154,10 @@ export default function PortfolioSection() {
         {/* ── Footer ── */}
         <AnimateIn delay={280} className="mt-8 flex items-center justify-between">
           <p className="text-slate-400 text-sm">
-            {t("footerCount", { count: 4, total: portfolioData.length })}
+            {t("footerCount", { count: 4, total: projectData.length })}
           </p>
           <div className="sm:pb-1 shrink-0 md:hidden">
-            <Button href="/portfolio" variant="outline" size="sm">
+            <Button href="/project" variant="outline" size="sm">
               Proyek Lainnya
             </Button>
           </div>

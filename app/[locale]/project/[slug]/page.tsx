@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import PortfolioDetail from "@/components/sections/PortfolioDetail";
+import ProjectDetail from "@/components/sections/ProjectDetail";
 import { getPortfolioIdFromSlug, getPortfolioSlug } from "@/lib/portfolioSlugUtils";
 import portfolioData from "@/data/portfolio.json";
 import companyData from "@/data/company.json";
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     openGraph: {
       title, description,
-      url: `${siteUrl}/${locale}/portfolio/${slug}`,
+      url: `${siteUrl}/${locale}/project/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : undefined,
     },
     twitter: { title, description },
@@ -43,7 +43,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PortfolioDetailPage({ params }: Props) {
+export default async function ProjectDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const portfolioId = getPortfolioIdFromSlug(slug);
@@ -52,7 +52,7 @@ export default async function PortfolioDetailPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
-      <PortfolioDetail portfolioId={portfolioId} />
+      <ProjectDetail portfolioId={portfolioId} />
     </main>
   );
 }

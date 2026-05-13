@@ -10,7 +10,7 @@ export async function GET() {
   const urls: string[] = [
     `${siteUrl}/`,
     `${siteUrl}/about`,
-    `${siteUrl}/portfolio`,
+    `${siteUrl}/project`,
     `${siteUrl}/layanan`,
   ];
 
@@ -20,7 +20,7 @@ export async function GET() {
   const portfolioList = portfolioData as PortfolioItem[];
   portfolioList.forEach((p) => {
     const slug = getPortfolioSlug(p.id);
-    if (slug) urls.push(`${siteUrl}/portfolio/${slug}`);
+    if (slug) urls.push(`${siteUrl}/project/${slug}`);
   });
 
   const servicesList = servicesData as ServiceItem[];

@@ -8,8 +8,8 @@
     "aboutTitle": "About",
     "layananTitle": "Services",
     "layananDescription": "The services we offer",
-    "portfolioTitle": "Portfolio",
-    "portfolioDescription": "A collection of our projects and case studies",
+    "projectTitle": "Portfolio",
+    "projectDescription": "A collection of our projects and case studies",
     "serviceNotFound": "Service not found",
     "servicePricelistSuffix": "Pricelist",
     "serviceDescriptionFallback": "Service description not available",
@@ -82,9 +82,9 @@
     "contactUs": "Contact Us",
     "consultNow": "Consult Now"
   },
-  "portfolio": {
-    "portfolioTitle": "Portfolio",
-    "portfolioDescription": "Selected projects",
+  "project": {
+    "projectTitle": "Portfolio",
+    "projectDescription": "Selected projects",
     "sectionLabel": "Our Projects",
     "headline": "Work We\nTake Pride In.",
     "otherProjectsButton": "More Projects",
@@ -118,6 +118,7 @@
     "projects": [
       {
         "id": 1,
+        "description": "Comprehensive visual identity for a local coffee shop — from logo, packaging, to consistent brand guidelines.",
         "challenge": "KOHA Coffee needed a strong and memorable brand identity to stand out in the increasingly competitive local premium coffee market.",
         "solution": "We created a sophisticated visual identity with a warm earth tone color palette reflecting the warmth and premium quality of their products. An elegant and timeless logo design became the foundation for the entire branding ecosystem.",
         "workDetails": ["Logo Design with multiple variations", "Complete Brand Guidelines & Style Guide", "Packaging Design (coffee bags & retail packaging)", "Social Media Templates & Assets", "Photography Direction & Styling", "Merchandise Design (cups, tumblers, apparel)"],
@@ -125,6 +126,7 @@
       },
       {
         "id": 2,
+        "description": "Modern company profile website for digital studio with minimalist design, smooth animations, and high performance.",
         "challenge": "Navyra Studio needed a website that was not only visually beautiful but also showcased their capabilities as a design & development studio with impressive projects.",
         "solution": "We developed a website combining modern design with smooth animations, responsive layout, and fast loading performance. A scalable architecture makes it easy to add projects and content.",
         "workDetails": ["Web Design & Prototyping (Figma)", "Frontend Development (Next.js, React)", "UI/UX Optimization", "Responsive Mobile Design", "Animation & Interaction Design", "Performance Optimization & SEO", "Deployment & Maintenance"],
@@ -132,6 +134,7 @@
       },
       {
         "id": 3,
+        "description": "Professional product photography session for local beauty brand showcasing feminine and elegant aesthetics.",
         "challenge": "Olivia Beauty needed high-quality visual assets that could showcase their products in an elegant and aspirational way for their marketing campaigns.",
         "solution": "We conducted professional product photography sessions with sophisticated lighting setups, styling consistent with brand aesthetics, and post-processing that enhanced visual impact without compromising product authenticity.",
         "workDetails": ["Product Photography Session (50+ shots)", "Styling & Props Direction", "Professional Lighting Setup", "Post-Processing & Color Grading", "Retouching & Image Enhancement", "Packaging & Flat Lay Photography", "Lifestyle Photography"],
@@ -139,6 +142,7 @@
       },
       {
         "id": 4,
+        "description": "Comprehensive rebrand for premium fashion label with editorial approach and strong sense of luxury.",
         "challenge": "VELLA Fashion wanted a comprehensive rebrand to increase their positioning as an aspirational and modern premium fashion label, competing with other local competitors.",
         "solution": "We developed a comprehensive rebranding strategy with a luxury and sophisticated visual identity. Using a minimal color palette, premium typography, and an editorial approach that highlights craftsmanship and quality.",
         "workDetails": ["Brand Strategy & Positioning", "Logo Redesign & Symbol", "Typography Selection & Customization", "Brand Color Palette Development", "Brand Guidelines (200+ pages)", "Packaging & Label Design", "Brand Photography Direction", "Store Design & Environmental Branding"],
@@ -146,6 +150,7 @@
       },
       {
         "id": 5,
+        "description": "Landing page and SaaS dashboard development for tech startup with modern UI and intuitive UX.",
         "challenge": "Arkana Tech startup needed a strong online presence with a converting landing page and an intuitive internal dashboard to manage their data.",
         "solution": "We developed a full-stack solution with modern tech stack, beautiful responsive design, and a powerful dashboard with real-time analytics. Focused on user experience and performance to maximize conversion.",
         "workDetails": ["Landing Page Design & Development", "Dashboard UI/UX Design", "Frontend Development (React, TypeScript)", "Backend API Development (Node.js)", "Database Design & Optimization", "Real-time Data Visualization", "Authentication & Security", "DevOps & Deployment"],
@@ -153,6 +158,7 @@
       },
       {
         "id": 6,
+        "description": "Mobile app design for interior design studio with space visualization features and online consultation.",
         "challenge": "Lumira Interior Studio needed a mobile app to connect with clients, showcase their projects, and facilitate online consultations and project collaboration.",
         "solution": "We designed an app with a user-friendly interface that makes it easy for clients to browse design samples, request consultations, and track project progress. Integration with calendar and messaging systems for seamless communication.",
         "workDetails": ["User Research & Personas", "Wireframing & Information Architecture", "UI/UX Design (High-fidelity mockups)", "Interaction Design & Animations", "Prototyping & User Testing", "Design System & Component Library", "Mobile App Development (React Native)", "Backend Integration & APIs"],
@@ -165,7 +171,7 @@
     "heading": "Designing Digital Products that",
     "highlight": "Grow With Your Business",
     "description": "We help businesses deliver websites, systems, and visual identities that not only look modern but also create measurable impact for brand growth and user experience.",
-    "cta": "Let's Start!",
+    "cta": "Get in Touch",
     "scrollHint": "Scroll",
     "logoAlt": "Navyra Studio logo, back to home",
     "established": "Est. 2026"
@@ -178,7 +184,7 @@
     "heading": "Got an idea?",
     "highlight": "Let's make it happen.",
     "description": "We're open for collaboration — from brand identity, web, to memorable digital product design.",
-    "contactButton": "Contact Us",
+    "contactButton": "Get in Touch",
     "orSendTo": "or send directly to"
   },
   "faq": {
@@ -369,7 +375,7 @@
     "company": "Company",
     "companyItems": [
       "About Us",
-      "Portfolio",
+      "Projects",
       "Contact"
     ],
     "contactEmail": "navyrastudio@gmail.com",

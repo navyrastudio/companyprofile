@@ -19,7 +19,7 @@ export function generateServiceSlug(title: string): string {
 const serviceIdToSlug: Record<number, string> = {};
 const slugToServiceId: Record<string, number> = {};
 
-servicesData.forEach((s: any) => {
+servicesData.forEach((s: { id: number; slug?: string; title?: string }) => {
   const slug = (s.slug as string) || slugify(s.title || `service-${s.id}`);
   serviceIdToSlug[s.id] = slug;
   slugToServiceId[slug] = s.id;

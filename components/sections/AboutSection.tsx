@@ -9,8 +9,6 @@ import { useTranslations } from "next-intl";
 export default function AboutSection() {
   const t = useTranslations("about");
   const tStats = useTranslations("stats");
-  const rawValues = t.raw("values") as any;
-  const values = Array.isArray(rawValues) ? rawValues : [];
   return (
     <section id="tentang" className="py-24 lg:py-32 bg-white border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">

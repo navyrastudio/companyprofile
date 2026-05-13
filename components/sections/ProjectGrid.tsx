@@ -36,7 +36,7 @@ function ProjectCard({
 
   return (
     <Link
-      href={`/portfolio/${slug}`}
+      href={`/project/${slug}`}
       className={`group relative block overflow-hidden rounded-2xl bg-slate-100 ${
         featured ? "aspect-video" : "aspect-4/3"
       }`}
@@ -85,8 +85,8 @@ function ProjectCard({
   );
 }
 
-export default function PortfolioGrid() {
-  const t = useTranslations("portfolio");
+export default function ProjectGrid() {
+  const t = useTranslations("project");
   const [filter, setFilter] = useState<FilterKey>("all");
 
   const filtered = useMemo(() => {

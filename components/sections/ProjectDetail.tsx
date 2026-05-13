@@ -14,8 +14,8 @@ type Project = (typeof portfolioData)[0] & {
   results?: string;
 };
 
-export default function PortfolioDetail({ portfolioId }: { portfolioId: number }) {
-  const t = useTranslations("portfolio");
+export default function ProjectDetail({ portfolioId }: { portfolioId: number }) {
+  const t = useTranslations("project");
   const project = portfolioData.find((p) => p.id === portfolioId) as Project | undefined;
   
   // Get translated project details
@@ -36,6 +36,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
   }
 
   // Use translated details if available, otherwise fall back to static data
+  const description = translatedProjectDetails?.description || project.description;
   const challenge = translatedProjectDetails?.challenge || project.challenge;
   const solution = translatedProjectDetails?.solution || project.solution;
   const workDetails = translatedProjectDetails?.workDetails || project.workDetails;
@@ -67,7 +68,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
 
         {/* Back link */}
         <Link
-          href="/portfolio"
+          href="/project"
           className="absolute top-6 left-6 lg:left-10 flex items-center gap-2 text-white/50 hover:text-white transition-colors duration-200 group"
         >
           <span className="w-7 h-7 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-200">
@@ -95,7 +96,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
               { label: t("meta.year"), value: project.year },
               { label: t("meta.category"), value: project.category },
               { label: t("meta.client"), value: project.title },
-              ...(project.workDetails ? [{ label: t("meta.deliverable"), value: `${project.workDetails.length} Item` }] : []),
+              ...(workDetails ? [{ label: t("meta.deliverable"), value: `${workDetails.length} Item` }] : []),
             ].map((meta, i, arr) => (
               <div key={meta.label} className="flex items-center gap-8 shrink-0">
                 <div>
@@ -120,7 +121,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
             {/* Description – pull quote style */}
             <AnimateIn>
               <p className="text-slate-700 text-xl sm:text-2xl leading-relaxed font-light border-l-2 border-brand pl-6 mb-16">
-                {project.description}
+                {description}
               </p>
             </AnimateIn>
 
@@ -244,7 +245,7 @@ export default function PortfolioDetail({ portfolioId }: { portfolioId: number }
             ].map(({ project: p, dir, label, icon }) => (
               <Link
                 key={dir}
-                href={`/portfolio/${getPortfolioSlug(p.id)}`}
+                href={`/project/${getPortfolioSlug(p.id)}`}
                 className={`group relative overflow-hidden py-8 sm:py-10 flex items-center gap-5 transition-colors duration-200 hover:bg-slate-50 ${dir === "next" ? "flex-row-reverse pl-8 lg:pl-10 -mr-6 lg:-mr-10 pr-6 lg:pr-10" : "-ml-6 lg:-ml-10 pl-6 lg:pl-10 pr-8 lg:pr-10"}`}
               >
                 {/* Mini image */}
