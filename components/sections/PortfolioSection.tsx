@@ -111,7 +111,7 @@ export default function PortfolioSection() {
                 <PortfolioCard
                   item={hero}
                   sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="aspect-[16/9]"
+                  className="aspect-video"
                 />
               </AnimateIn>
             )}
@@ -134,7 +134,7 @@ export default function PortfolioSection() {
                   <PortfolioCard
                     item={item}
                     sizes="(max-width: 640px) 100vw, 50vw"
-                    className="aspect-[4/3]"
+                    className="aspect-4/3"
                   />
                 </AnimateIn>
               ) : null
