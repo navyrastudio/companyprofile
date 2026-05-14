@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Gradient orb — top left */}
       <div

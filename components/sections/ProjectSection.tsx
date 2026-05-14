@@ -84,7 +84,7 @@ export default function ProjectSection() {
   const [hero, second, third, fourth] = items;
 
   return (
-    <section id="proyek" className="py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
+    <section id="proyek" className="py-24 lg:py-32 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Header ── */}

@@ -10,7 +10,7 @@ export default function AboutSection() {
   const t = useTranslations("about");
   const tStats = useTranslations("stats");
   return (
-    <section id="tentang" className="py-24 lg:py-32 bg-white border-t border-slate-100">
+    <section id="tentang" className="py-24 lg:py-32 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Section label ── */}

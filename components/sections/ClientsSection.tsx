@@ -11,7 +11,7 @@ const ticker = [...clients, ...clients, ...clients];
 export default function ClientsSection() {
   const t = useTranslations("clients");
   return (
-    <section className="py-12 bg-white border-t border-slate-100">
+    <section className="py-12 border-t border-slate-100">
 
       {/* ── Label ── */}
       <div className="flex items-center gap-4 px-6 lg:px-10 mb-8 max-w-7xl mx-auto">

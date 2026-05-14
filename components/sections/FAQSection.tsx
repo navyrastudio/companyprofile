@@ -13,7 +13,7 @@ export default function FAQSection() {
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
 
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 border-t border-slate-100">
+    <section className="py-24 lg:py-32 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Header ── */}
