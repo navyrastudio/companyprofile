@@ -6,16 +6,17 @@ import {
   faLinkedinIn,
   faXTwitter,
   faBehance,
+  faDribbble,
 } from "@fortawesome/free-brands-svg-icons";
 import companyData from "@/data/company.json";
 import navData from "@/data/navigation.json";
 import { useTranslations } from "next-intl";
 
 const socials = [
-  { href: companyData.socials.instagram, label: "Instagram",   icon: faInstagram  },
-  { href: companyData.socials.linkedin,  label: "LinkedIn",    icon: faLinkedinIn },
-  { href: companyData.socials.twitter,   label: "Twitter / X", icon: faXTwitter   },
-  { href: companyData.socials.behance,   label: "Behance",     icon: faBehance    },
+  { href: companyData.socials.instagram, label: "Instagram", icon: faInstagram  },
+  { href: companyData.socials.linkedin,  label: "LinkedIn",   icon: faLinkedinIn },
+  { href: companyData.socials.behance,   label: "Behance",    icon: faBehance    },
+  { href: companyData.socials.dribbble,  label: "Dribbble",   icon: faDribbble   },
 ];
 
 export default function Footer() {
