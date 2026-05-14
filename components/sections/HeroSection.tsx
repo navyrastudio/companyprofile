@@ -37,9 +37,9 @@ export default function HeroSection() {
       rotateY: 90,
     });
 
-    // Create staggered timeline with delay after loading
+    // Create staggered timeline - no delay, appear immediately after loading
     const tl = gsap.timeline({
-      delay: 0.5, // 500ms delay after loading completes
+      delay: 0, // No delay, appear immediately
     });
 
     // Logo animation - with 3D flip effect
