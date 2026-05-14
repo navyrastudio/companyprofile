@@ -48,77 +48,6 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isOpen]);
 
-  // GSAP animations for navbar - trigger after loading complete
-  useEffect(() => {
-    if (isLoading) return;
-
-    // Get all nav link elements
-    const navLinks = desktopNavRef.current?.querySelectorAll("a") || [];
-
-    // Initial hidden state
-    gsap.set([logoRef.current, desktopNavRef.current, langSwitcherRef.current, mobileMenuBtnRef.current], {
-      opacity: 0,
-      y: -20,
-    });
-
-    // Create timeline - no delay, appear immediately after loading
-    const tl = gsap.timeline({
-      delay: 0, // No delay, appear immediately
-    });
-
-    // Logo animation
-    tl.to(
-      logoRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "back.out(1.2)",
-      },
-      0
-    );
-
-    // Desktop nav animation
-    tl.to(
-      desktopNavRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "back.out(1.2)",
-      },
-      0.1
-    );
-
-    // Language switcher animation
-    tl.to(
-      langSwitcherRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "back.out(1.2)",
-      },
-      0.2
-    );
-
-    // Mobile menu button animation
-    tl.to(
-      mobileMenuBtnRef.current,
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "back.out(1.2)",
-      },
-      0.2
-    );
-
-    return () => {
-      tl.kill();
-    };
-  }, [isLoading]);
-
   const switchLocale = () => {
     const newLocale = locale === "id" ? "en" : "id";
     // Replace the locale prefix in the current pathname
@@ -138,7 +67,7 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-18">
             {/* Logo */}
-            <Link ref={logoRef} href={`/${locale}`} aria-label={`Navyra Studio - ${t("home")}`} className="shrink-0 opacity-0 -translate-y-5">
+            <Link href={`/${locale}`} aria-label={`Navyra Studio - ${t("home")}`} className="shrink-0">
               <Image
                 src="/navyra-logo.png"
                 alt={t("logoHome")}
@@ -150,7 +79,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div ref={desktopNavRef} className="hidden md:flex items-center gap-10 flex-1 justify-center opacity-0 -translate-y-5">
+            <div className="hidden md:flex items-center gap-10 flex-1 justify-center">
               <nav aria-label={t("mainNav")} className="flex items-center gap-10">
                 {navLinks.map((link) => (
                   <Link
@@ -169,9 +98,8 @@ export default function Navbar() {
             <div className="flex items-center gap-3 shrink-0">
               {/* Language Toggle */}
               <button
-                ref={langSwitcherRef}
                 onClick={switchLocale}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-slate-200 hover:border-brand hover:bg-brand-50 transition-all duration-200 text-xs font-semibold opacity-0 -translate-y-5"
+                className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-slate-200 hover:border-brand hover:bg-brand-50 transition-all duration-200 text-xs font-semibold"
                 aria-label={tLang("switchLang")}
               >
                 <svg className="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -184,9 +112,8 @@ export default function Navbar() {
 
               {/* Mobile menu button */}
               <button
-                ref={mobileMenuBtnRef}
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden shrink-0 w-10 h-10 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-colors opacity-0 -translate-y-5"
+                className="md:hidden shrink-0 w-10 h-10 flex items-center justify-center text-slate-700 hover:text-slate-900 transition-colors"
                 aria-label={isOpen ? t("closeMenu") : t("openMenu")}
                 aria-expanded={isOpen}
               >

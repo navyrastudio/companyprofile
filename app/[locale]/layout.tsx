@@ -43,7 +43,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${poppins.variable} antialiased`}>
-      <body className="bg-white text-slate-900" style={{ scrollBehavior: "smooth" }}>
+      <body className="bg-white text-slate-900">
         <LoadingProvider>
           <NextIntlClientProvider messages={messages}>
             <SplashScreen />
