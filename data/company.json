@@ -18,5 +18,51 @@
     "twitter": "https://twitter.com/navyrastudio",
     "behance": "https://behance.net/navyrastudio",
     "dribbble": "https://dribbble.com/navyrastudio"
-  }
+  },
+  "founders": [
+    {
+      "name": "Rifan Arsyansyah, S.Kom",
+      "role": "Co-Founder & CEO",
+      "image": "/founders/rifan.jpg",
+      "email": "rifan@navyra.id",
+      "bio": "Designer & entrepreneur leading product strategy and brand design.",
+      "socials": {
+        "linkedin": "https://linkedin.com/in/rifan",
+        "instagram": "https://instagram.com/rifan"
+      }
+    },
+    {
+      "name": "Yakub Firman Mustofa, S.Kom",
+      "role": "Co-Founder & CTO",
+      "image": "/founders/firman.jpg",
+      "email": "yakub@navyra.id",
+      "bio": "Engineer focused on building scalable web platforms.",
+      "socials": {
+        "linkedin": "https://linkedin.com/in/yakub",
+        "instagram": "https://instagram.com/yakub"
+      }
+    },
+    {
+      "name": "Achmad Zaki Ramadhani, S.Kom",
+      "role": "Co-Founder & CMO",
+      "image": "/founders/zaki.jpg",
+      "email": "zaki@navyra.id",
+      "bio": "Operations expert ensuring smooth project execution.",
+      "socials": {
+        "linkedin": "https://linkedin.com/in/zaki",
+        "instagram": "https://instagram.com/zaki"
+      }
+    },
+    {
+      "name": "Rafli Dhio Muhammad Valen, S.Kom",
+      "role": "Co-Founder & COO",
+      "image": "/founders/rafli.jpg",
+      "email": "rafli@navyra.id",
+      "bio": "Marketing strategist driving brand growth and engagement.",
+      "socials": {
+        "linkedin": "https://linkedin.com/in/rafli",
+        "instagram": "https://instagram.com/rafli"
+      }
+    }
+  ]
 }

@@ -68,11 +68,23 @@
     "cta": "Yuk, Kenalan!",
     "longDesc": "Karena bagi kami, produk digital terbaik bukan hanya tentang tampilan, tetapi tentang bagaimana sebuah solusi dapat membantu bisnis bertumbuh dan terhubung lebih dekat dengan penggunanya.",
     "logoAlt": "Logo Navyra Studio",
+    "visionMissionHeading": "Arah yang kami <highlight>tuju</highlight> dan cara kami mencapainya.",
+    "coreValuesHeading": "Prinsip yang membimbing setiap karya kami.",
+    "howWeWorkHeading": "Proses terstruktur untuk hasil yang terukur.",
+    "emailUs": "Email Kami",
+    "callUs": "Hubungi via Telepon",
+    "foundersHeading": "Orang-orang di Balik Layar",
     "values": [
       { "label": "Desain Strategis", "desc": "Setiap keputusan desain berbasis data dan tujuan bisnis." },
       { "label": "Teknologi Modern", "desc": "Stack terkini untuk performa dan skalabilitas terbaik." },
       { "label": "Kolaborasi Penuh", "desc": "Kami mitra Anda, bukan sekadar vendor." }
-    ]
+    ],
+    "founders": "Tim Kami",
+    "founderBio": "Mengenal lebih dekat para penggerak di balik layar Navyra Studio.",
+    "founderRole": "Peran",
+    "founderEmail": "Email",
+    "founderLinkedIn": "LinkedIn",
+    "founderInstagram": "Instagram"
   },
   "pricelist": {
     "customPrice": "Custom (Hubungi Kami)",

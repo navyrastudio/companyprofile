@@ -11,14 +11,14 @@ export default function AboutHero() {
     <section className="relative bg-white overflow-hidden">
       {/* Gradient orbs for visual interest */}
       <div
-        className="animate-orb-1 absolute -top-32 -left-48 w-150 h-150 rounded-full pointer-events-none"
+        className="animate-orb-1 absolute -top-32 -left-48 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(26,86,219,0.12) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
       <div
-        className="animate-orb-2 absolute -bottom-40 -right-40 w-175 h-175 rounded-full pointer-events-none"
+        className="animate-orb-2 absolute -bottom-40 -right-40 w-[700px] h-[700px] rounded-full pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(99,143,230,0.08) 0%, transparent 70%)",
           filter: "blur(80px)",
@@ -41,7 +41,7 @@ export default function AboutHero() {
             {/* Heading with accent line */}
             <AnimateIn delay={40} className="mb-8">
               <div className="flex items-start gap-6">
-                <div className="mt-1 w-1 h-12 bg-gradient-to-b from-brand to-brand/0 rounded-full" />
+                <div className="mt-1 w-1 h-12 bg-linear-to-b from-brand to-brand/0 rounded-full" />
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight">
                   {t("heroHeading")}
                 </h1>
@@ -68,7 +68,7 @@ export default function AboutHero() {
       {/* Bottom accent */}
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-8 lg:pt-12 border-t border-slate-100/50">
-          <div className="h-px bg-gradient-to-r from-transparent via-brand/20 to-transparent" />
+          <div className="h-px bg-linear-to-r from-transparent via-brand/20 to-transparent" />
         </div>
       </div>
     </section>

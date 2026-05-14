@@ -65,14 +65,26 @@
     "phone": "Phone",
     "followUs": "Follow us"
     ,"sectionLabel": "About Us",
-    "cta": "More",
+    "cta": "More About",
     "longDesc": "Because to us, the best digital products aren't just about looks — they're about how a solution helps businesses grow and connect with users.",
     "logoAlt": "Navyra Studio logo",
+    "visionMissionHeading": "The direction we <highlight>aim for</highlight> and how we achieve it.",
+    "coreValuesHeading": "Principles that guide our every work.",
+    "howWeWorkHeading": "Structured process for measurable results.",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "foundersHeading": "The People Behind the Scenes",
     "values": [
       { "label": "Strategic Design", "desc": "Every design decision grounded in data and business goals." },
       { "label": "Modern Tech", "desc": "Current stacks for best performance and scalability." },
       { "label": "Full Collaboration", "desc": "We’re your partner, not just a vendor." }
-    ]
+    ],
+    "founders": "Our Team",
+    "founderBio": "Get to know the driving forces behind Navyra Studio.",
+    "founderRole": "Role",
+    "founderEmail": "Email",
+    "founderLinkedIn": "LinkedIn",
+    "founderInstagram": "Instagram"
   },
   "pricelist": {
     "customPrice": "Custom (Contact Us)",
