@@ -35,6 +35,10 @@
     "switchFrom": "Ganti ke Bahasa Indonesia"
   },
   "about": {
+    "pageLabel": "Tentang",
+    "heroHeading": "Studio Kreatif yang Membangun Pengalaman Digital",
+    "heroDescription": "Kami merancang dan mengembangkan produk digital yang bermakna untuk membantu bisnis Anda berkembang. Dari konsep hingga peluncuran, kami mewujudkan ide dengan strategi, kreativitas, dan keunggulan teknis.",
+    "heroCTA": "Mari Bekerja Sama",
     "companyHeading": "Tentang Navyra Studio",
     "companyDescription": "Kami adalah studio digital yang fokus pada menciptakan solusi web, desain UI/UX, dan branding yang bermakna untuk bisnis Anda.",
     "visionMission": "Visi & Misi",

@@ -35,6 +35,10 @@
     "switchFrom": "Switch to Indonesian"
   },
   "about": {
+    "pageLabel": "About",
+    "heroHeading": "Creative Studio Building Digital Experiences",
+    "heroDescription": "We design and develop meaningful digital products that help businesses grow. From concept to launch, we bring ideas to life with strategy, creativity, and technical excellence.",
+    "heroCTA": "Let's Work Together",
     "companyHeading": "About Navyra Studio",
     "companyDescription": "We are a digital studio focused on creating meaningful web solutions, UI/UX design, and branding for your business.",
     "visionMission": "Vision & Mission",

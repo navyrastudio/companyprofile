@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import AboutSection from "@/components/sections/AboutSection";
+import AboutHero from "@/components/sections/AboutHero";
 import AnimateIn from "@/components/ui/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
@@ -114,7 +114,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
-      <AboutSection />
+      <AboutHero />
       <AboutContent />
     </main>
   );
