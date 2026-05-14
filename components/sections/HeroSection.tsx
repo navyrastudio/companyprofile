@@ -176,7 +176,7 @@ export default function HeroSection() {
       <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto">
 
         {/* Logo — float animation */}
-        <div ref={logoRef} className="relative">
+        <div ref={logoRef} className="relative opacity-0 translate-y-16">
           <Image
             src="/navyra-logo.png"
             alt={t("logoAlt")}
@@ -188,7 +188,7 @@ export default function HeroSection() {
         </div>
 
         {/* Eyebrow badge */}
-        <div ref={badgeRef} className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div ref={badgeRef} className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm opacity-0 translate-y-16">
           <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
             {t("eyebrow")}
@@ -198,18 +198,18 @@ export default function HeroSection() {
         </div>
 
         {/* Heading */}
-        <h1 ref={headingRef} className="text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+        <h1 ref={headingRef} className="text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight opacity-0 translate-y-16">
           <span className="sr-only">Navyra Studio</span>
           {t("heading")} <span className="text-brand">{t("highlight")}</span>
         </h1>
 
         {/* Description */}
-        <p ref={descRef} className="text-slate-400 text-xs sm:text-base leading-relaxed max-w-3xl">
+        <p ref={descRef} className="text-slate-400 text-xs sm:text-base leading-relaxed max-w-3xl opacity-0 translate-y-16">
           {t("description")}
         </p>
 
         {/* CTA */}
-        <div ref={ctaRef}>
+        <div ref={ctaRef} className="opacity-0 translate-y-16">
           <Button href="#kontak" variant="primary" showArrow>
             {t("cta")}
           </Button>
@@ -218,7 +218,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll-down hint */}
-      <div ref={scrollHintRef} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
+      <div ref={scrollHintRef} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none opacity-0 translate-y-6">
         <span className="text-[9px] uppercase tracking-[0.3em] text-slate-400 font-medium">{t("scrollHint")}</span>
         <div className="animate-scroll-bounce">
           <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
