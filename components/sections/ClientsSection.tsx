@@ -1,8 +1,13 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import clientsData from "@/data/clients.json";
 import { useTranslations } from "next-intl";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type Client = { id: number; name: string; logo: string };
 const clients = clientsData as Client[];
@@ -10,8 +15,32 @@ const ticker = [...clients, ...clients, ...clients];
 
 export default function ClientsSection() {
   const t = useTranslations("clients");
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.set(section, { opacity: 0, y: 60 });
+
+    gsap.to(section, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: section,
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section className="py-12 border-t border-slate-100">
+    <section ref={sectionRef} className="py-12 border-t border-slate-100">
 
       {/* ── Label ── */}
       <div className="flex items-center gap-4 px-6 lg:px-10 mb-8 max-w-7xl mx-auto">

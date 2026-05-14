@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import type { IconType } from "react-icons";
@@ -12,6 +13,10 @@ import AnimateIn from "@/components/ui/AnimateIn";
 import servicesDataStatic from "@/data/services.json";
 import { getServiceSlug } from "@/lib/slugUtils";
 import { useTranslations } from "next-intl";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const siIconMap: Record<string, IconType> = {
   SiReact, SiNextdotjs, SiLaravel, SiWordpress, SiWebflow, SiVuedotjs,
@@ -23,6 +28,7 @@ export default function ServicesSection() {
   const t = useTranslations("services");
   const rawData = t.raw("data") as any;
   const servicesData = Array.isArray(rawData) ? rawData : [];
+  const sectionRef = useRef<HTMLElement>(null);
   
   // Extract tech stack from static data (not translated)
   const techStackMap: Record<number, any[]> = {};
@@ -34,8 +40,30 @@ export default function ServicesSection() {
   
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.set(section, { opacity: 0, y: 60 });
+
+    gsap.to(section, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: section,
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
-    <section id="layanan" className="py-24 lg:py-32 border-t border-slate-100">
+    <section ref={sectionRef} id="layanan" className="py-24 lg:py-32 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Section header ── */}

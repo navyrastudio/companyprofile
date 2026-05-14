@@ -3,6 +3,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { Inter, Poppins } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import { LoadingProvider } from "@/context/LoadingContext";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SplashScreen from "@/components/ui/SplashScreen";
@@ -43,16 +44,18 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${inter.variable} ${poppins.variable} antialiased`}>
       <body className="bg-white text-slate-900" style={{ scrollBehavior: "smooth" }}>
-        <NextIntlClientProvider messages={messages}>
-          <SplashScreen />
-          <header>
-            <Navbar />
-          </header>
-          <main id="main-content" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer />
-        </NextIntlClientProvider>
+        <LoadingProvider>
+          <NextIntlClientProvider messages={messages}>
+            <SplashScreen />
+            <header>
+              <Navbar />
+            </header>
+            <main id="main-content" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer />
+          </NextIntlClientProvider>
+        </LoadingProvider>
       </body>
     </html>
   );

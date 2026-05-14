@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AnimateIn from "@/components/ui/AnimateIn";
 import { useTranslations } from "next-intl";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function FAQSection() {
   const [openId, setOpenId] = useState<number | null>(0);
@@ -11,9 +15,32 @@ export default function FAQSection() {
   const rawItems = t.raw("items") as any;
   const faqData = Array.isArray(rawItems) ? rawItems : [];
   const toggle = (id: number) => setOpenId(openId === id ? null : id);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    gsap.set(section, { opacity: 0, y: 60 });
+
+    gsap.to(section, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: section,
+        start: "top 75%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
-    <section className="py-24 lg:py-32 border-t border-slate-100">
+    <section ref={sectionRef} className="py-24 lg:py-32 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Header ── */}

@@ -1,13 +1,129 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
+import { useLoading } from "@/context/LoadingContext";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
   const t = useTranslations("hero");
+  const sectionRef = useRef<HTMLElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const scrollHintRef = useRef<HTMLDivElement>(null);
+  const { isLoading } = useLoading();
+
+  useEffect(() => {
+    // Skip if still loading
+    if (isLoading) return;
+
+    // Set initial states for all elements
+    gsap.set([logoRef.current, badgeRef.current, headingRef.current, descRef.current, ctaRef.current, scrollHintRef.current], {
+      opacity: 0,
+      y: 60,
+    });
+
+    // Logo special initial state
+    gsap.set(logoRef.current, {
+      scale: 0.5,
+      rotateY: 90,
+    });
+
+    // Create staggered timeline with delay after loading
+    const tl = gsap.timeline({
+      delay: 0.5, // 500ms delay after loading completes
+    });
+
+    // Logo animation - with 3D flip effect
+    tl.to(
+      logoRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateY: 0,
+        duration: 1.2,
+        ease: "back.out(1.3)",
+      },
+      0
+    );
+
+    // Badge animation - slide up with bounce
+    tl.to(
+      badgeRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "back.out(1.5)",
+      },
+      0.1
+    );
+
+    // Heading animation - with letter-like stagger effect
+    tl.to(
+      headingRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "back.out(1.2)",
+      },
+      0.25
+    );
+
+    // Description animation
+    tl.to(
+      descRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      },
+      0.4
+    );
+
+    // CTA Button animation - with scale effect
+    tl.to(
+      ctaRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "back.out(1.4)",
+      },
+      0.55
+    );
+
+    // Scroll hint animation - fade in smoothly
+    tl.to(
+      scrollHintRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      0.7
+    );
+
+    return () => {
+      tl.kill();
+    };
+  }, [isLoading]);
+
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
@@ -60,17 +176,19 @@ export default function HeroSection() {
       <div className="relative flex flex-col items-center text-center gap-7 px-6 max-w-4xl mx-auto">
 
         {/* Logo — float animation */}
-        <Image
-          src="/navyra-logo.png"
-          alt={t("logoAlt")}
-          width={200}
-          height={200}
-          className="animate-hero-logo object-contain w-28 sm:w-36 lg:w-44"
-          priority
-        />
+        <div ref={logoRef} className="relative">
+          <Image
+            src="/navyra-logo.png"
+            alt={t("logoAlt")}
+            width={200}
+            height={200}
+            className="object-contain w-28 sm:w-36 lg:w-44"
+            priority
+          />
+        </div>
 
         {/* Eyebrow badge */}
-        <div className="animate-hero-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div ref={badgeRef} className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
           <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-slate-500">
             {t("eyebrow")}
@@ -80,18 +198,18 @@ export default function HeroSection() {
         </div>
 
         {/* Heading */}
-        <h1 className="animate-hero-h1 text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+        <h1 ref={headingRef} className="text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
           <span className="sr-only">Navyra Studio</span>
           {t("heading")} <span className="text-brand">{t("highlight")}</span>
         </h1>
 
         {/* Description */}
-        <p className="animate-hero-desc text-slate-400 text-xs sm:text-base leading-relaxed max-w-3xl">
+        <p ref={descRef} className="text-slate-400 text-xs sm:text-base leading-relaxed max-w-3xl">
           {t("description")}
         </p>
 
         {/* CTA */}
-        <div className="animate-hero-cta">
+        <div ref={ctaRef}>
           <Button href="#kontak" variant="primary" showArrow>
             {t("cta")}
           </Button>
@@ -100,7 +218,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll-down hint */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-hero-cta pointer-events-none">
+      <div ref={scrollHintRef} className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none">
         <span className="text-[9px] uppercase tracking-[0.3em] text-slate-400 font-medium">{t("scrollHint")}</span>
         <div className="animate-scroll-bounce">
           <svg className="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
